@@ -26,6 +26,7 @@ namespace Chickensubclass.Content.Projectiles
         {
             Projectile.CloneDefaults(ProjectileID.FairyQueenRangedItemShot);
             AIType = ProjectileID.Bullet;
+            Projectile.DamageType = DamageClass.Melee; 
             Projectile.aiStyle = 1;
             Projectile.light = 0.5f; 
         }

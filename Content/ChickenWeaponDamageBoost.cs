@@ -15,6 +15,7 @@ namespace Chickensubclass.Content
         int heldItemType = player.inventory[player.selectedItem].type;
 
         return heldItemType == ModContent.ItemType<FlyingChicken>() ||
+               heldItemType == ModContent.ItemType<AmericanChicken>() ||
                heldItemType == ModContent.ItemType<NuclearChicken>() ||
                heldItemType == ModContent.ItemType<SpookyChicken>() ||
                heldItemType == ModContent.ItemType<SolarChicken>() ||

@@ -22,7 +22,7 @@ namespace Chickensubclass.Content.Items
 			Item.width = 69; // nice
 			Item.height = 50;
 			Item.useTime = 65;
-			Item.useAnimation = 65;
+			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 5;
 			Item.value = Item.buyPrice(silver: 5);

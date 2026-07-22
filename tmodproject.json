@@ -8,6 +8,8 @@
     "Content\\Items\\NuggetChicken.cs": "Chickensubclass.Content.Items",
     "Content\\Items\\BinChicken.cs": "Chickensubclass.Content.Items",
     "Content\\Projectiles\\BinChickenProjectile.cs": "Chickensubclass.Content.Projectiles",
-    "Content\\Buffs\\ChickenPower.cs": "Chickensubclass.Content.Buffs"
+    "Content\\Buffs\\ChickenPower.cs": "Chickensubclass.Content.Buffs",
+    "Content\\Items\\AmericanChicken.cs": "Chickensubclass.Content.Items",
+    "Content\\Projectiles\\AmericanChickenProjectile.cs": "Chickensubclass.Content.Projectiles"
   }
 }

@@ -399,6 +399,11 @@ Items: {
 		DisplayName: Chicken Pie
 		Tooltip: Grants Chicken Power
 	}
+
+	AmericanChicken: {
+		DisplayName: American Chicken
+		Tooltip: Uses the power of the second amendment
+	}
 }
 
 Projectiles: {
@@ -432,6 +437,7 @@ Projectiles: {
 	BinChickenProjectile.DisplayName: Bin Chicken Projectile
 	GreedyChickenProjectile.DisplayName: Greedy Chicken Projectile
 	GreedyChickenProjectile2.DisplayName: Greedy Chicken Projectile2
+	AmericanChickenProjectile.DisplayName: American Chicken Projectile
 }
 
 NPCs: {
