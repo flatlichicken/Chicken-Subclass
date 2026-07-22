@@ -1,0 +1,42 @@
+using System; //what sources the code uses, these sources allow for calling of terraria functions, existing system functions and microsoft vector functions (probably more)
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+
+namespace Chickensubclass.Content.Items.Accessories
+{
+	[AutoloadEquip(EquipType.Shoes)]
+	public class ChickenFoot : ModItem
+	{
+		
+
+		public override void SetDefaults() {
+			Item.width = 22;
+			Item.height = 18;
+			Item.accessory = true;
+			Item.value = Item.buyPrice(silver: 50);
+			Item.rare = ItemRarityID.Blue;
+
+			// Link the LegSlot for the 1120px texture
+			 
+		}
+
+		public override void UpdateAccessory(Player player, bool hideVisual) {
+			// Restored your original Main.LocalPlayer check
+			bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
+			if (isChickenWeapon) {
+				player.moveSpeed += 0.15f;
+			}		
+		}
+
+		public override void AddRecipes() {
+			Recipe RawChickenRecipe = CreateRecipe();
+			RawChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 20);
+			RawChickenRecipe.AddTile(TileID.WorkBenches);
+			RawChickenRecipe.Register();
+		}
+	}
+}

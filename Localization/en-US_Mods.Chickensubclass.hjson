@@ -1,0 +1,465 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	Chicken: {
+		DisplayName: Chicken
+		Tooltip: "'Why are you using a Chicken as a Weapon?'"
+	}
+
+	MagicChicken: {
+		DisplayName: Magic Chicken
+		Tooltip: Shoots an Magic Chicken
+	}
+
+	ExplosiveChicken: {
+		DisplayName: Explosive Chicken
+		Tooltip: Lays Grenades instead of Eggs
+	}
+
+	ChickenSoul: {
+		DisplayName: Chicken Soul
+		Tooltip: "'The essence of chickens'"
+	}
+
+	FlyingChicken: {
+		Tooltip: "'It shoots Feathers when it Flies'"
+		DisplayName: Flying Chicken
+	}
+
+	ChickenFeather: {
+		Tooltip: ""
+		DisplayName: Chicken Feather
+	}
+
+	RawChicken: {
+		DisplayName: Raw Chicken
+		Tooltip: ""
+	}
+
+	ChickenFeatherBreastplate: {
+		DisplayName: Chicken Feather Breastplate
+		Tooltip: 5% increased melee damage
+	}
+
+	ChickenFeatherGreaves: {
+		DisplayName: Chicken Feather Greaves
+		Tooltip:
+			'''
+			2% increased melee critical strike chance
+			5% increased movement speed
+			'''
+	}
+
+	ChickenFeatherHelm: {
+		DisplayName: Chicken Feather Helm
+		Tooltip: 3% increased melee critical strike chance
+	}
+
+	RedJunglefowl: {
+		DisplayName: Red Junglefowl
+		Tooltip:
+			'''
+			'Basically just a Wild Chicken'
+			Shoots jungle thorns
+			'''
+	}
+
+	SpicyChickenNugget: {
+		DisplayName: Spicy Chicken Nugget
+		Tooltip: "'Steve's Lava Chicken yeah its tasty as hell'"
+	}
+
+	EvilChicken: {
+		DisplayName: Evil Chicken
+		Tooltip: Summons a Chicken ghost as you swing
+	}
+
+	SpicyChickenBreastplate: {
+		DisplayName: Spicy Chicken Breastplate
+		Tooltip:
+			'''
+			3% increased melee damage
+			8% increased melee damage when holding a chicken weapon
+			'''
+	}
+
+	SpicyChickenGreaves: {
+		DisplayName: Spicy Chicken Greaves
+		Tooltip:
+			'''
+			3% increased melee speed
+			8% increased melee speed when holding a chicken weapon
+			'''
+	}
+
+	SpicyChickenHelmet: {
+		DisplayName: Spicy Chicken Helmet
+		Tooltip:
+			'''
+			3% increased melee critical strike chance
+			8% increased melee critical strike chance when holding a chicken weapon
+			'''
+	}
+
+	FireChicken: {
+		DisplayName: Fire Chicken
+		Tooltip: Fires a spread of burning feathers
+	}
+
+	ChaosChicken: {
+		DisplayName: Chaos Chicken
+		Tooltip: "'Chaos! Chaos!'"
+	}
+
+	ChickenFoot: {
+		DisplayName: Chicken Foot
+		Tooltip: Increased movement speed when holding a chicken weapon
+	}
+
+	FrostBeak: {
+		DisplayName: Frost Beak
+		Tooltip:
+			'''
+			20% increased melee damage when holding a chicken weapon
+			'Watch What Happens When I Cast A Spell I Don't Know!'
+			'''
+	}
+
+	ChickenWings: {
+		DisplayName: Chicken Wings
+		Tooltip:
+			'''
+			Increased movement speed when holding a chicken weapon
+			You can't actually fly with these
+			'''
+	}
+
+	GodChicken: {
+		DisplayName: God Chicken
+		Tooltip: You shouldn't have this
+	}
+
+	HolyChicken: {
+		DisplayName: Holy Chicken
+		Tooltip: Thrusts forward every 5th swing
+	}
+
+	DarkChicken: {
+		DisplayName: Dark Chicken
+		Tooltip: flies forward every 3rd swing
+	}
+
+	ChickenClimbingGear: {
+		DisplayName: Chicken Climbing Gear
+		Tooltip: Increased mobility when holding a chicken weapon
+	}
+
+	PoultryEmblem: {
+		DisplayName: Poultry Emblem
+		Tooltip: 20% increased melee damage when holding a chicken weapon
+	}
+
+	NinjaChicken: {
+		DisplayName: Ninja Chicken
+		Tooltip: ""
+	}
+
+	ExpiredCoupon: {
+		DisplayName: Expired Coupon
+		Tooltip: Minor increase in melee damage, crit chance, melee speed and defence when holding a chicken weapon
+	}
+
+	Coupon: {
+		DisplayName: Coupon
+		Tooltip: Right click to redeem for 5 gold
+	}
+
+	NuggetMachine: {
+		DisplayName: Nugget Machine
+		Tooltip: ""
+	}
+
+	PlantBasedNugget: {
+		DisplayName: Plant Based Nugget
+		Tooltip: "'Eating animals is wrong, Flatlichicken, hurting animals is wrong, Flatlichicken'"
+	}
+
+	SolarNugget: {
+		DisplayName: Solar Nugget
+		Tooltip: ""
+	}
+
+	DinoNuggie: {
+		DisplayName: Dino Nuggie
+		Tooltip: ""
+	}
+
+	LowPolyChicken: {
+		DisplayName: Low Poly Chicken
+		Tooltip: ""
+	}
+
+	PlantBasedChickenBreastplate: {
+		DisplayName: Plant Based Chicken Breastplate
+		Tooltip:
+			'''
+			10% increased melee critical strike chance
+			8% increased melee damage
+			'''
+	}
+
+	PlantBasedChickenGreaves: {
+		DisplayName: Plant Based Chicken Greaves
+		Tooltip:
+			'''
+			10% increased melee critical strike chance
+			7% increased movement speed
+			'''
+	}
+
+	PlantBasedChickenHelmet: {
+		DisplayName: Plant Based Chicken Helmet
+		Tooltip:
+			'''
+			8% increased melee critical strike chance
+			20% increased melee damage
+			'''
+	}
+
+	TrueDarkChicken: {
+		DisplayName: True Dark Chicken
+		Tooltip: flies forward every swing
+	}
+
+	TrueHolyChicken: {
+		DisplayName: True Holy Chicken
+		Tooltip: ""
+	}
+
+	LizardChicken: {
+		DisplayName: Lizard "Chicken"
+		Tooltip: ""
+	}
+
+	CommieChicken: {
+		DisplayName: Commie Chicken
+		Tooltip: Throws hammers and sickles
+	}
+
+	ChickenNinjaGear: {
+		DisplayName: Chicken Ninja Gear
+		Tooltip:
+			'''
+			Dash and increased mobility when holding a chicken weapon
+			Gives a chance to dodge attacks when holding a chicken weapon
+			'''
+	}
+
+	NuclearChicken: {
+		DisplayName: Nuclear Chicken
+		Tooltip: ""
+	}
+
+	DinoGreaves: {
+		DisplayName: Dino Greaves
+		Tooltip:
+			'''
+			12% increased melee damage when holding a chicken weapon
+			10% increased movement speed when holding a chicken weapon
+			'''
+	}
+
+	DinoBreastplate: {
+		DisplayName: Dino Breastplate
+		Tooltip:
+			'''
+			12% increased melee critical strike chance when holding a chicken weapon
+			12% increased melee damage when holding a chicken weapon
+			'''
+	}
+
+	DinoHelmet: {
+		DisplayName: Dino Helmet
+		Tooltip:
+			'''
+			10% increased melee critical strike chance when holding a chicken weapon
+			24% increased melee damage when holding a chicken weapon
+			'''
+	}
+
+	TerraChicken: {
+		DisplayName: Terra Chicken
+		Tooltip: ""
+	}
+
+	WaterChicken: {
+		DisplayName: Water Chicken
+		Tooltip: ""
+	}
+
+	PrismaticChicken: {
+		DisplayName: Prismatic Chicken
+		Tooltip: ""
+	}
+
+	RoaringChicken: {
+		DisplayName: Roaring Chicken
+		Tooltip: "'NYEH HEH HEH!'"
+	}
+
+	ShadowCrystal: {
+		Tooltip: A sharp shadow moves like water in the hand.
+		DisplayName: Shadow Crystal
+	}
+
+	BeeChicken: {
+		DisplayName: Bee Chicken
+		Tooltip: "'ya like jazz?'"
+	}
+
+	SolarChicken: {
+		DisplayName: Solar Chicken
+		Tooltip: ""
+	}
+
+	SpookyChicken: {
+		DisplayName: Spooky Chicken
+		Tooltip: Summons ghosts to fight
+	}
+
+	ZenithChicken: {
+		DisplayName: Zenith Chicken
+		Tooltip: "'No, it wont melt'"
+	}
+
+	NuggetKnuckles: {
+		DisplayName: Nugget Knuckles
+		Tooltip: True Melee attacks with chicken weapons has a chance to weaken enemies
+	}
+
+	ChickenScent: {
+		DisplayName: Chicken Scent
+		Tooltip:
+			'''
+			8% increased melee critical strike chance when holding a chicken weapon
+			8% increased melee damage when holding a chicken weapon
+			Attacks will make enemies stronger when holding a chicken weapon
+			'''
+	}
+
+	SolarFlareBeak: {
+		DisplayName: Solar Flare Beak
+		Tooltip: 30% increased melee critical strike chance when holding a chicken weapon
+	}
+
+	ChlorophytePullet: {
+		DisplayName: Chlorophyte Pullet
+		Tooltip:
+			'''
+			Shoots a homing projectile when you miss enough times
+			'If you're having trouble, shoot where they're going, instead of where they are'
+			'''
+	}
+
+	ReaperChicken: {
+		DisplayName: Reaper Chicken
+		Tooltip: ""
+	}
+
+	NuggetChicken: {
+		DisplayName: Nugget Chicken
+		Tooltip: Launches a nugget flail
+	}
+
+	BinChicken: {
+		DisplayName: Bin Chicken
+		Tooltip: ""
+	}
+
+	Bawkbawk: {
+		DisplayName: Bawkbawk
+		Tooltip: This weapon is unused
+	}
+
+	GreedyChicken: {
+		DisplayName: Greedy Chicken
+		Tooltip: Will Drain the bank account of your enemies
+	}
+
+	PieMachine: {
+		DisplayName: Pie Machine
+		Tooltip:
+			'''
+			Used to craft chicken pies
+			'Chickens go in, pies come out'
+			'''
+	}
+
+	ChickenPie: {
+		DisplayName: Chicken Pie
+		Tooltip: Grants Chicken Power
+	}
+}
+
+Projectiles: {
+	ExampleBullet.DisplayName: Example Bullet
+	MagicChickenProjectile.DisplayName: Magic Chicken Projectile
+	ChickenFeatherProjectile.DisplayName: Chicken Feather Projectile
+	RedJunglefowlProjectile.DisplayName: Red Junglefowl Projectile
+	EvilChickenProjectile.DisplayName: Evil Chicken Projectile
+	ChickenFireFeatherProjectile.DisplayName: Chicken Fire Feather Projectile
+	ChaosChickenProjectile.DisplayName: Chaos Chicken Projectile
+	HolyChickenProjectile.DisplayName: Holy Chicken Projectile
+	DarkChickenProjectile.DisplayName: Dark Chicken Projectile
+	LowPolyChickenProjectile.DisplayName: Low Poly Chicken Projectile
+	LowPolyChickenProjectile2.DisplayName: Low Poly Chicken Projectile2
+	TrueDarkChickenProjectile.DisplayName: True Dark Chicken Projectile
+	TrueHolyChickenProjectile.DisplayName: True Holy Chicken Projectile
+	CommieChickenHammer.DisplayName: Commie Chicken Hammer
+	CommieChickenSickle.DisplayName: Commie Chicken Sickle
+	NuclearChickenProjectile.DisplayName: Nuclear Chicken Projectile
+	ExplosiveChickenProjectile.DisplayName: Explosive Chicken Projectile
+	TerraChickenProjectile.DisplayName: Terra Chicken Projectile
+	RoaringChickenProjectile.DisplayName: Roaring Chicken Projectile
+	SolarChickenProjectile.DisplayName: Solar Chicken Projectile
+	PrismaticChickenProjectile.DisplayName: Prismatic Chicken Projectile
+	SpookyChickenProjectile.DisplayName: Spooky Chicken Projectile
+	ZenithChickenProjectile.DisplayName: Zenith Chicken Projectile
+	ChlorophytePulletProjectile.DisplayName: Chlorophyte Pullet Projectile
+	ChickenChlorophyteFeatherProjectile.DisplayName: Chicken Chlorophyte Feather Projectile
+	ReaperChickenFeatherProjectile.DisplayName: Reaper Chicken Feather Projectile
+	NuggetChickenProjectile.DisplayName: Nugget Chicken Projectile
+	BinChickenProjectile.DisplayName: Bin Chicken Projectile
+	GreedyChickenProjectile.DisplayName: Greedy Chicken Projectile
+	GreedyChickenProjectile2.DisplayName: Greedy Chicken Projectile2
+}
+
+NPCs: {
+	AngryChicken.DisplayName: Angry Chicken
+	AngrierChicken.DisplayName: Angrier Chicken
+	GiantChicken.DisplayName: Giant Chicken
+}
+
+MapObject.NuggetMachineTile: Nugget Machine
+
+Tiles: {
+	NuggetMachineTile.MapEntry: Nugget Machine
+	PieMachineTile.MapEntry: Pie Machine
+}
+
+Buffs: {
+	Chicken: {
+		DisplayName: Chicken
+		Description: You are scared and do less damage
+	}
+
+	ChickenInstinct: {
+		DisplayName: Chicken Instinct
+		Description: 5% increased melee damage when holding a chicken weapon
+	}
+
+	ChickenPower: {
+		DisplayName: Chicken Power
+		Description: 10% increased melee damage when holding a chicken weapon
+	}
+}

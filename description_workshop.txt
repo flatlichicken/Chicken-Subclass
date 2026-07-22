@@ -1,0 +1,28 @@
+Ever wanted to Play terraria using chickens as weapons? No? well now you can with this mod!
+
+features:
+4 full armor sets and 2 helmets for existing armor sets.
+8 accessories in total. (some of them are components for another accessory)
+A bunch of chicken weapons. (I lost count)
+3 kinds of chicken enemies.
+And a few other items.
+
+this is my first time creating a terraria mod
+
+1.3 update:
+
+buffed the damage of Zenith Chicken from 200 to 275
+buffed the swing speed of Zenith Chicken
+reduced imunity frames for Zenith Chicken projectiles.
+(the dps of the zenith chicken is now comprable to the regular zenith)
+
+fixed the chicken nugget
+Prismatic Chicken no longer changes the color of other dusts
+Zenith Chicken no longer changes the color of other dusts
+fixed the Nugget Machine Acting like a workbench
+Chicken Instinct buff no longer clears when you leave the game
+ 
+
+added Pie Machine
+added Chicken Pie
+added new buff, Chicken Power

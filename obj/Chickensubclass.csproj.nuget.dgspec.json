@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
+        "projectName": "Chickensubclass",
+        "projectPath": "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
+        "packagesPath": "C:\\Users\\HEA0004\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\HEA0004\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.121/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
