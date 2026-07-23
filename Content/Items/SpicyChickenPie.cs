@@ -9,7 +9,7 @@ using Chickensubclass.Content.Buffs;
 
 namespace Chickensubclass.Content.Items
 {
-	public class ChickenPie : ModItem
+	public class SpicyChickenPie : ModItem
 	{
 		public override void SetStaticDefaults() {
 
@@ -21,12 +21,12 @@ namespace Chickensubclass.Content.Items
 			Item.width = 34;
 			Item.height = 22;
 			Item.maxStack = Item.CommonMaxStack;
-			Item.value = Item.sellPrice(silver: 20);
-			Item.rare = ItemRarityID.Blue;
+			Item.value = Item.sellPrice(gold: 1, silver: 50);
+			Item.rare = ItemRarityID.Green;
 			Item.useTime = 17;
             Item.useAnimation = 17;
             Item.useStyle = ItemUseStyleID.EatFood;
-			Item.buffType = ModContent.BuffType<ChickenPower>();
+			Item.buffType = ModContent.BuffType<ChickenRage>();
             Item.buffTime = 36000;
 			Item.consumable = true;
 			Item.useTurn = true;
@@ -37,7 +37,7 @@ namespace Chickensubclass.Content.Items
         {
             player.ClearBuff(ModContent.BuffType<ChickenInstinct>());
 			player.ClearBuff(ModContent.BuffType<ChickenAnger>());
-			player.ClearBuff(ModContent.BuffType<ChickenRage>());
+			player.ClearBuff(ModContent.BuffType<ChickenPower>());
         }
 
 

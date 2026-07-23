@@ -95,7 +95,7 @@ namespace Chickensubclass.Content.NPCs
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
 
 				// Sets the description of this NPC that is listed in the bestiary.
-				new FlavorTextBestiaryInfoElement("Mods.Chickensubclass.Bestiary.AngrierChicken"),
+				new FlavorTextBestiaryInfoElement("A kind of angry chicken that is angrier."),
 
 				// By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
 				// The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called

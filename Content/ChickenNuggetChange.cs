@@ -24,6 +24,7 @@ namespace Content.ChickenSubClass
             {
                 player.ClearBuff(ModContent.BuffType<ChickenPower>());
                 player.ClearBuff(ModContent.BuffType<ChickenAnger>());
+                player.ClearBuff(ModContent.BuffType<ChickenRage>());
             }
         }
         

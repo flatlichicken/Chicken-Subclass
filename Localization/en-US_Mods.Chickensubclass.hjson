@@ -471,6 +471,6 @@ Buffs: {
 
 	ChickenAnger: {
 		DisplayName: Chicken Anger
-		Description: Mods.Chickensubclass.Buffs.ChickenAnger.Description
+		Description: 5% increased melee damage and can light enemies on fire when holding a chicken weapon
 	}
 }

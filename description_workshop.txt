@@ -32,3 +32,4 @@ added Chicken Pie
 added new buffs:
 Chicken Power
 Chicken Anger
+Chicken Rage

@@ -33,6 +33,11 @@ namespace Chickensubclass.Content
                 target.AddBuff(BuffID.OnFire, 180);
             }
 
+            if (Player.HasBuff(ModContent.BuffType<ChickenRage>()) && isChickenWeapon)
+            {
+                target.AddBuff(BuffID.OnFire2, 180);
+            }
+
             if (NuggetKnucklesCheck && Main.rand.NextBool(10))
             {
             target.AddBuff(ModContent.BuffType<Buffs.Chicken>(), 180);
@@ -64,6 +69,11 @@ namespace Chickensubclass.Content
             if (Player.HasBuff(ModContent.BuffType<ChickenAnger>()))
             {
                 target.AddBuff(BuffID.OnFire, 180);
+            }
+
+            if (Player.HasBuff(ModContent.BuffType<ChickenRage>()))
+            {
+                target.AddBuff(BuffID.OnFire2, 180);
             }
 
             if (ChickenScentCheck)

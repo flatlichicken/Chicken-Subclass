@@ -38,6 +38,7 @@ namespace Chickensubclass.Content.Items
 		{
 			player.ClearBuff(ModContent.BuffType<ChickenInstinct>());
 			player.ClearBuff(ModContent.BuffType<ChickenPower>());
+			player.ClearBuff(ModContent.BuffType<ChickenRage>());
 		}
 		
 		public override void AddRecipes()
