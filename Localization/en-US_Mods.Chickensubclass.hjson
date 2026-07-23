@@ -468,4 +468,9 @@ Buffs: {
 		DisplayName: Chicken Power
 		Description: 10% increased melee damage when holding a chicken weapon
 	}
+
+	ChickenAnger: {
+		DisplayName: Chicken Anger
+		Description: Mods.Chickensubclass.Buffs.ChickenAnger.Description
+	}
 }

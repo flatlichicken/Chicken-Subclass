@@ -21,19 +21,22 @@ namespace Chickensubclass.Content.Items
 			Item.width = 34;
 			Item.height = 22;
 			Item.maxStack = Item.CommonMaxStack;
-			Item.value = 7; 
+			Item.value = Item.sellPrice(silver: 20);
 			Item.rare = ItemRarityID.Blue;
-			Item.useTime = 20;
-            Item.useAnimation = 20;
+			Item.useTime = 17;
+            Item.useAnimation = 17;
             Item.useStyle = ItemUseStyleID.EatFood;
 			Item.buffType = ModContent.BuffType<ChickenPower>();
             Item.buffTime = 36000;
 			Item.consumable = true;
+			Item.useTurn = true;
+			Item.UseSound = SoundID.Item2; 
 		}
 
 		public override void OnConsumeItem(Player player)
         {
             player.ClearBuff(ModContent.BuffType<ChickenInstinct>());
+			player.ClearBuff(ModContent.BuffType<ChickenAnger>());
         }
 
 

@@ -13,6 +13,7 @@ namespace Chickensubclass.Content
         public bool FrostBeakCheck;
         public bool SolarFlareBeakCheck;
         public bool DinoHelmCheck;
+        bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
 
 
         public override void ResetEffects()
@@ -26,6 +27,12 @@ namespace Chickensubclass.Content
 
         public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
         {
+            
+            if (Player.HasBuff(ModContent.BuffType<ChickenAnger>()) && isChickenWeapon)
+            {
+                target.AddBuff(BuffID.OnFire, 180);
+            }
+
             if (NuggetKnucklesCheck && Main.rand.NextBool(10))
             {
             target.AddBuff(ModContent.BuffType<Buffs.Chicken>(), 180);
@@ -54,7 +61,11 @@ namespace Chickensubclass.Content
         
         public override void OnHitNPCWithProj(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            
+            if (Player.HasBuff(ModContent.BuffType<ChickenAnger>()))
+            {
+                target.AddBuff(BuffID.OnFire, 180);
+            }
+
             if (ChickenScentCheck)
             {
             target.AddBuff(ModContent.BuffType<Buffs.ChickenInstinct>(), 180);
@@ -75,7 +86,6 @@ namespace Chickensubclass.Content
             target.AddBuff(BuffID.Daybreak, 300 + Main.rand.Next(540));
             }
         }
-
 
     }
 

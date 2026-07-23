@@ -23,6 +23,7 @@ namespace Content.ChickenSubClass
             if (item.type == ItemID.ChickenNugget)
             {
                 player.ClearBuff(ModContent.BuffType<ChickenPower>());
+                player.ClearBuff(ModContent.BuffType<ChickenAnger>());
             }
         }
         
