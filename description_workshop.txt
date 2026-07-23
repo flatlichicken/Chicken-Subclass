@@ -17,6 +17,8 @@ reduced imunity frames for Zenith Chicken projectiles.
 (the dps of the zenith chicken is now comprable to the regular zenith)
 buffed the swing speed of Red Junglefowl
 
+Flying Chicken no longer needs fallen stars to craft
+
 fixed the chicken nugget
 Prismatic Chicken no longer changes the color of other dusts
 Zenith Chicken no longer changes the color of other dusts

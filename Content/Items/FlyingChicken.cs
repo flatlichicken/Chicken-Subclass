@@ -64,7 +64,6 @@ namespace Chickensubclass.Content.Items
 			FlyingChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenFeather>(), 25);
 			FlyingChickenRecipe.AddIngredient(ItemID.Feather, 10);
 			FlyingChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 8);
-			FlyingChickenRecipe.AddIngredient(ItemID.FallenStar, 15);
 			FlyingChickenRecipe.AddRecipeGroup("GoldBar", 10);
 			FlyingChickenRecipe.AddTile(TileID.Anvils);
 			FlyingChickenRecipe.Register();
