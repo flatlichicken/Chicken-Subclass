@@ -13,6 +13,8 @@
     "Content\\Projectiles\\AmericanChickenProjectile.cs": "Chickensubclass.Content.Projectiles",
     "Content\\NuggetDrawPlayer.cs": "Chickensubclass.Content",
     "Content\\Buffs\\ChickenRage.cs": "Chickensubclass.Content.Buffs",
-    "Content\\Items\\SpicyChickenPie.cs": "Chickensubclass.Content.Items"
+    "Content\\Items\\SpicyChickenPie.cs": "Chickensubclass.Content.Items",
+    "Content\\Items\\ChickenWalker.cs": "Chickensubclass.Content.Items",
+    "Content\\Projectiles\\ChickenWalkerProjectile.cs": "Chickensubclass.Content.Projectiles"
   }
 }
