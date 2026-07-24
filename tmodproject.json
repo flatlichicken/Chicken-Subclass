@@ -15,6 +15,7 @@
     "Content\\Buffs\\ChickenRage.cs": "Chickensubclass.Content.Buffs",
     "Content\\Items\\SpicyChickenPie.cs": "Chickensubclass.Content.Items",
     "Content\\Items\\ChickenWalker.cs": "Chickensubclass.Content.Items",
-    "Content\\Projectiles\\ChickenWalkerProjectile.cs": "Chickensubclass.Content.Projectiles"
+    "Content\\Projectiles\\ChickenWalkerProjectile.cs": "Chickensubclass.Content.Projectiles",
+    "Content\\Projectiles\\ChickenWalkerProjectile2.cs": "Chickensubclass.Content.Projectiles"
   }
 }

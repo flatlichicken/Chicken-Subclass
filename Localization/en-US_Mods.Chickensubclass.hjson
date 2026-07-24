@@ -404,6 +404,16 @@ Items: {
 		DisplayName: American Chicken
 		Tooltip: Uses the power of the second amendment
 	}
+
+	ChickenWalker: {
+		DisplayName: Chicken Walker
+		Tooltip: ""
+	}
+
+	SpicyChickenPie: {
+		DisplayName: Spicy Chicken Pie
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -438,6 +448,8 @@ Projectiles: {
 	GreedyChickenProjectile.DisplayName: Greedy Chicken Projectile
 	GreedyChickenProjectile2.DisplayName: Greedy Chicken Projectile2
 	AmericanChickenProjectile.DisplayName: American Chicken Projectile
+	ChickenWalkerProjectile.DisplayName: Chicken Walker Projectile
+	ChickenWalkerProjectile2.DisplayName: Chicken Walker Projectile2
 }
 
 NPCs: {
@@ -472,5 +484,10 @@ Buffs: {
 	ChickenAnger: {
 		DisplayName: Chicken Anger
 		Description: 5% increased melee damage and can light enemies on fire when holding a chicken weapon
+	}
+
+	ChickenRage: {
+		DisplayName: Chicken Rage
+		Description: Mods.Chickensubclass.Buffs.ChickenRage.Description
 	}
 }

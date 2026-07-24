@@ -17,10 +17,10 @@ namespace Chickensubclass.Content.Items
 		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.Chickensubclass.hjson' file.
 		public override void SetDefaults()
 		{
-			Item.damage = 29;
+			Item.damage = 28;
 			Item.DamageType = DamageClass.Melee;
-			Item.width = 55;
-			Item.height = 60;
+			Item.width = 92;
+			Item.height = 68;
 			Item.useTime = 20;
 			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
@@ -31,7 +31,7 @@ namespace Chickensubclass.Content.Items
 			Item.autoReuse = true;
 			Item.useTurn = false;
 			Item.shoot = ModContent.ProjectileType<ChickenWalkerProjectile>();
-			Item.shootSpeed = 8f;
+			Item.shootSpeed = 10f;
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
@@ -44,8 +44,10 @@ namespace Chickensubclass.Content.Items
 		public override void AddRecipes()
 		{
 			Recipe ChickenWalkerRecipe = CreateRecipe();
-			ChickenWalkerRecipe.AddIngredient(ModContent.ItemType<Content.Items.Chicken>());
-			ChickenWalkerRecipe.AddIngredient(ItemID.EnchantedSword, 1);
+			ChickenWalkerRecipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenFeather>(), 10);
+			ChickenWalkerRecipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 10);
+			ChickenWalkerRecipe.AddIngredient(ItemID.FallenStar, 20);
+			ChickenWalkerRecipe.AddIngredient(ItemID.MeteoriteBar, 15);
 			ChickenWalkerRecipe.AddTile(TileID.Anvils);
 			ChickenWalkerRecipe.Register();
 

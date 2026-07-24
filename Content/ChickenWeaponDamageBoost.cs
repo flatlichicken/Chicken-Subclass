@@ -16,6 +16,7 @@ namespace Chickensubclass.Content
 
         return heldItemType == ModContent.ItemType<FlyingChicken>() ||
                heldItemType == ModContent.ItemType<AmericanChicken>() ||
+               heldItemType == ModContent.ItemType<ChickenWalker>() ||
                heldItemType == ModContent.ItemType<NuclearChicken>() ||
                heldItemType == ModContent.ItemType<SpookyChicken>() ||
                heldItemType == ModContent.ItemType<SolarChicken>() ||

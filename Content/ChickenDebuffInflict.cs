@@ -6,14 +6,14 @@ using Chickensubclass.Content.Buffs;
 
 namespace Chickensubclass.Content
 {
-	public class ChickenDebuffInflict : ModPlayer
+    public class ChickenDebuffInflict : ModPlayer
     {
         public bool NuggetKnucklesCheck;
         public bool ChickenScentCheck;
         public bool FrostBeakCheck;
         public bool SolarFlareBeakCheck;
         public bool DinoHelmCheck;
-        bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
+        bool isChickenWeapon => ChickenWeaponDamageBoost.IfUsingChickenWeapon(Player);
 
 
         public override void ResetEffects()
@@ -35,7 +35,7 @@ namespace Chickensubclass.Content
 
             if (Player.HasBuff(ModContent.BuffType<ChickenRage>()) && isChickenWeapon)
             {
-                target.AddBuff(BuffID.OnFire2, 180);
+                target.AddBuff(BuffID.OnFire3, 180);
             }
 
             if (NuggetKnucklesCheck && Main.rand.NextBool(10))
@@ -73,7 +73,7 @@ namespace Chickensubclass.Content
 
             if (Player.HasBuff(ModContent.BuffType<ChickenRage>()))
             {
-                target.AddBuff(BuffID.OnFire2, 180);
+                target.AddBuff(BuffID.OnFire3, 180);
             }
 
             if (ChickenScentCheck)

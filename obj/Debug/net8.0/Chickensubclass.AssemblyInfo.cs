@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Chickensubclass")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+433eeeab17c88ded2914b37b454b16296f24e3e3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+839137b5e53a4fa3ab30a5fcc1e4aecc3ad211b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Chickensubclass")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Chickensubclass")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
