@@ -21,7 +21,7 @@ namespace Chickensubclass.Content.Items
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 69; // nice
 			Item.height = 50;
-			Item.useTime = 65;
+			Item.useTime = 60;
 			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 5;

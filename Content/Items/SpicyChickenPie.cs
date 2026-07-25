@@ -21,7 +21,7 @@ namespace Chickensubclass.Content.Items
 			Item.width = 34;
 			Item.height = 22;
 			Item.maxStack = Item.CommonMaxStack;
-			Item.value = Item.sellPrice(gold: 1, silver: 50);
+			Item.value = Item.sellPrice(gold: 1, silver: 40);
 			Item.rare = ItemRarityID.Green;
 			Item.useTime = 17;
             Item.useAnimation = 17;
@@ -44,7 +44,7 @@ namespace Chickensubclass.Content.Items
 		public override void AddRecipes()
 		{
 			Recipe ChickenPieRecipe = CreateRecipe();
-			ChickenPieRecipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 5);
+			ChickenPieRecipe.AddIngredient(ModContent.ItemType<Content.Items.SpicyChickenNugget>(), 5);
 			ChickenPieRecipe.AddTile(ModContent.TileType<PieMachineTile>());
 			ChickenPieRecipe.Register();
 

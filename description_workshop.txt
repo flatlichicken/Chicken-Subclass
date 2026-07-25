@@ -16,6 +16,7 @@ buffed the swing speed of Zenith Chicken
 reduced imunity frames for Zenith Chicken projectiles.
 (the dps of the zenith chicken is now comprable to the regular zenith)
 buffed the swing speed of Red Junglefowl
+slightly buffed the shoot speed of Red Junglefowl
 
 Flying Chicken no longer needs fallen stars to craft
 you can now eat spicy chicken nuggets
@@ -27,8 +28,10 @@ fixed the Nugget Machine Acting like a workbench
 Chicken Instinct buff no longer clears when you leave the game
  
 added American Chicken
+added ChickenWalker
 added Pie Machine
 added Chicken Pie
+added Spicy Chicken Pie
 added new buffs:
 Chicken Power
 Chicken Anger
