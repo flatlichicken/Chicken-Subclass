@@ -11,7 +11,7 @@ namespace Chickensubclass.Content.Items
 		public override void SetStaticDefaults() {
 
 			Item.ResearchUnlockCount = 25; // Configure the amount of this item that's needed to research it in Journey mode.
-			
+			ItemID.Sets.ShimmerTransformToItem[Type] = ModContent.ItemType<ChickenFeather>();
 		}
 
 		public override void SetDefaults()

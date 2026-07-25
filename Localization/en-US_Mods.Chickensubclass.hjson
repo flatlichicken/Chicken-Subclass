@@ -13,7 +13,7 @@ Items: {
 
 	ExplosiveChicken: {
 		DisplayName: Explosive Chicken
-		Tooltip: Lays Grenades instead of Eggs
+		Tooltip: Lays Explosive Eggs
 	}
 
 	ChickenSoul: {
@@ -66,7 +66,11 @@ Items: {
 
 	SpicyChickenNugget: {
 		DisplayName: Spicy Chicken Nugget
-		Tooltip: "'Steve's Lava Chicken yeah its tasty as hell'"
+		Tooltip:
+			'''
+			'Steve's Lava Chicken yeah its tasty as hell'
+			Grants Chicken Anger
+			'''
 	}
 
 	EvilChicken: {
@@ -329,7 +333,7 @@ Items: {
 
 	ZenithChicken: {
 		DisplayName: Zenith Chicken
-		Tooltip: "'No, it wont melt'"
+		Tooltip: ""
 	}
 
 	NuggetKnuckles: {
@@ -412,7 +416,7 @@ Items: {
 
 	SpicyChickenPie: {
 		DisplayName: Spicy Chicken Pie
-		Tooltip: ""
+		Tooltip: Grants Chicken Rage
 	}
 }
 
