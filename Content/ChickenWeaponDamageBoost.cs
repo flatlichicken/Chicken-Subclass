@@ -29,6 +29,7 @@ namespace Chickensubclass.Content
                heldItemType == ModContent.ItemType<RedJunglefowl>() ||
                heldItemType == ModContent.ItemType<MagicChicken>() ||
                heldItemType == ModContent.ItemType<EvilChicken>() ||
+               heldItemType == ModContent.ItemType<NuggetChicken>() ||
                heldItemType == ModContent.ItemType<ExplosiveChicken>() ||
                heldItemType == ModContent.ItemType<ChaosChicken>() ||
               // heldItemType == ModContent.ItemType<GodChicken>() || (removed)

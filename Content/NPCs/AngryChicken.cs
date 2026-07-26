@@ -6,6 +6,8 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 using Chickensubclass.Content.Items; // the line of code that got me past one of my hardest challenges, getting past cs0246
 using Terraria.Audio;
+using Chickensubclass.Content.Gores;
+using Microsoft.Xna.Framework;
 
 namespace Chickensubclass.Content.NPCs
 {
@@ -104,18 +106,34 @@ namespace Chickensubclass.Content.NPCs
 		}
 
 		public override void HitEffect(NPC.HitInfo hit) {
-			// Spawn confetti when this zombie is hit.
+                for (int i = 0; i < 10; i++) {
+                        int dustType = Main.rand.Next(5, 5);
+                        var dust = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, dustType);
 
-			for (int i = 0; i < 10; i++) {
-				int dustType = Main.rand.Next(5, 5);
-				var dust = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, dustType);
+                        dust.velocity.X += Main.rand.NextFloat(-0.05f, 0.05f);
+                        dust.velocity.Y += Main.rand.NextFloat(-0.05f, 0.05f);
 
-				dust.velocity.X += Main.rand.NextFloat(-0.05f, 0.05f);
-				dust.velocity.Y += Main.rand.NextFloat(-0.05f, 0.05f);
+                        dust.scale *= 1f + Main.rand.NextFloat(-0.03f, 0.03f);
+                }
 
-				dust.scale *= 1f + Main.rand.NextFloat(-0.03f, 0.03f);
-			}
-		}
+                if (NPC.life <= 0) {
+                        int featherCount = Main.rand.Next(3, 6);
+
+                        for (int i = 0; i < featherCount; i++) {
+                                Vector2 velocity = new Vector2(
+                                        Main.rand.NextFloat(-2f, 2f), 
+                                        Main.rand.NextFloat(-3f, -1f)
+                                );
+
+                                Gore.NewGore(
+                                        NPC.GetSource_Death(), 
+                                        NPC.position, 
+                                        velocity, 
+                                        ModContent.GoreType<ChickenFeatherGore>()
+                                );
+                        }
+                }
+        }
 
 	}
 }

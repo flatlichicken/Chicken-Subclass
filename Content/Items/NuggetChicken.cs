@@ -19,7 +19,7 @@ namespace Chickensubclass.Content.Items
 		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.Chickensubclass.hjson' file.
 		public override void SetDefaults()
 		{
-			Item.damage = 31;
+			Item.damage = 25;
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 55;
 			Item.height = 60;
