@@ -14,6 +14,9 @@ this is my first time creating a terraria mod
 Chicken Feather now shimmers into Raw Chicken
 Raw Chicken now shimmers into Chicken Feather
 
+you no longer take fall damage when wearing Chicken Wings or any of the upgrades
+you now need demonite or crimtane bars to craft Chicken Wings
+
 added tooltip to Spicy Chicken Pie
 changed tooltip of Explosive Chicken
 changed tooltip of Spicy Chicken Nugget

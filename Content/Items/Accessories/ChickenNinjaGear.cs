@@ -32,18 +32,18 @@ namespace Chickensubclass.Content.Items.Accessories
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual) {
-            player.wings = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Wings);
+            
             
             if (!hideVisual) {
                 player.shoe = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Shoes);
                 player.waist = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Waist);
             }
 
-            player.noFallDmg = false;
 
             bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
             if (isChickenWeapon)
             {
+                player.wings = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Wings);
                 player.jumpSpeedBoost += 1.5f;
                 player.moveSpeed += 0.15f;
                 player.spikedBoots = 2;
