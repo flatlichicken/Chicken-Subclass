@@ -23,7 +23,7 @@ namespace Chickensubclass.Content.Items
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 55;
 			Item.height = 60;
-			Item.useTime = 18;
+			Item.useTime = 36;
 			Item.useAnimation = 18;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 6;
@@ -33,7 +33,7 @@ namespace Chickensubclass.Content.Items
 			Item.autoReuse = true;
 			Item.useTurn = false;
 			Item.shoot = ModContent.ProjectileType<NuggetChickenProjectile>();
-			Item.shootSpeed = 12f;
+			Item.shootSpeed = 8f;
 		}
 
 

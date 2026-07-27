@@ -117,7 +117,7 @@ namespace Chickensubclass.Content.NPCs
                 }
 
                 if (NPC.life <= 0) {
-                        int featherCount = Main.rand.Next(3, 6);
+                        int featherCount = Main.rand.Next(2, 5);
 
                         for (int i = 0; i < featherCount; i++) {
                                 Vector2 velocity = new Vector2(
