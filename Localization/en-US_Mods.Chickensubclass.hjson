@@ -454,12 +454,14 @@ Projectiles: {
 	AmericanChickenProjectile.DisplayName: American Chicken Projectile
 	ChickenWalkerProjectile.DisplayName: Chicken Walker Projectile
 	ChickenWalkerProjectile2.DisplayName: Chicken Walker Projectile2
+	GreatChickenFeatherProjectile.DisplayName: Great Chicken Feather Projectile
 }
 
 NPCs: {
 	AngryChicken.DisplayName: Angry Chicken
 	AngrierChicken.DisplayName: Angrier Chicken
 	GiantChicken.DisplayName: Giant Chicken
+	GreatChicken.DisplayName: Great Chicken
 }
 
 MapObject.NuggetMachineTile: Nugget Machine
