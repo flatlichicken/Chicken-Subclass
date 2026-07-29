@@ -13,17 +13,19 @@ namespace Chickensubclass.Content.NPCs
         private int FrameDir = 0;
         private float MoveType = 0;
         private int AttackTimer = 0;
+        private int ProjTimer = 0;
         private int ProjAngle = 0;
         private int FeatherSpreadCooldown = 2;
         private int BossPhase = 0;
         private bool ArmorShed = false;
+        private float XtraDashspeed = 0f; 
         public override void SetStaticDefaults() {
                 Main.npcFrameCount[NPC.type] = 12;
                 
         }
         public override void SetDefaults() {
-                NPC.width = 32;
-                NPC.height = 32;
+                NPC.width = 125;
+                NPC.height = 50;
                 NPC.damage = 15;
                 NPC.defense = 12;
                 NPC.lifeMax = 2000;
@@ -34,7 +36,10 @@ namespace Chickensubclass.Content.NPCs
                 NPC.noTileCollide = true;
                 NPC.boss = true;
                 NPC.knockBackResist = 0f;
+                Music = MusicLoader.GetMusicSlot(Mod, "Content/Music/GreatChickenBossTheme");
         }
+
+
         public override void FindFrame(int frameHeight) {
             NPC.spriteDirection = NPC.direction;
             int startFrame = 0;
@@ -95,7 +100,8 @@ namespace Chickensubclass.Content.NPCs
 
             AttackTimer += 1;
 
-            if (AttackTimer >= 220 && AttackTimer < 240) {
+            // movement behavior
+            if (AttackTimer >= 220 && AttackTimer < 240 && Main.expertMode == false) {
                 MoveType = 4;
             }
             else if (AttackTimer >= 240 && AttackTimer < 300) {
@@ -128,13 +134,43 @@ namespace Chickensubclass.Content.NPCs
                             speed = (offset.Length() + 100f) / 90f;
                         }
                         else {
-                            if (BossPhase == 2) speed = 5.5f;
-                            else if (BossPhase == 1) speed = 5.25f;
-                            else speed = 5f;
+                            // effects boss movement speed AND projectile speed
+                            if (Main.expertMode) {
+                                // expert mode+ scaling
+                                if (BossPhase == 2) speed = 6f;
+                                else if (BossPhase == 1) speed = 5.5f;
+                                else speed = 5f;
+                            }
+                            else {
+                                // classic mode scaling
+                                if (BossPhase == 2) speed = 5.5f;
+                                else if (BossPhase == 1) speed = 5.25f;
+                                else speed = 5f;
+                            }
+                            
                             
                         }
+
+                        // feather attacks
+						ProjTimer += 1;
+						Vector2 targetPos = NPC.Center + Main.rand.NextVector2Circular(300f, 300f);
+						Vector2 spawnPos = NPC.Center + Collision.TileCollision(NPC.Center, targetPos - NPC.Center, 62, 62);
+
+						if (ProjTimer == 150 || ProjTimer == 300 || ProjTimer == 450) {
+							Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 0, 0f, Main.myPlayer, ai0: speed);
+						}
+
+                        if (ProjTimer == 600) {
+                            if (BossPhase >= 1) Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherAimIndecator>(), 0, 0f, Main.myPlayer, ai0: speed);
+                            else Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 0, 0f, Main.myPlayer, ai0: speed);
+							
+						}
+
+						if (ProjTimer >= 600) {
+							ProjTimer = 0; // reset timer
+						}
                         
-                        float ySpeedMultiplier = 2f; 
+                        float ySpeedMultiplier = 1.8f; 
                         NPC.velocity = new Vector2(direction.X * speed, direction.Y * speed * ySpeedMultiplier);
                     }
                     else if (MoveType == 1) { // move up
@@ -157,8 +193,9 @@ namespace Chickensubclass.Content.NPCs
                         if (AttackTimer == 240) {
                             Vector2 dashDirection = player.Center - NPC.Center;
                             dashDirection.Normalize();
-                            if (BossPhase == 2) NPC.velocity = dashDirection * 25f;
-                            else NPC.velocity = dashDirection * 18f;
+                            if (Main.expertMode) XtraDashspeed = 3f;
+                            if (BossPhase == 2) NPC.velocity = dashDirection * (25f + XtraDashspeed);
+                            else NPC.velocity = dashDirection * (18f + XtraDashspeed);
                         }
                     }
 
@@ -182,22 +219,6 @@ namespace Chickensubclass.Content.NPCs
                     dust.scale *= 1f + Main.rand.NextFloat(-0.03f, 0.03f);
             }
 
-
-            if (NPC.life <= 0) {
-                    int featherCount = Main.rand.Next(3, 6);
-                    for (int i = 0; i < featherCount; i++) {
-                            Vector2 velocity = new Vector2(
-                                    Main.rand.NextFloat(-2f, 2f), 
-                                    Main.rand.NextFloat(-3f, -1f)
-                            );
-                            Gore.NewGore(
-                                    NPC.GetSource_Death(), 
-                                    NPC.position, 
-                                    velocity, 
-                                    ModContent.GoreType<ChickenFeatherGore>()
-                            );
-                    }
-            }
         }
     }
 }

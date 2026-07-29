@@ -455,6 +455,8 @@ Projectiles: {
 	ChickenWalkerProjectile.DisplayName: Chicken Walker Projectile
 	ChickenWalkerProjectile2.DisplayName: Chicken Walker Projectile2
 	GreatChickenFeatherProjectile.DisplayName: Great Chicken Feather Projectile
+	FeatherCrossIndecator.DisplayName: Feather Cross Indecator
+	FeatherAimIndecator.DisplayName: Feather Aim Indecator
 }
 
 NPCs: {

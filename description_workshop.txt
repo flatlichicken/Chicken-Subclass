@@ -10,7 +10,12 @@ And a few other items.
 
 this is my first time creating a terraria mod
 
-1.3.1 update:
+credit to MasterSwordRemix for the song "Apprehension" used in the bossfight
+
+1.4 update:
+
+added new boss: Great Chicken
+
 nerfed damage of Nugget Chicken from 31 to 25
 nerfed speed and fire rate of Nugget Chicken's projectile
 
@@ -23,8 +28,6 @@ you now need demonite or crimtane bars to craft Chicken Wings
 fixed an issue where Nugget Chicken was uneffected by chicken weapon damage boosts
 
 all chicken enemies now have gores (feathers)
-
-added new boss: Great Chicken
 
 added tooltip to Spicy Chicken Pie
 changed tooltip of Explosive Chicken
