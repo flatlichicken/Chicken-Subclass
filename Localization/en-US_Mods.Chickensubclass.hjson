@@ -496,6 +496,6 @@ Buffs: {
 
 	ChickenRage: {
 		DisplayName: Chicken Rage
-		Description: Mods.Chickensubclass.Buffs.ChickenRage.Description
+		Description: 10% increased melee damage and can sets HellFire to enemies when holding a chicken weapon
 	}
 }

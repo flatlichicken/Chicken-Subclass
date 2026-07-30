@@ -19,6 +19,8 @@ added new boss: Great Chicken
 nerfed damage of Nugget Chicken from 31 to 25
 nerfed speed and fire rate of Nugget Chicken's projectile
 
+Chaos Chicken does less damage aganst the Destroyer
+
 Chicken Feather now shimmers into Raw Chicken
 Raw Chicken now shimmers into Chicken Feather
 
@@ -33,3 +35,4 @@ added tooltip to Spicy Chicken Pie
 changed tooltip of Explosive Chicken
 changed tooltip of Spicy Chicken Nugget
 removed tooltip of Zenith Chicken
+added description to Chicken Rage

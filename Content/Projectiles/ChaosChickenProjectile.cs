@@ -36,7 +36,7 @@ namespace Chickensubclass.Content.Projectiles
 		public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers) {
   	    if (target.type == NPCID.TheDestroyer || target.type == NPCID.TheDestroyerBody || target.type == NPCID.TheDestroyerTail) {
         // SourceDamage cuts the raw power of the chicken before the Destroyer's armor 
-        modifiers.SourceDamage *= 0.9f; 
+        modifiers.SourceDamage *= 0.5f; 
  		   }
 		}
 
