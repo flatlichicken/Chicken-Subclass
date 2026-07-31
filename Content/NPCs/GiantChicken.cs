@@ -37,6 +37,7 @@ namespace Chickensubclass.Content.NPCs
 			NPC.value = 120f;
 			NPC.knockBackResist = 0.1f;
 			NPC.aiStyle = 3; // Fighter AI, important to choose the aiStyle that matches the NPCID that we want to mimic
+			NPC.rarity = 3;
 
 			AIType = NPCID.AnomuraFungus; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
 			AnimationType = NPCID.Zombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
@@ -130,7 +131,7 @@ namespace Chickensubclass.Content.NPCs
                                         NPC.GetSource_Death(), 
                                         NPC.position, 
                                         velocity, 
-                                        ModContent.GoreType<ChickenFeatherGore>()
+                                        ModContent.GoreType<GiantChickenFeatherGore>()
                                 );
                         }
                 }

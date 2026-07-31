@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\HEA0004\\.nuget\\packages\\": {}
+    "C:\\Users\\flatl\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HEA0004\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
+      "projectUniqueName": "C:\\Users\\flatl\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
       "projectName": "Chickensubclass",
-      "projectPath": "C:\\Users\\HEA0004\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
-      "packagesPath": "C:\\Users\\HEA0004\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HEA0004\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\obj\\",
+      "projectPath": "C:\\Users\\flatl\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
+      "packagesPath": "C:\\Users\\flatl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\flatl\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HEA0004\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\flatl\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

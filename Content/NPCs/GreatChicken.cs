@@ -2,8 +2,11 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.GameContent.ItemDropRules;
 using Chickensubclass.Content.Gores;
 using Chickensubclass.Content.Projectiles;
+using Chickensubclass.Content.Buffs;
+using Chickensubclass.Content.Items;
 
 namespace Chickensubclass.Content.NPCs
 {
@@ -22,6 +25,8 @@ namespace Chickensubclass.Content.NPCs
         
         public override void SetStaticDefaults() {
                 Main.npcFrameCount[NPC.type] = 12;
+                NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Confused] = true;
+                NPC.buffImmune[ModContent.BuffType<Buffs.Chicken>()] = true;
                 
         }
         public override void SetDefaults() {
@@ -33,12 +38,18 @@ namespace Chickensubclass.Content.NPCs
                 NPC.lifeMax = 25500;
                 NPC.HitSound = SoundID.NPCHit1;
                 NPC.DeathSound = SoundID.NPCDeath1;
-                NPC.value = 100f;
+                NPC.value = 90000f;
                 NPC.noGravity = true;
                 NPC.noTileCollide = true;
                 NPC.boss = true;
                 NPC.knockBackResist = 0f;
                 Music = MusicLoader.GetMusicSlot(Mod, "Content/Music/GreatChickenBossTheme");
+        }
+
+        public override void ModifyNPCLoot(NPCLoot npcLoot) {
+            npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<GreatChickenTreasureBag>()));
+            npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<PieMachine>()));
+            
         }
 
 
