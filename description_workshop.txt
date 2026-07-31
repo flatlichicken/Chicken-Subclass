@@ -16,17 +16,19 @@ credit to MasterSwordRemix for the song "Apprehension" used in the bossfight
 
 added new boss: Great Chicken
 
+added new mount Chicken Jockey
+
 nerfed damage of Nugget Chicken from 31 to 25
 nerfed speed and fire rate of Nugget Chicken's projectile
-
 Chaos Chicken does less damage aganst the Destroyer
 
 Chicken Feather now shimmers into Raw Chicken
 Raw Chicken now shimmers into Chicken Feather
-
 you no longer take fall damage when wearing Chicken Wings or any of the upgrades
 you now need demonite or crimtane bars to craft Chicken Wings
 Giant Chicken now gets detected by the Lifeform Analyzer
+
+updated sprite of Giant Chicken
 
 fixed an issue where Nugget Chicken was uneffected by chicken weapon damage boosts
 

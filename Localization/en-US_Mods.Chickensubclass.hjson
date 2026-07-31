@@ -423,6 +423,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Great Chicken Treasure Bag
 	}
+
+	ChickenJockey: {
+		Tooltip: "'You want me to fight the chicken?'"
+		DisplayName: Chicken Jockey
+	}
 }
 
 Projectiles: {
@@ -502,5 +507,10 @@ Buffs: {
 	ChickenRage: {
 		DisplayName: Chicken Rage
 		Description: 10% increased melee damage and can sets HellFire to enemies when holding a chicken weapon
+	}
+
+	ChickenJockeyBuff: {
+		Description: Mods.Chickensubclass.Buffs.ChickenJockeyBuff.Description
+		DisplayName: Chicken Jockey Buff
 	}
 }
