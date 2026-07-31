@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj": {}
+    "C:\\Users\\HEA0004\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj": {
+    "C:\\Users\\HEA0004\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
+        "projectUniqueName": "C:\\Users\\HEA0004\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
         "projectName": "Chickensubclass",
-        "projectPath": "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
+        "projectPath": "C:\\Users\\HEA0004\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\Chickensubclass.csproj",
         "packagesPath": "C:\\Users\\HEA0004\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HEA0004\\OneDrive - Croydon Community School\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\obj\\",
+        "outputPath": "C:\\Users\\HEA0004\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Chickensubclass\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HEA0004\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.121/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

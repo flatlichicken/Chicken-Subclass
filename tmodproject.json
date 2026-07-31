@@ -17,6 +17,8 @@
     "Content\\Items\\ChickenWalker.cs": "Chickensubclass.Content.Items",
     "Content\\Projectiles\\ChickenWalkerProjectile.cs": "Chickensubclass.Content.Projectiles",
     "Content\\Projectiles\\ChickenWalkerProjectile2.cs": "Chickensubclass.Content.Projectiles",
-    "Content\\Projectiles\\FeatherAimIndecator.cs": "Chickensubclass.Content.Projectiles"
+    "Content\\Projectiles\\FeatherAimIndecator.cs": "Chickensubclass.Content.Projectiles",
+    "Content\\Mounts\\ChickenJockeyMount.cs": "Chickensubclass.Content.Mounts",
+    "Content\\Buffs\\ChickenJockeyBuff.cs": "Chickensubclass.Content.Buffs"
   }
 }
