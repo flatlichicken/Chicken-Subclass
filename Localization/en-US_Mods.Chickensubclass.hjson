@@ -425,8 +425,22 @@ Items: {
 	}
 
 	ChickenJockey: {
-		Tooltip: "'You want me to fight the chicken?'"
 		DisplayName: Chicken Jockey
+		Tooltip:
+			'''
+			flys better when holding a chicken weapon
+			'You want me to fight the chicken?'
+			'''
+	}
+
+	ChickenOrb: {
+		DisplayName: Chicken Orb
+		Tooltip:
+			'''
+			Makes Chicken Wings strong enough to fly
+			Makes Chicken Feet fast enough to sprint
+			Works with upgrades
+			'''
 	}
 }
 

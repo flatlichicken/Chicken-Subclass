@@ -5,6 +5,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent;
+using Chickensubclass.Content.Items.Accessories;
 
 namespace Chickensubclass.Content.Items
 {
@@ -32,6 +33,7 @@ namespace Chickensubclass.Content.Items
         public override void ModifyItemLoot(ItemLoot itemLoot) {
             itemLoot.Add(ItemDropRule.CoinsBasedOnNPCValue(ModContent.NPCType<Content.NPCs.GreatChicken>()));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<PieMachine>(), 1));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenOrb>(), 1));
    
         }
 

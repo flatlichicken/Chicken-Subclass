@@ -11,6 +11,12 @@ namespace Chickensubclass.Content.Items.Accessories
 {   
     public class ChickenClimbingGear : ModItem
     {
+        private static bool AccWorn;
+        public override void SetStaticDefaults() {
+            int wingSlot = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Wings);
+            ArmorIDs.Wing.Sets.Stats[wingSlot] = new WingStats(100, 6f, 1f);
+        }
+
         public override void SetDefaults() {
             Item.width = 24;
             Item.height = 24;
@@ -30,14 +36,13 @@ namespace Chickensubclass.Content.Items.Accessories
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual) {
-            
-
             if (!hideVisual) {
                 player.shoe = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Shoes);
             }
 
-
             bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
+            bool usingChickenOrb = player.GetModPlayer<ChickenOrbLogic>().UsingChickenOrb;
+
             if (isChickenWeapon)
             {
                 player.wings = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Wings);
@@ -45,6 +50,32 @@ namespace Chickensubclass.Content.Items.Accessories
                 player.moveSpeed += 0.15f;
                 player.spikedBoots = 2;
             }  
+
+            if (usingChickenOrb)
+            {
+                int wingSlot = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Wings);
+                
+                player.wings = wingSlot;
+                player.wingsLogic = wingSlot;
+                if (isChickenWeapon) player.wingTimeMax = 120;
+                else player.wingTimeMax = 100;
+                player.noFallDmg = true;
+
+                if (player.velocity.Y == 0) {
+                    player.wingTime = player.wingTimeMax;
+                }
+            }
+            AccWorn = true;
+        }
+
+        public static bool WingActive() {
+            if (AccWorn == true) {
+                AccWorn = false;
+                return true;
+            }
+            else {
+                return false;
+            }
         }
 
         public override void AddRecipes()

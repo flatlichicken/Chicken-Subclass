@@ -29,7 +29,8 @@ namespace Chickensubclass.Content.Items.Accessories
 			bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
 			if (isChickenWeapon) {
 				player.moveSpeed += 0.15f;
-			}		
+			}
+					
 		}
 
 		public override void AddRecipes() {

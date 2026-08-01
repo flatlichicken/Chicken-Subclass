@@ -15,12 +15,5 @@ namespace Chickensubclass.Content.Items
             Item.value = 50000;
             Item.rare = ItemRarityID.LightRed;
         }
-
-        public override void AddRecipes() {
-        Recipe PieMachine = CreateRecipe();
-                PieMachine.AddIngredient(ItemID.HallowedBar, 10);
-                PieMachine.AddTile(TileID.MythrilAnvil);
-                PieMachine.Register();
-        }
     }
 }
