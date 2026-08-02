@@ -11,7 +11,7 @@ namespace Chickensubclass.Content.Items.Accessories
 	[AutoloadEquip(EquipType.Shoes)]
 	public class ChickenFoot : ModItem
 	{
-		
+		private static bool AccWorn;
 
 		public override void SetDefaults() {
 			Item.width = 22;
@@ -30,8 +30,18 @@ namespace Chickensubclass.Content.Items.Accessories
 			if (isChickenWeapon) {
 				player.moveSpeed += 0.15f;
 			}
-					
+			AccWorn = true;	
 		}
+
+		public static bool FootActive() {
+            if (AccWorn == true) {
+                AccWorn = false;
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
 
 		public override void AddRecipes() {
 			Recipe RawChickenRecipe = CreateRecipe();

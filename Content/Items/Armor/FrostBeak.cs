@@ -29,7 +29,7 @@ namespace Chickensubclass.Content.Items.Armor
 			Item.height = 18; 
 			Item.value = Item.sellPrice(gold: 8); 
 			Item.rare = ItemRarityID.Pink; 
-			Item.defense = 8; 
+			Item.defense = 5; 
 		}
 
 		// IsArmorSet determines what armor pieces are needed for the setbonus to take effect

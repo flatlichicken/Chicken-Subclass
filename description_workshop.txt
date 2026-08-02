@@ -23,6 +23,10 @@ added new accessory: Chicken Orb
 nerfed damage of Nugget Chicken from 31 to 25
 nerfed speed and fire rate of Nugget Chicken's projectile
 Chaos Chicken does less damage aganst the Destroyer
+nerfed defence of Frost Beak from 8 to 5
+
+Angry Chickens and Angrier Chickens now drop 1-3 Chicken Feathers and Raw Chicken instead of 1-8
+poslished up the beastary entries
 
 Chicken Feather now shimmers into Raw Chicken
 Raw Chicken now shimmers into Chicken Feather

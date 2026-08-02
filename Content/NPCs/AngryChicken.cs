@@ -62,8 +62,8 @@ namespace Chickensubclass.Content.NPCs
 			// npcLoot.Add(ItemDropRule.Common(ItemID.ZombieArm, 250)); // Drop zombie arm with a 1 out of 250 chance.
 
 			// Finally, we can add additional drops. Many Zombie variants have their own unique drops: https://terraria.fandom.com/wiki/Zombie
-			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RawChicken>(), 1, 1, 8));
-			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenFeather>(), 1, 1, 8));
+			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RawChicken>(), 1, 1, 3));
+			npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenFeather>(), 1, 1, 3));
 
 		}
 
@@ -93,7 +93,8 @@ namespace Chickensubclass.Content.NPCs
 			// We can use AddRange instead of calling Add multiple times in order to add multiple items at once
 			bestiaryEntry.Info.AddRange([
 				// Sets the spawning conditions of this NPC that is listed in the bestiary.
-				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
+				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
+				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
 				// Sets the description of this NPC that is listed in the bestiary.
 				new FlavorTextBestiaryInfoElement("A kind of chicken that is angry."),

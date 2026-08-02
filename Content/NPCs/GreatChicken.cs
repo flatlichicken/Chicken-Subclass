@@ -7,6 +7,7 @@ using Chickensubclass.Content.Gores;
 using Chickensubclass.Content.Projectiles;
 using Chickensubclass.Content.Buffs;
 using Chickensubclass.Content.Items;
+using Terraria.GameContent.Bestiary;
 
 namespace Chickensubclass.Content.NPCs
 {
@@ -27,6 +28,15 @@ namespace Chickensubclass.Content.NPCs
                 Main.npcFrameCount[NPC.type] = 12;
                 NPCID.Sets.SpecificDebuffImmunity[Type][BuffID.Confused] = true;
                 NPC.buffImmune[ModContent.BuffType<Buffs.Chicken>()] = true;
+
+                NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers() {
+                    Velocity = 1f,
+                    Position = new Vector2(55f, 40f),            // Moves the main right-side preview UP
+                    PortraitPositionYOverride = -4f,             // Slightly adjusts small left-side icon
+                    PortraitPositionXOverride = -0f,
+                    PortraitScale = 0.75f                         // Scales down large boss sprites to fit
+                };
+                NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
                 
         }
         public override void SetDefaults() {
@@ -49,6 +59,7 @@ namespace Chickensubclass.Content.NPCs
         public override void ModifyNPCLoot(NPCLoot npcLoot) {
             npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<GreatChickenTreasureBag>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<PieMachine>()));
+            npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenJockey>()));
             
         }
 
@@ -253,11 +264,27 @@ namespace Chickensubclass.Content.NPCs
 
                 }
                 else {
-                    NPC.velocity.Y += -2f;
+                    NPC.velocity.Y += -1f;
                     NPC.EncourageDespawn(10);
                 }
                 
             }
+
+            public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
+            // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
+            bestiaryEntry.Info.AddRange([
+                // Sets the spawning conditions of this NPC that is listed in the bestiary.
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+
+                // Sets the description of this NPC that is listed in the bestiary.
+                new FlavorTextBestiaryInfoElement("The top chicken.")
+
+                // By default the last added IBestiaryBackgroundImagePathAndColorProvider will be used to show the background image.
+                // The ExampleSurfaceBiome ModBiomeBestiaryInfoElement is automatically populated into bestiaryEntry.Info prior to this method being called
+                // so we use this line to tell the game to prioritize a specific InfoElement for sourcing the background image.
+                
+            ]);
+        }
 
         public override void HitEffect(NPC.HitInfo hit) {
             for (int i = 0; i < 10; i++) {

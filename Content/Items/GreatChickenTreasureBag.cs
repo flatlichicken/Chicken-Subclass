@@ -34,6 +34,7 @@ namespace Chickensubclass.Content.Items
             itemLoot.Add(ItemDropRule.CoinsBasedOnNPCValue(ModContent.NPCType<Content.NPCs.GreatChicken>()));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<PieMachine>(), 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenOrb>(), 1));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenJockey>(), 1));
    
         }
 

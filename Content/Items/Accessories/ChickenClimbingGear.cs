@@ -77,6 +77,15 @@ namespace Chickensubclass.Content.Items.Accessories
                 return false;
             }
         }
+        public static bool FootActive() {
+            if (AccWorn == true) {
+                AccWorn = false;
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
 
         public override void AddRecipes()
         {

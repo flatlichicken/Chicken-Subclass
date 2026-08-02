@@ -420,7 +420,7 @@ Items: {
 	}
 
 	GreatChickenTreasureBag: {
-		Tooltip: ""
+		Tooltip: Right Click to open
 		DisplayName: Great Chicken Treasure Bag
 	}
 
@@ -428,7 +428,8 @@ Items: {
 		DisplayName: Chicken Jockey
 		Tooltip:
 			'''
-			flys better when holding a chicken weapon
+			Better when holding a chicken weapon
+			or using chicken accessories
 			'You want me to fight the chicken?'
 			'''
 	}

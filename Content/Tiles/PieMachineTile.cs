@@ -27,7 +27,7 @@ namespace Chickensubclass.Content.Tiles
 
             TileObjectData.addTile(Type);
 
-            AddMapEntry(new Color(191, 142, 111), Language.GetOrRegister("Mods.Chickensubclass.Tiles.PieMachineTile.MapEntry", () => "Pie Machine"));
+            AddMapEntry(new Color(207, 194, 178), Language.GetOrRegister("Mods.Chickensubclass.Tiles.PieMachineTile.MapEntry", () => "Pie Machine"));
             
             
         }
