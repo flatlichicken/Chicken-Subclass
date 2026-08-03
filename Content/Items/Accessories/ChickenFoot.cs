@@ -27,10 +27,15 @@ namespace Chickensubclass.Content.Items.Accessories
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			// Restored your original Main.LocalPlayer check
 			bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
+			bool usingChickenOrb = player.GetModPlayer<ChickenOrbLogic>().UsingChickenOrb;
 			if (isChickenWeapon) {
 				player.moveSpeed += 0.15f;
 			}
-			AccWorn = true;	
+			AccWorn = true;
+
+			if (usingChickenOrb) {
+                player.accRunSpeed = 6f;
+            }
 		}
 
 		public static bool FootActive() {

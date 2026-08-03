@@ -65,6 +65,9 @@ namespace Chickensubclass.Content.Items.Accessories
                     player.wingTime = player.wingTimeMax;
                 }
             }
+            if (usingChickenOrb) {
+                player.accRunSpeed = 6f;
+            }
             AccWorn = true;
         }
 

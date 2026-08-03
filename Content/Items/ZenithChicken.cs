@@ -13,7 +13,7 @@ namespace Chickensubclass.Content.Items
 	{
 		public override void SetDefaults()
 		{
-			Item.damage = 275;
+			Item.damage = 225;
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 313;
 			Item.height = 255;

@@ -252,7 +252,7 @@ namespace Chickensubclass.Content.NPCs
                             if (Main.expertMode) XtraDashspeed = 3f;
                             if (BossPhase == 2) NPC.velocity = dashDirection * (25f + XtraDashspeed);
                             else NPC.velocity = dashDirection * (18f + XtraDashspeed);
-                            NPC.damage = (int)(125 * (speed - 4f));
+                            NPC.damage = (int)(115 * (speed - 4f));
                         }
                         if (AttackTimer == 300) NPC.damage = 40;
                     }
