@@ -60,6 +60,7 @@ namespace Chickensubclass.Content.NPCs
             npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<GreatChickenTreasureBag>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<PieMachine>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenJockey>()));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GreatChickenTrophy>(), 10));
             
         }
 

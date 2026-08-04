@@ -448,6 +448,11 @@ Items: {
 		DisplayName: Great Chicken Trophy
 		Tooltip: ""
 	}
+
+	GreatChickenRelic: {
+		DisplayName: Great Chicken Relic
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -501,6 +506,7 @@ MapObject.NuggetMachineTile: Nugget Machine
 Tiles: {
 	NuggetMachineTile.MapEntry: Nugget Machine
 	PieMachineTile.MapEntry: Pie Machine
+	GreatChickenRelicTile.MapEntry: Great Chicken Relic Tile
 }
 
 Buffs: {
