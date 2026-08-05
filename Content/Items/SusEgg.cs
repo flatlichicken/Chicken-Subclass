@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Terraria.Audio;
 using Chickensubclass.Content.NPCs;
 
-namespace Chickensubclass.Items
+namespace Chickensubclass.Content.Items
 {
     public class SusEgg : ModItem
     {
@@ -17,7 +17,7 @@ namespace Chickensubclass.Items
             Item.height = 20;
             Item.maxStack = 20;
             Item.value = Item.sellPrice(0, 1, 0, 0);
-            Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.Orange;
             Item.useAnimation = 45;
             Item.useTime = 45;
             Item.useStyle = ItemUseStyleID.HoldUp;
