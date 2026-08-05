@@ -58,6 +58,7 @@ namespace Chickensubclass.Content.NPCs
 
         public override void ModifyNPCLoot(NPCLoot npcLoot) {
             npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<GreatChickenTreasureBag>()));
+            npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsMasterMode(), ModContent.ItemType<GreatChickenRelic>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<PieMachine>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenJockey>()));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GreatChickenTrophy>(), 10));

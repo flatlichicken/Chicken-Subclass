@@ -21,7 +21,8 @@
     "Content\\Items\\ChickenJockey.cs": "Chickensubclass.Content.Items",
     "Content\\Items\\Accessories\\ChickenOrb.cs": "Chickensubclass.Content.Items.Accessories",
     "Content\\Items\\Accessories\\ChickenOrbLogic.cs": "Chickensubclass.Content.Items.Accessories",
-    "Content\\Tiles\\GreatChickenRelicTile.cs": "Chickensubclass.Content.Tiles",
-    "Content\\Items\\GreatChickenRelic.cs": "Chickensubclass.Content.Items"
+    "Content\\Items\\GreatChickenTrophy.cs": "Chickensubclass.Content.Items",
+    "Content\\Tiles\\GreatChickenTrophyTile.cs": "Chickensubclass.Content.Tiles",
+    "Content\\Items\\SusEgg.cs": "Chickensubclass.Content.Items"
   }
 }
