@@ -451,7 +451,7 @@ Items: {
 
 	GreatChickenRelic: {
 		DisplayName: Great Chicken Relic
-		Tooltip: "Summons the Great ChickenS"
+		Tooltip: Summons the Great ChickenS
 	}
 
 	SusEgg: {

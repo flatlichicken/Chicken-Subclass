@@ -129,8 +129,13 @@ namespace Chickensubclass.Content.Projectiles
 			);
 
 			Vector2 originalPosition = player.position;
-			player.position = Projectile.position - new Vector2(player.width / 2f, player.height / 2f);
-			Main.PlayerRenderer.DrawPlayer(Main.Camera, player, player.position, player.fullRotation, player.fullRotationOrigin, 0f);
+			player.position = Projectile.Center - new Vector2(player.width / 2f, player.height / 2f);
+			Player tempPlayer = (Player)player.Clone();
+			tempPlayer.mount = new Mount();
+			tempPlayer.itemAnimation = 0;
+			tempPlayer.itemTime = 0;
+
+			Main.PlayerRenderer.DrawPlayer(Main.Camera, tempPlayer, tempPlayer.position, Projectile.rotation, tempPlayer.fullRotationOrigin, 0f);
 			player.position = originalPosition;
 
 			return false; // do not return true

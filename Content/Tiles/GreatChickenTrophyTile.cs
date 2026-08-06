@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.Localization;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -19,7 +20,7 @@ namespace Chickensubclass.Content.Tiles
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16 }; 
             
             TileObjectData.addTile(Type);
-            AddMapEntry(new Color(120, 85, 60));
+            AddMapEntry(new Color(120, 85, 60), Language.GetText("MapObject.Trophy"));
         }
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY) {

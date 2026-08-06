@@ -15,10 +15,10 @@ credit to MasterSwordRemix for the song "Apprehension" used in the bossfight
 1.4 update:
 
 added new boss: Great Chicken
-
 added new mount: Chicken Jockey
-
-added new accessory: Chicken Orb 
+added new accessory: Chicken Orb
+added a tropthy and relic for the boss
+added a summon for the boss
 
 nerfed damage of Nugget Chicken from 31 to 25
 nerfed speed and fire rate of Nugget Chicken's projectile
@@ -36,6 +36,7 @@ you no longer take fall damage when wearing Chicken Wings or any of the upgrades
 you now need demonite or crimtane bars to craft Chicken Wings
 Giant Chicken now gets detected by the Lifeform Analyzer
 Pie Machine is now dropped from Great Chicken instead of being crafted
+minor visual improvments to the Zenith Chickens projectiles
 
 updated sprite of Giant Chicken (no longer just a scaled up sprite of angry chicken coloured yellow)
 
