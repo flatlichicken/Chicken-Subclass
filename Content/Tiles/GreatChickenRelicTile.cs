@@ -36,24 +36,44 @@ namespace Chickensubclass.Content.Tiles
 
             if (tile.HasTile && tile.TileFrameX == 0 && tile.TileFrameY == 0) {
                 Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange, Main.offScreenRange);
-                Vector2 tileDrawPos = new Vector2(tileX * 16, tileY * 16) - Main.screenPosition + zero;
+                Vector2 baseDrawPos = new Vector2(tileX * 16, tileY * 16) - Main.screenPosition + zero;
 
                 Texture2D texture = TextureAssets.Tile[Type].Value;
+                Color lightingColor = Lighting.GetColor(tileX + 1, tileY + 1);
 
-                float floatOffset = (float)Math.Sin(Main.GlobalTimeWrappedHourly * MathHelper.TwoPi / 5f) * 4f;
+                float time = Main.GlobalTimeWrappedHourly;
+                float floatOffset = (float)Math.Sin(time * MathHelper.TwoPi / 5f) * 4f;
+
                 Rectangle statueFrame = new Rectangle(0, 0, FrameWidth, 54);
-                Vector2 statueDrawPos = tileDrawPos + new Vector2(0f, floatOffset);
+                Vector2 statueDrawPos = baseDrawPos + new Vector2(0f, floatOffset);
 
-                Color baseColor = Lighting.GetColor(tileX + 1, tileY + 1);
-                spriteBatch.Draw(texture, statueDrawPos, statueFrame, baseColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+                spriteBatch.Draw(texture, statueDrawPos, statueFrame, lightingColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
 
-                float pulse = (float)Math.Sin(Main.GlobalTimeWrappedHourly * (MathHelper.TwoPi / 2f)) * 0.3f + 0.7f;
-                Color glowColor = new Color(255, 255, 255, 0) * 0.1f * pulse;
+                float pulseFactor = (float)Math.Sin(time * MathHelper.TwoPi / 2f) * 0.5f + 0.8f;
+                Color glowColor = new Color(255, 255, 255, 0) * pulseFactor * 0.35f;
 
-                for (int glowIndex = 0; glowIndex < 4; glowIndex++)
-                {
-                    Vector2 glowOffset = new Vector2(0f, 2f).RotatedBy(glowIndex * MathHelper.PiOver2);
-                    spriteBatch.Draw(texture, statueDrawPos + glowOffset, statueFrame, glowColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+                spriteBatch.Draw(texture, statueDrawPos, statueFrame, glowColor, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+
+                if (!Main.gamePaused && Main.instance.IsActive && Main.rand.NextBool(8)) {
+                    int spawnY = Main.rand.Next(FrameHeight);
+                    float yOffset = spawnY < 54 ? floatOffset : 0f;
+                    Vector2 dustWorldPos = new Vector2(tileX * 16, tileY * 16) + new Vector2(Main.rand.Next(FrameWidth), spawnY + yOffset);
+
+                    Color dustColor = Main.rand.NextBool(4) ? new Color(255, 253, 220) : Color.White;
+
+                    Dust dust = Dust.NewDustDirect(
+                        dustWorldPos, 
+                        0, 0, 
+                        DustID.SilverFlame, 
+                        0f, 0f, 
+                        100, 
+                        dustColor, 
+                        Main.rand.NextFloat(0.9f, 1.2f)
+                    );
+
+                    dust.velocity = new Vector2(Main.rand.NextFloat(-0.1f, 0.1f), -0.2f);
+                    dust.fadeIn = 1.2f;
+                    dust.noGravity = true;
                 }
             }
 
