@@ -541,7 +541,17 @@ Buffs: {
 	}
 
 	ChickenJockeyBuff: {
-		Description: Mods.Chickensubclass.Buffs.ChickenJockeyBuff.Description
-		DisplayName: Chicken Jockey Buff
+		Description: Do not bring this mount to a cinema
+		DisplayName: Chicken Jockey
+	}
+
+	ChickenVenom: {
+		Description: Mods.Chickensubclass.Buffs.ChickenVenom.Description
+		DisplayName: Chicken Venom
+	}
+
+	ChickenPoison: {
+		Description: Mods.Chickensubclass.Buffs.ChickenPoison.Description
+		DisplayName: Chicken Poison
 	}
 }
