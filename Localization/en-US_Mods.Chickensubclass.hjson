@@ -546,12 +546,12 @@ Buffs: {
 	}
 
 	ChickenVenom: {
-		Description: Mods.Chickensubclass.Buffs.ChickenVenom.Description
+		Description: 10% increased melee damage and inflicts Acid Venom to enemies when holding a chicken weapon
 		DisplayName: Chicken Venom
 	}
 
 	ChickenPoison: {
-		Description: Mods.Chickensubclass.Buffs.ChickenPoison.Description
+		Description: 5% increased melee damage and can poison enemies when holding a chicken weapon
 		DisplayName: Chicken Poison
 	}
 }
