@@ -49,9 +49,9 @@ namespace Chickensubclass.Content.NPCs
 
             AIType = NPCID.AnomuraFungus; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
             AnimationType = NPCID.Zombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
-            Banner = Item.NPCtoBanner(NPCID.Bird); // Makes this NPC get affected by the normal zombie banner.
-            BannerItem = Item.BannerToItem(Banner); // Makes kills of this NPC go towards dropping the banner it's associated with.
-             // Associates this NPC with the ExampleSurfaceBiome in Bestiary
+            NPC.Banner = NPC.type;
+            NPC.BannerRequiredKills = 25;
+            NPC.BannerItem = ModContent.ItemType<Items.GiantChickenBanner>();
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot) {
@@ -79,7 +79,7 @@ namespace Chickensubclass.Content.NPCs
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-            return SpawnCondition.OverworldDaySlime.Chance * 0.012f; // Spawn with 1/5th the chance of a regular zombie.
+            return SpawnCondition.OverworldDaySlime.Chance * 0.012f;
         }
 
         public override void AI() {
