@@ -17,7 +17,7 @@ namespace Chickensubclass.Content.Items.Accessories
 			Item.width = 22;
 			Item.height = 18;
 			Item.accessory = true;
-			Item.value = Item.buyPrice(silver: 50);
+			Item.value = Item.sellPrice(silver: 35);
 			Item.rare = ItemRarityID.Blue;
 
 			// Link the LegSlot for the 1120px texture

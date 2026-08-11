@@ -18,7 +18,7 @@ namespace Chickensubclass.Content.Items.Accessories
 			Item.width = 22;
 			Item.height = 18;
 			Item.accessory = true;
-			Item.value = Item.buyPrice(gold: 7);
+			Item.value = Item.sellPrice(gold: 9);
 			Item.rare = ItemRarityID.Lime;
 			 
 		}

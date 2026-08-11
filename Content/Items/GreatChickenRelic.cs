@@ -19,7 +19,7 @@ namespace Chickensubclass.Content.Items
             Item.maxStack = Item.CommonMaxStack;
             Item.rare = ItemRarityID.Master;
             Item.master = true;
-            Item.value = Item.sellPrice(0, 5, 0, 0);
+            Item.value = Item.sellPrice(0, 1, 0, 0);
         }
     }
 }

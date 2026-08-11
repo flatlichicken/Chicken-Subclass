@@ -17,7 +17,7 @@ namespace Chickensubclass.Content.Items
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
             Item.rare = ItemRarityID.Blue;
-            Item.value = Item.buyPrice(0, 0, 10, 0);
+            Item.value = Item.sellPrice(0, 0, 10, 0);
             
             Item.createTile = ModContent.TileType<Tiles.GiantChickenBannerTile>();
             Item.placeStyle = 0;

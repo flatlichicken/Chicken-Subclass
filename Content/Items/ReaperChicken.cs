@@ -27,7 +27,7 @@ namespace Chickensubclass.Content.Items
 			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 2;
-			Item.value = Item.buyPrice(gold: 8);
+			Item.value = Item.sellPrice(0, 4, 50, 0);
 			Item.rare = ItemRarityID.LightPurple;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;

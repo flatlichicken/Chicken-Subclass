@@ -20,7 +20,7 @@ namespace Chickensubclass.Content.Items
             Item.width = 30;
             Item.height = 30;
             Item.rare = ItemRarityID.Blue;
-            Item.value = Item.buyPrice(gold: 2);
+            Item.value = Item.sellPrice(0, 1, 0, 0);
         }
     }
 }
