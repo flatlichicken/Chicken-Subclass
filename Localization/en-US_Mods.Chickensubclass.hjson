@@ -458,6 +458,26 @@ Items: {
 		Tooltip: ""
 		DisplayName: Suspicious Looking Egg
 	}
+
+	FlockEmblem: {
+		DisplayName: Flock Emblem
+		Tooltip: ""
+	}
+
+	AngrierChickenBanner: {
+		DisplayName: Angrier Chicken Banner
+		Tooltip: ""
+	}
+
+	AngryChickenBanner: {
+		DisplayName: Angry Chicken Banner
+		Tooltip: ""
+	}
+
+	GiantChickenBanner: {
+		DisplayName: Giant Chicken Banner
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -512,6 +532,9 @@ Tiles: {
 	NuggetMachineTile.MapEntry: Nugget Machine
 	PieMachineTile.MapEntry: Pie Machine
 	GreatChickenRelicTile.MapEntry: Great Chicken Relic Tile
+	AngrierChickenBannerTile.MapEntry: Angrier Chicken Banner Tile
+	AngryChickenBannerTile.MapEntry: Angry Chicken Banner Tile
+	GiantChickenBannerTile.MapEntry: Giant Chicken Banner Tile
 }
 
 Buffs: {

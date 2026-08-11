@@ -7,9 +7,9 @@ namespace Chickensubclass.Content.Items
     public class GiantChickenBanner : ModItem
     {
         public override void SetDefaults() {
-            Item.Width = 10;
-            Item.Height = 24;
-            Item.MaxStack = Item.CommonMaxStack;
+            Item.width = 10;
+            Item.height = 24;
+            Item.maxStack = Item.CommonMaxStack;
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;

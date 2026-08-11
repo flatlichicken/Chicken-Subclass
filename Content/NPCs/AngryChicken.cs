@@ -39,8 +39,8 @@ namespace Chickensubclass.Content.NPCs
 
 			AIType = NPCID.AnomuraFungus; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
 			AnimationType = NPCID.Zombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
-			NPC.Banner = NPC.type;
-            NPC.BannerItem = ModContent.ItemType<Items.AngryChickenBanner>();
+			Banner = NPC.type;
+            BannerItem = ModContent.ItemType<Items.AngryChickenBanner>();
 		}
 
 		public override void ModifyNPCLoot(NPCLoot npcLoot) {

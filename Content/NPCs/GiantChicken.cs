@@ -17,8 +17,10 @@ namespace Chickensubclass.Content.NPCs
     {
         public override void SetStaticDefaults() {
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.Zombie];
+            
 
             NPCID.Sets.ShimmerTransformToNPC[NPC.type] = NPCID.Duck;
+            
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers() {
                     Velocity = 1f,
@@ -49,9 +51,8 @@ namespace Chickensubclass.Content.NPCs
 
             AIType = NPCID.AnomuraFungus; // Use vanilla zombie's type when executing AI code. (This also means it will try to despawn during daytime)
             AnimationType = NPCID.Zombie; // Use vanilla zombie's type when executing animation code. Important to also match Main.npcFrameCount[NPC.type] in SetStaticDefaults.
-            NPC.Banner = NPC.type;
-            NPC.BannerRequiredKills = 25;
-            NPC.BannerItem = ModContent.ItemType<Items.GiantChickenBanner>();
+            Banner = NPC.type;
+            BannerItem = ModContent.ItemType<Items.GiantChickenBanner>();
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot) {
@@ -100,6 +101,8 @@ namespace Chickensubclass.Content.NPCs
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
+            bestiaryEntry.UIInfoProvider = new CommonEnemyUICollectionInfoProvider(NPCID.Search.GetName(Type), quickUnlock: true);
+
             // We can use AddRange instead of calling Add multiple times in order to add multiple items at once
             bestiaryEntry.Info.AddRange([
                 // Sets the spawning conditions of this NPC that is listed in the bestiary.
