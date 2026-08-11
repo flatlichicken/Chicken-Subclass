@@ -13,39 +13,47 @@ namespace Chickensubclass.Content
         public bool FrostBeakCheck;
         public bool SolarFlareBeakCheck;
         public bool DinoHelmCheck;
+        public int ChickenBuffPrio;
         bool isChickenWeapon => ChickenWeaponDamageBoost.IfUsingChickenWeapon(Player);
 
 
-        public override void ResetEffects()
+        public override void ResetEffects(Player player) 
         {
             NuggetKnucklesCheck = false;
             ChickenScentCheck = false;
             FrostBeakCheck = false;
             SolarFlareBeakCheck = false;
             DinoHelmCheck = false;
+
+            if (Player.HasBuff(ModContent.BuffType<ChickenVenom>())) ChickenBuffPrio = 5;
+            else if (Player.HasBuff(ModContent.BuffType<ChickenRage>())) ChickenBuffPrio = 4;
+            else if (Player.HasBuff(ModContent.BuffType<ChickenPower>())) ChickenBuffPrio = 3;
+            else if (Player.HasBuff(ModContent.BuffType<ChickenPoison>())) ChickenBuffPrio = 2;
+            else if (Player.HasBuff(ModContent.BuffType<ChickenAnger>())) ChickenBuffPrio = 1;
+            else if (Player.HasBuff(ModContent.BuffType<ChickenInstinct>())) ChickenBuffPrio = 0;
         }
 
         public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            
-            if (Player.HasBuff(ModContent.BuffType<ChickenAnger>()) && isChickenWeapon)
+
+            if (ChickenBuffPrio == 5 && isChickenWeapon)
             {
-                target.AddBuff(BuffID.OnFire, 180);
+                target.AddBuff(BuffID.Venom, 180);
             }
 
-            if (Player.HasBuff(ModContent.BuffType<ChickenRage>()) && isChickenWeapon)
+            else if (ChickenBuffPrio == 4 && isChickenWeapon)
             {
                 target.AddBuff(BuffID.OnFire3, 180);
             }
 
-            if (Player.HasBuff(ModContent.BuffType<ChickenPoison>()) && isChickenWeapon)
+            else if (ChickenBuffPrio == 2 && isChickenWeapon)
             {
                 target.AddBuff(BuffID.Poisoned, 180);
             }
 
-            if (Player.HasBuff(ModContent.BuffType<ChickenVenom>()) && isChickenWeapon)
+            else if (ChickenBuffPrio == 1 && isChickenWeapon)
             {
-                target.AddBuff(BuffID.Venom, 180);
+                target.AddBuff(BuffID.OnFire, 180);
             }
 
             if (NuggetKnucklesCheck && Main.rand.NextBool(10))
@@ -76,24 +84,25 @@ namespace Chickensubclass.Content
         
         public override void OnHitNPCWithProj(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            if (Player.HasBuff(ModContent.BuffType<ChickenAnger>()) && isChickenWeapon)
+
+            if (ChickenBuffPrio == 5 && isChickenWeapon)
             {
-                target.AddBuff(BuffID.OnFire, 180);
+                target.AddBuff(BuffID.Venom, 180);
             }
 
-            if (Player.HasBuff(ModContent.BuffType<ChickenRage>()) && isChickenWeapon)
+            else if (ChickenBuffPrio == 4 && isChickenWeapon)
             {
                 target.AddBuff(BuffID.OnFire3, 180);
             }
 
-            if (Player.HasBuff(ModContent.BuffType<ChickenPoison>()) && isChickenWeapon)
+            else if (ChickenBuffPrio == 2 && isChickenWeapon)
             {
                 target.AddBuff(BuffID.Poisoned, 180);
             }
 
-            if (Player.HasBuff(ModContent.BuffType<ChickenVenom>()) && isChickenWeapon)
+            else if (ChickenBuffPrio == 1 && isChickenWeapon)
             {
-                target.AddBuff(BuffID.Venom, 180);
+                target.AddBuff(BuffID.OnFire, 180);
             }
 
             if (ChickenScentCheck)

@@ -25,6 +25,7 @@
     "Content\\Tiles\\GreatChickenTrophyTile.cs": "Chickensubclass.Content.Tiles",
     "Content\\Items\\SusEgg.cs": "Chickensubclass.Content.Items",
     "Content\\Buffs\\ChickenPoison.cs": "Chickensubclass.Content.Buffs",
-    "Content\\Buffs\\ChickenVenom.cs": "Chickensubclass.Content.Buffs"
+    "Content\\Buffs\\ChickenVenom.cs": "Chickensubclass.Content.Buffs",
+    "Content\\Items\\Accessories\\FlockEmblem.cs": "Chickensubclass.Content.Items.Accessories"
   }
 }

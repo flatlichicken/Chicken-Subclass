@@ -17,7 +17,8 @@ namespace Chickensubclass.Content.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
             bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
-			if (isChickenWeapon) 
+			int BuffPrio = player.GetModPlayer<ChickenDebuffInflict>().ChickenBuffPrio;
+			if (isChickenWeapon && BuffPrio == 0) 
             {
             player.GetDamage(DamageClass.Melee) += 0.05f;
             }

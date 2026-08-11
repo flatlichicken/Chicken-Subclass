@@ -10,16 +10,16 @@ using Chickensubclass.Content;
 namespace Chickensubclass.Content.Items.Accessories
 {
 	
-	public class ChickenScent : ModItem
+	public class FlockEmblem : ModItem
 	{
 		
 
 		public override void SetDefaults() {
-			Item.width = 20;
-			Item.height = 24;
+			Item.width = 22;
+			Item.height = 18;
 			Item.accessory = true;
-			Item.value = Item.buyPrice(gold: 1);
-			Item.rare = ItemRarityID.LightPurple;
+			Item.value = Item.buyPrice(gold: 7);
+			Item.rare = ItemRarityID.Lime;
 			 
 		}
 
@@ -27,17 +27,17 @@ namespace Chickensubclass.Content.Items.Accessories
     		bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
     		if (isChickenWeapon && Main.rand.NextBool(1)) {
     	    	player.GetModPlayer<ChickenDebuffInflict>().ChickenScentCheck = true;
-				player.GetDamage(DamageClass.Melee) += 0.08f;
-				player.GetCritChance(DamageClass.Melee) += 8f;
+				player.GetDamage(DamageClass.Melee) += 0.20f;
+				player.GetCritChance(DamageClass.Melee) += 15f;
     		}       
 		}
 
 		public override void AddRecipes() {
-			Recipe ChickenScentRecipe = CreateRecipe();
-			ChickenScentRecipe.AddIngredient(ItemID.ChickenNugget, 10);
-			ChickenScentRecipe.AddIngredient(ItemID.PutridScent, 1);
-			ChickenScentRecipe.AddTile(TileID.MythrilAnvil);
-			ChickenScentRecipe.Register();
+			Recipe FlockEmblemRecipe = CreateRecipe();
+			FlockEmblemRecipe.AddIngredient(ModContent.ItemType<Content.Items.Accessories.PoultryEmblem>(), 1);
+			FlockEmblemRecipe.AddIngredient(ItemID.EyeoftheGolem, 1);
+			FlockEmblemRecipe.AddTile(TileID.MythrilAnvil);
+			FlockEmblemRecipe.Register();
 		}
 	}
 }

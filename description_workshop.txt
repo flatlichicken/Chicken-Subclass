@@ -2,7 +2,7 @@ Ever wanted to Play terraria using chickens as weapons? No? well now you can wit
 
 features:
 4 full armor sets and 2 helmets for existing armor sets.
-10 accessories in total. (some of them are components for another accessory)
+11 accessories in total. (some of them are components for another accessory)
 A bunch of chicken weapons. (I lost count)
 3 kinds of chicken enemies.
 a new boss
@@ -14,6 +14,15 @@ credit to MasterSwordRemix for the song "Apprehension" used in the bossfight
 
 1.4.1 update:
 
+added new banners for chicken enemies
+added two new buffs:
+Chicken Poison
+Chicken Venom
+added new accessory: Flock Emblem
+
 Fixed an issue where projectiles would be effected by chicken effects even when not holding a chicken weapon
+if you somehow have multiple chicken buffs, they do not stack and only the strongest one out of the buffs you have will be activated
+
+decreased value of Chicken Scent and Nugget Knuckles from 9 gold to 1 gold
 
 added description to chicken jockey mount buff
