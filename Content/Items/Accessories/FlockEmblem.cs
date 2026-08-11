@@ -35,8 +35,9 @@ namespace Chickensubclass.Content.Items.Accessories
 		public override void AddRecipes() {
 			Recipe FlockEmblemRecipe = CreateRecipe();
 			FlockEmblemRecipe.AddIngredient(ModContent.ItemType<Content.Items.Accessories.PoultryEmblem>(), 1);
+			FlockEmblemRecipe.AddIngredient(ModContent.ItemType<Content.Items.Accessories.ChickenScent>(), 1);
 			FlockEmblemRecipe.AddIngredient(ItemID.EyeoftheGolem, 1);
-			FlockEmblemRecipe.AddTile(TileID.MythrilAnvil);
+			FlockEmblemRecipe.AddTile(TileID.TinkerersWorkbench);
 			FlockEmblemRecipe.Register();
 		}
 	}
