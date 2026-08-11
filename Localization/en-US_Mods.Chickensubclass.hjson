@@ -160,7 +160,7 @@ Items: {
 
 	PoultryEmblem: {
 		DisplayName: Poultry Emblem
-		Tooltip: 20% increased melee damage when holding a chicken weapon
+		Tooltip: 18% increased melee damage when holding a chicken weapon
 	}
 
 	NinjaChicken: {
@@ -451,17 +451,22 @@ Items: {
 
 	GreatChickenRelic: {
 		DisplayName: Great Chicken Relic
-		Tooltip: Summons the Great ChickenS
+		Tooltip: 
 	}
 
 	SusEgg: {
-		Tooltip: ""
+		Tooltip: "Summons the Great Chicken"
 		DisplayName: Suspicious Looking Egg
 	}
 
 	FlockEmblem: {
 		DisplayName: Flock Emblem
-		Tooltip: ""
+		Tooltip:
+			'''
+			15% increased melee critical strike chance when holding a chicken weapon
+			20% increased melee damage when holding a chicken weapon
+			Attacks will make enemies stronger when holding a chicken weapon
+			'''
 	}
 
 	AngrierChickenBanner: {
@@ -482,39 +487,39 @@ Items: {
 
 Projectiles: {
 	ExampleBullet.DisplayName: Example Bullet
-	MagicChickenProjectile.DisplayName: Magic Chicken Projectile
-	ChickenFeatherProjectile.DisplayName: Chicken Feather Projectile
-	RedJunglefowlProjectile.DisplayName: Red Junglefowl Projectile
+	MagicChickenProjectile.DisplayName: Magic Chicken
+	ChickenFeatherProjectile.DisplayName: Chicken Feather
+	RedJunglefowlProjectile.DisplayName: Red Junglefowl Thorn
 	EvilChickenProjectile.DisplayName: Evil Chicken Projectile
-	ChickenFireFeatherProjectile.DisplayName: Chicken Fire Feather Projectile
-	ChaosChickenProjectile.DisplayName: Chaos Chicken Projectile
-	HolyChickenProjectile.DisplayName: Holy Chicken Projectile
-	DarkChickenProjectile.DisplayName: Dark Chicken Projectile
-	LowPolyChickenProjectile.DisplayName: Low Poly Chicken Projectile
-	LowPolyChickenProjectile2.DisplayName: Low Poly Chicken Projectile2
-	TrueDarkChickenProjectile.DisplayName: True Dark Chicken Projectile
-	TrueHolyChickenProjectile.DisplayName: True Holy Chicken Projectile
+	ChickenFireFeatherProjectile.DisplayName: Chicken Fire Feather
+	ChaosChickenProjectile.DisplayName: Chaos Chicken
+	HolyChickenProjectile.DisplayName: Holy Chicken Charge
+	DarkChickenProjectile.DisplayName: Dark Chicken Charge
+	LowPolyChickenProjectile.DisplayName: Low Poly Chicken
+	LowPolyChickenProjectile2.DisplayName: Low Poly Chicken 
+	TrueDarkChickenProjectile.DisplayName: True Dark Chicken Charge
+	TrueHolyChickenProjectile.DisplayName: True Holy Chicken Charge
 	CommieChickenHammer.DisplayName: Commie Chicken Hammer
 	CommieChickenSickle.DisplayName: Commie Chicken Sickle
-	NuclearChickenProjectile.DisplayName: Nuclear Chicken Projectile
-	ExplosiveChickenProjectile.DisplayName: Explosive Chicken Projectile
-	TerraChickenProjectile.DisplayName: Terra Chicken Projectile
-	RoaringChickenProjectile.DisplayName: Roaring Chicken Projectile
-	SolarChickenProjectile.DisplayName: Solar Chicken Projectile
-	PrismaticChickenProjectile.DisplayName: Prismatic Chicken Projectile
-	SpookyChickenProjectile.DisplayName: Spooky Chicken Projectile
+	NuclearChickenProjectile.DisplayName: Nuclear Chicken Bomb
+	ExplosiveChickenProjectile.DisplayName: Explosive Egg
+	TerraChickenProjectile.DisplayName: Terra Chicken Bolt
+	RoaringChickenProjectile.DisplayName: Roaring Chicken Blade
+	SolarChickenProjectile.DisplayName: Solar Chicken Fireball
+	PrismaticChickenProjectile.DisplayName: Prismatic Chicken Bolt
+	SpookyChickenProjectile.DisplayName: Spooky Chicken Ghost
 	ZenithChickenProjectile.DisplayName: Zenith Chicken Projectile
-	ChlorophytePulletProjectile.DisplayName: Chlorophyte Pullet Projectile
-	ChickenChlorophyteFeatherProjectile.DisplayName: Chicken Chlorophyte Feather Projectile
-	ReaperChickenFeatherProjectile.DisplayName: Reaper Chicken Feather Projectile
-	NuggetChickenProjectile.DisplayName: Nugget Chicken Projectile
-	BinChickenProjectile.DisplayName: Bin Chicken Projectile
-	GreedyChickenProjectile.DisplayName: Greedy Chicken Projectile
-	GreedyChickenProjectile2.DisplayName: Greedy Chicken Projectile2
-	AmericanChickenProjectile.DisplayName: American Chicken Projectile
-	ChickenWalkerProjectile.DisplayName: Chicken Walker Projectile
-	ChickenWalkerProjectile2.DisplayName: Chicken Walker Projectile2
-	GreatChickenFeatherProjectile.DisplayName: Great Chicken Feather Projectile
+	ChlorophytePulletProjectile.DisplayName: Chlorophyte Pullet
+	ChickenChlorophyteFeatherProjectile.DisplayName: Chlorophyte Chicken Feather
+	ReaperChickenFeatherProjectile.DisplayName: Reaper Chicken Feather
+	NuggetChickenProjectile.DisplayName: Nugget Chicken Flail
+	BinChickenProjectile.DisplayName: Bin Chicken Beak
+	GreedyChickenProjectile.DisplayName: Greedy Chicken Minion
+	GreedyChickenProjectile2.DisplayName: Greedy Chicken Dollar
+	AmericanChickenProjectile.DisplayName: American Chicken Bullet
+	ChickenWalkerProjectile.DisplayName: Chicken Walker Star
+	ChickenWalkerProjectile2.DisplayName: Chicken Walker Star
+	GreatChickenFeatherProjectile.DisplayName: Great Chicken Feather
 	FeatherCrossIndecator.DisplayName: Feather Cross Indecator
 	FeatherAimIndecator.DisplayName: Feather Aim Indecator
 }
