@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.Enums;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -15,9 +16,18 @@ namespace Chickensubclass.Content.Tiles
             Main.tileLavaDeath[Type] = true;
             Main.tileLighted[Type] = true;
 
+            DustType = -1;
             AnimationFrameHeight = 36;
 
+            TileID.Sets.MultiTileSway[Type] = true;
+            
+
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
+            TileObjectData.newTile.AnchorTop = new AnchorData(
+                AnchorType.SolidTile | AnchorType.Platform | AnchorType.PlanterBox, 
+                TileObjectData.newTile.Width, 
+                0
+            );
             TileObjectData.newTile.WaterDeath = true;
             TileObjectData.newTile.WaterPlacement = LiquidPlacement.NotAllowed;
             TileObjectData.newTile.LavaPlacement = LiquidPlacement.NotAllowed;

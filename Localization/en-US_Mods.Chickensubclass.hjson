@@ -451,11 +451,11 @@ Items: {
 
 	GreatChickenRelic: {
 		DisplayName: Great Chicken Relic
-		Tooltip: 
+		Tooltip: ""
 	}
 
 	SusEgg: {
-		Tooltip: "Summons the Great Chicken"
+		Tooltip: Summons the Great Chicken
 		DisplayName: Suspicious Looking Egg
 	}
 
@@ -483,6 +483,11 @@ Items: {
 		DisplayName: Giant Chicken Banner
 		Tooltip: ""
 	}
+
+	SoulBottleChicken: {
+		Tooltip: ""
+		DisplayName: Soul Bottle Chicken
+	}
 }
 
 Projectiles: {
@@ -496,7 +501,7 @@ Projectiles: {
 	HolyChickenProjectile.DisplayName: Holy Chicken Charge
 	DarkChickenProjectile.DisplayName: Dark Chicken Charge
 	LowPolyChickenProjectile.DisplayName: Low Poly Chicken
-	LowPolyChickenProjectile2.DisplayName: Low Poly Chicken 
+	LowPolyChickenProjectile2.DisplayName: Low Poly Chicken
 	TrueDarkChickenProjectile.DisplayName: True Dark Chicken Charge
 	TrueHolyChickenProjectile.DisplayName: True Holy Chicken Charge
 	CommieChickenHammer.DisplayName: Commie Chicken Hammer
@@ -583,4 +588,3 @@ Buffs: {
 		DisplayName: Chicken Poison
 	}
 }
-
