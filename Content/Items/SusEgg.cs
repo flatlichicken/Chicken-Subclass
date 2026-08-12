@@ -15,8 +15,7 @@ namespace Chickensubclass.Content.Items
         public override void SetDefaults() {
             Item.width = 20;
             Item.height = 20;
-            Item.maxStack = 20;
-            Item.value = Item.sellPrice(0, 0, 50, 0);
+            Item.maxStack = Item.CommonMaxStack;
             Item.rare = ItemRarityID.Orange;
             Item.useAnimation = 45;
             Item.useTime = 45;
@@ -45,9 +44,9 @@ namespace Chickensubclass.Content.Items
 
         public override void AddRecipes() {
 				Recipe recipe = CreateRecipe();
-				recipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 10);
-				recipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenFeather>(), 10);
-				recipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenSoul>(), 10);
+				recipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 1);
+				recipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenFeather>(), 1);
+				recipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenSoul>(), 1);
 				recipe.AddTile(TileID.MythrilAnvil);
 				recipe.Register();
 			}
