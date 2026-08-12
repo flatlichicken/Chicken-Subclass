@@ -44,9 +44,9 @@ namespace Chickensubclass.Content.Items
 
         public override void AddRecipes() {
 				Recipe recipe = CreateRecipe();
-				recipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 1);
-				recipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenFeather>(), 1);
-				recipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenSoul>(), 1);
+				recipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 10);
+				recipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenFeather>(), 10);
+				recipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenSoul>(), 5);
 				recipe.AddTile(TileID.MythrilAnvil);
 				recipe.Register();
 			}

@@ -28,6 +28,7 @@
     "Content\\Buffs\\ChickenVenom.cs": "Chickensubclass.Content.Buffs",
     "Content\\Items\\Accessories\\FlockEmblem.cs": "Chickensubclass.Content.Items.Accessories",
     "Content\\Tiles\\SoulBottleChickenTile.cs": "Chickensubclass.Content.Tiles",
-    "Content\\Items\\SoulBottleChicken.cs": "Chickensubclass.Content.Items"
+    "Content\\Items\\SoulBottleChicken.cs": "Chickensubclass.Content.Items",
+    "Content\\NPCs\\Chickemonium.cs": "Chickensubclass.Content.NPCs"
   }
 }
