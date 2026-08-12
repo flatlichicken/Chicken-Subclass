@@ -35,7 +35,10 @@ namespace Chickensubclass.Content.Items
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<PieMachine>(), 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenOrb>(), 1));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenJockey>(), 1));
-   
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<RawChicken>(), 1, 40, 60));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenFeather>(), 1, 40, 60));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenSoul>(), 1, 25, 40));
+
         }
 
         public override Color? GetAlpha(Color lightColor) {
