@@ -46,9 +46,12 @@ namespace Chickensubclass.Content.Items.Accessories
             bool isChickenWeapon = ChickenWeaponDamageBoost.IfUsingChickenWeapon(player);
             bool usingChickenOrb = player.GetModPlayer<ChickenOrbLogic>().UsingChickenOrb;
 
+            int wingSlot = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Wings);
+            player.wings = wingSlot;
+            player.noFallDmg = true;
+
             if (isChickenWeapon)
             {
-                player.wings = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Wings);
                 player.jumpSpeedBoost += 1.5f;
                 player.moveSpeed += 0.15f;
                 player.spikedBoots = 2;
@@ -59,13 +62,9 @@ namespace Chickensubclass.Content.Items.Accessories
 
             if (usingChickenOrb)
             {
-                int wingSlot = EquipLoader.GetEquipSlot(Mod, Name, EquipType.Wings);
-                
-                player.wings = wingSlot;
                 player.wingsLogic = wingSlot;
                 if (isChickenWeapon) player.wingTimeMax = 120;
                 else player.wingTimeMax = 100;
-                player.noFallDmg = true;
 
                 if (player.velocity.Y == 0) {
                     player.wingTime = player.wingTimeMax;
