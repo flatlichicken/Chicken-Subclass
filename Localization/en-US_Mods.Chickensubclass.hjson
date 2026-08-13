@@ -534,6 +534,7 @@ NPCs: {
 	AngrierChicken.DisplayName: Angrier Chicken
 	GiantChicken.DisplayName: Giant Chicken
 	GreatChicken.DisplayName: Great Chicken
+	Chickemonium.DisplayName: Chickemonium
 }
 
 MapObject.NuggetMachineTile: Nugget Machine

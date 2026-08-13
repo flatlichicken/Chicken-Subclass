@@ -8,6 +8,7 @@ using Chickensubclass.Content.Items;
 using Terraria.Audio;
 using Chickensubclass.Content.Gores;
 using Microsoft.Xna.Framework;
+using ReLogic.Utilities;
 
 namespace Chickensubclass.Content.NPCs
 {
@@ -15,9 +16,13 @@ namespace Chickensubclass.Content.NPCs
     {
         private bool Enraged = false;
         private bool RoamStarted = false;
-		private int soundTimer = 0;
-
-		private float speed = 0;
+        private bool ReachedCloseRange = false;
+        private int soundTimer = 0;
+        private int soundTimer2 = 0;
+        private float speed = 0;
+        private SlotId attackSoundSlot;
+        private SlotId docileSoundSlot;
+        private bool attackStarted = false;
 
         public override void SetStaticDefaults() {
             Main.npcFrameCount[Type] = 2;
@@ -31,10 +36,10 @@ namespace Chickensubclass.Content.NPCs
         }
 
         public override void SetDefaults() {
-            NPC.width = 60;
-            NPC.height = 60;
-            NPC.damage = 8;
-            NPC.defense = 3;
+            NPC.width = 100;
+            NPC.height = 100;
+            NPC.damage = 42;
+            NPC.defense = 8;
             NPC.lifeMax = 1000;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
@@ -54,7 +59,18 @@ namespace Chickensubclass.Content.NPCs
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-            return SpawnCondition.OverworldDaySlime.Chance * 0f;
+            if (!NPC.downedBoss3) {
+                return 0f;
+            }
+
+            if (spawnInfo.Player.ZoneRockLayerHeight) {
+                float depthProgress = (spawnInfo.SpawnTileY - (float)Main.rockLayer) / (float)(Main.maxTilesY - Main.rockLayer);
+                depthProgress = MathHelper.Clamp(depthProgress, 0.1f, 1f);
+
+                return SpawnCondition.Cavern.Chance * 0.1f * depthProgress;
+            }
+
+            return 0f;
         }
 
         public override void FindFrame(int frameHeight) {
@@ -68,50 +84,123 @@ namespace Chickensubclass.Content.NPCs
 
         public override void AI()
         {
+            if (!NPC.active)
+            {
+                StopAllSounds();
+                return;
+            }
+
+            bool isHovered = NPC.Hitbox.Contains(Main.MouseWorld.ToPoint());
+            
+
+            NPC.TargetClosest(true);
             Player targetPlayer = Main.player[NPC.target];
 
             if (!targetPlayer.active || targetPlayer.dead)
             {
+                StopAllSounds();
+                return;
+            }
+
+            float currentDistance = Vector2.Distance(NPC.Center, targetPlayer.Center);
+            float radius60Blocks = 960f;
+
+            if (currentDistance <= radius60Blocks)
+            {
+                ReachedCloseRange = true;
+            }
+
+            if (!Enraged && ReachedCloseRange && currentDistance > radius60Blocks)
+            {
+                StopAllSounds();
+                NPC.active = false;
                 return;
             }
 
             float maximumRange = 800f;
 
-            if (Vector2.Distance(NPC.Center, targetPlayer.Center) > maximumRange)
+            if (!Enraged && currentDistance <= maximumRange)
             {
-                return;
-            }
-
-            if (Collision.CanHit(NPC.Center, 1, 1, targetPlayer.Center, 1, 1))
-            {
-                Enraged = true;
-            }
-
-            Vector2 dashDirection = Vector2.Zero;
-
-            if (!RoamStarted)
-            {
-                dashDirection = targetPlayer.Center - NPC.Center;
-                SoundEngine.PlaySound(new SoundStyle("Chickensubclass/Content/NPCs/ChickemoniumDocile"), NPC.position);
-                RoamStarted = true;
-            }
-
-            if (Enraged)
-            {
-                dashDirection = targetPlayer.Center - NPC.Center;
-				
-				soundTimer--;
-                if (soundTimer <= 0)
+                if (Collision.CanHit(NPC.Center, 1, 1, targetPlayer.Center, 1, 1))
                 {
-                    SoundEngine.PlaySound(new SoundStyle("Chickensubclass/Content/NPCs/ChickemoniumAttacking"), NPC.position);
-                    soundTimer = 420;
+                    Enraged = true;
                 }
             }
 
-            if (dashDirection != Vector2.Zero)
+            if (!Enraged)
             {
-                dashDirection.Normalize();
-                NPC.velocity = dashDirection * 4f;
+                if (!RoamStarted)
+                {
+                    StopAllSounds();
+                    docileSoundSlot = SoundEngine.PlaySound(new SoundStyle("Chickensubclass/Content/NPCs/ChickemoniumDocile"), NPC.position);
+                    soundTimer2 = 1560;
+                    RoamStarted = true;
+                }
+
+                soundTimer2--;
+                if (soundTimer2 <= 0)
+                {
+                    StopAllSounds();
+                    docileSoundSlot = SoundEngine.PlaySound(new SoundStyle("Chickensubclass/Content/NPCs/ChickemoniumDocile"), NPC.position);
+                    soundTimer2 = 1560;
+                }
+
+                if (NPC.velocity == Vector2.Zero)
+                {
+                    Vector2 initialDir = targetPlayer.Center - NPC.Center;
+                    if (initialDir != Vector2.Zero)
+                    {
+                        initialDir.Normalize();
+                    }
+                    speed = 2.5f;
+                    NPC.velocity = initialDir * speed;
+                }
+            }
+            else
+            {
+                Vector2 dashDirection = targetPlayer.Center - NPC.Center;
+                if (dashDirection != Vector2.Zero)
+                {
+                    dashDirection.Normalize();
+                }
+                if (!attackStarted)
+                {
+                    speed = 7.5f;
+                    attackStarted = true;
+                }
+                
+                NPC.velocity = dashDirection * speed;
+                if (isHovered && speed > 5f) speed -= 0.05f;
+                else if (!isHovered && speed < 10f) speed += 0.1f;
+                soundTimer--;
+                if (soundTimer <= 0)
+                {
+                    StopAllSounds();
+                    attackSoundSlot = SoundEngine.PlaySound(new SoundStyle("Chickensubclass/Content/NPCs/ChickemoniumAttacking"), NPC.position);
+                    soundTimer = 420;
+                }
+            }
+        }
+
+        public override Color? GetAlpha(Color drawColor)
+        {
+            return Color.White;
+        }
+
+        public override void OnKill()
+        {
+            StopAllSounds();
+        }
+
+        private void StopAllSounds()
+        {
+            if (SoundEngine.TryGetActiveSound(attackSoundSlot, out ActiveSound activeAttackSound)) 
+            {
+                activeAttackSound.Stop();
+            }
+            if (SoundEngine.TryGetActiveSound(docileSoundSlot, out ActiveSound activeDocileSound)) 
+            {
+                activeDocileSound.Stop();
             }
         }
 
