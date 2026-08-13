@@ -17,6 +17,8 @@ namespace Chickensubclass.Content.NPCs
         private bool RoamStarted = false;
 		private int soundTimer = 0;
 
+		private float speed = 0;
+
         public override void SetStaticDefaults() {
             Main.npcFrameCount[Type] = 2;
 
@@ -52,7 +54,7 @@ namespace Chickensubclass.Content.NPCs
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-            return SpawnCondition.OverworldDaySlime.Chance * 0.35f;
+            return SpawnCondition.OverworldDaySlime.Chance * 0f;
         }
 
         public override void FindFrame(int frameHeight) {
@@ -109,7 +111,7 @@ namespace Chickensubclass.Content.NPCs
             if (dashDirection != Vector2.Zero)
             {
                 dashDirection.Normalize();
-                NPC.velocity = dashDirection;
+                NPC.velocity = dashDirection * 4f;
             }
         }
 
