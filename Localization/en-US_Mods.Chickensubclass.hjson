@@ -485,7 +485,7 @@ Items: {
 	}
 
 	SoulBottleChicken: {
-		Tooltip: ""
+		Tooltip: "This item is unused/incomplete"
 		DisplayName: Soul Bottle Chicken
 	}
 }

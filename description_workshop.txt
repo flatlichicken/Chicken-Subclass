@@ -19,6 +19,7 @@ added two new buffs:
 Chicken Poison
 Chicken Venom
 added new accessory: Flock Emblem
+added new enemy: chickemonium
 
 New sprite for Magic Chicken and its projectile
 

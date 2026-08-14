@@ -23,6 +23,7 @@ namespace Chickensubclass.Content.NPCs
         private SlotId attackSoundSlot;
         private SlotId docileSoundSlot;
         private bool attackStarted = false;
+        private int attackTime = 2400;
 
         public override void SetStaticDefaults() {
             Main.npcFrameCount[Type] = 2;
@@ -40,7 +41,7 @@ namespace Chickensubclass.Content.NPCs
             NPC.height = 100;
             NPC.damage = 42;
             NPC.defense = 8;
-            NPC.lifeMax = 1000;
+            NPC.lifeMax = 1500;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.value = 60f;
@@ -48,14 +49,12 @@ namespace Chickensubclass.Content.NPCs
             NPC.noTileCollide = true;
             NPC.knockBackResist = 0f;
             NPC.aiStyle = -1;
-
-            Banner = NPC.type;
-            BannerItem = ModContent.ItemType<Items.AngryChickenBanner>();
+            NPC.rarity = 3;
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot) {
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RawChicken>(), 1, 1, 3));
-            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenFeather>(), 1, 1, 3));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RawChicken>(), 1, 5, 10));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenFeather>(), 1, 5, 10));
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) {
@@ -67,10 +66,22 @@ namespace Chickensubclass.Content.NPCs
                 float depthProgress = (spawnInfo.SpawnTileY - (float)Main.rockLayer) / (float)(Main.maxTilesY - Main.rockLayer);
                 depthProgress = MathHelper.Clamp(depthProgress, 0.1f, 1f);
 
-                return SpawnCondition.Cavern.Chance * 0.1f * depthProgress;
+                return SpawnCondition.Cavern.Chance * 0.08f * depthProgress;
             }
 
             return 0f;
+        }
+
+        public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
+        {
+            string[] deathMessages = [
+                $"{target.name} was consumed by C-367 after being spotted. As usual, no remains.",
+                $"{target.name} was spotted by C-367 and hunted down."   
+            ];
+
+            string chosenMessage = deathMessages[Main.rand.Next(deathMessages.Length)];
+
+            target.HurtPlayerDeathReason = Terraria.DataStructures.PlayerDeathReason.ByCustomReason(chosenMessage);
         }
 
         public override void FindFrame(int frameHeight) {
@@ -110,7 +121,7 @@ namespace Chickensubclass.Content.NPCs
                 ReachedCloseRange = true;
             }
 
-            if (!Enraged && ReachedCloseRange && currentDistance > radius60Blocks)
+            if (!Enraged && ReachedCloseRange && currentDistance > (radius60Blocks * 2))
             {
                 StopAllSounds();
                 NPC.active = false;
@@ -169,9 +180,13 @@ namespace Chickensubclass.Content.NPCs
                     attackStarted = true;
                 }
                 
-                NPC.velocity = dashDirection * speed;
-                if (isHovered && speed > 5f) speed -= 0.05f;
+                attackTime--;
+                if (attackTime <= 0) speed = -12f;                
+                else if (isHovered && speed > 5f) speed -= 0.05f;
                 else if (!isHovered && speed < 10f) speed += 0.1f;
+
+
+                NPC.velocity = dashDirection * speed;
                 soundTimer--;
                 if (soundTimer <= 0)
                 {
@@ -207,7 +222,7 @@ namespace Chickensubclass.Content.NPCs
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
             bestiaryEntry.Info.AddRange([
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Caverns,
-                new FlavorTextBestiaryInfoElement("C-367 was initially discovered in 1962 near a hydrothermal vent within the Let-Vand zone during the first expedition and excavation of the Hadal Blacksite. Due to its high threat level, early recommendations left C-367 undisturbed and advised personnel to avoid its known roaming areas.")
+                new FlavorTextBestiaryInfoElement("C-367 was initially discovered in 1962 near a sunken chicken coop within the Let-Vand zone during the first expedition and excavation of the Hadal Blacksite. Due to its high threat level, early recommendations left C-367 underground and advised personnel to avoid its known roaming areas.")
             ]);
         }
 
