@@ -185,7 +185,11 @@ Items: {
 
 	PlantBasedNugget: {
 		DisplayName: Plant Based Nugget
-		Tooltip: "'Eating animals is wrong, Flatlichicken, hurting animals is wrong, Flatlichicken'"
+		Tooltip:
+			'''
+			'Eating animals is wrong, Flatlichicken, hurting animals is wrong, Flatlichicken'
+			Grants Chicken Poison
+			'''
 	}
 
 	SolarNugget: {
@@ -406,7 +410,11 @@ Items: {
 
 	AmericanChicken: {
 		DisplayName: American Chicken
-		Tooltip: Uses the power of the second amendment
+		Tooltip:
+			'''
+			Uses the power of the second amendment
+			Needs ammo
+			'''
 	}
 
 	ChickenWalker: {
@@ -485,8 +493,13 @@ Items: {
 	}
 
 	SoulBottleChicken: {
-		Tooltip: "This item is unused/incomplete"
+		Tooltip: This item is unused/incomplete
 		DisplayName: Soul Bottle Chicken
+	}
+
+	PlantBasedChickenPie: {
+		DisplayName: Plant Based Chicken Pie
+		Tooltip: Grants Chicken Venom
 	}
 }
 
@@ -543,9 +556,9 @@ Tiles: {
 	NuggetMachineTile.MapEntry: Nugget Machine
 	PieMachineTile.MapEntry: Pie Machine
 	GreatChickenRelicTile.MapEntry: Great Chicken Relic Tile
-	AngrierChickenBannerTile.MapEntry: Angrier Chicken Banner Tile
-	AngryChickenBannerTile.MapEntry: Angry Chicken Banner Tile
-	GiantChickenBannerTile.MapEntry: Giant Chicken Banner Tile
+	AngrierChickenBannerTile.MapEntry: Banner
+	AngryChickenBannerTile.MapEntry: Banner
+	GiantChickenBannerTile.MapEntry: Banner
 }
 
 Buffs: {

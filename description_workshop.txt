@@ -13,13 +13,15 @@ this is my first time creating a terraria mod
 credit to MasterSwordRemix for the song "Apprehension" used in the bossfight
 
 1.4.1 update:
-
+added new food item: Plant Based Chicken Pie
 added new banners for chicken enemies
 added two new buffs:
 Chicken Poison
 Chicken Venom
 added new accessory: Flock Emblem
-added new enemy: chickemonium
+added new enemy: Chickemonium
+
+you can now eat Plant Based Nuggets
 
 New sprite for Magic Chicken and its projectile
 
@@ -27,7 +29,7 @@ Fixed an issue where projectiles would be effected by chicken effects even when 
 if you somehow have multiple chicken buffs, they do not stack and only the strongest one out of the buffs you have will be activated
 chicken wings grant fall damage imunity regardless of if you are holding a chicken weapon or not
 changed the projectile for the Red Junglefowl (sorry for the vaugeposting)
-
+American Chicken now consumes ammo and uses the projectile
 fixed the sell prices of many items
 
 added description to chicken jockey mount buff

@@ -9,7 +9,7 @@ using Chickensubclass.Content.Buffs;
 
 namespace Chickensubclass.Content.Items
 {
-	public class SpicyChickenPie : ModItem
+	public class PlantBasedChickenPie : ModItem
 	{
 		public override void SetStaticDefaults() {
 
@@ -21,12 +21,12 @@ namespace Chickensubclass.Content.Items
 			Item.width = 34;
 			Item.height = 22;
 			Item.maxStack = Item.CommonMaxStack;
-			Item.value = Item.sellPrice(gold: 1, silver: 40);
+			Item.value = Item.sellPrice(gold: 1, silver: 80);
 			Item.rare = ItemRarityID.Green;
 			Item.useTime = 17;
             Item.useAnimation = 17;
             Item.useStyle = ItemUseStyleID.EatFood;
-			Item.buffType = ModContent.BuffType<ChickenRage>();
+			Item.buffType = ModContent.BuffType<ChickenVenom>();
             Item.buffTime = 36000;
 			Item.consumable = true;
 			Item.useTurn = true;
@@ -37,18 +37,18 @@ namespace Chickensubclass.Content.Items
         {
             player.ClearBuff(ModContent.BuffType<ChickenInstinct>());
 			player.ClearBuff(ModContent.BuffType<ChickenAnger>());
+			player.ClearBuff(ModContent.BuffType<ChickenRage>());
 			player.ClearBuff(ModContent.BuffType<ChickenPower>());
 			player.ClearBuff(ModContent.BuffType<ChickenPoison>());
-			player.ClearBuff(ModContent.BuffType<ChickenVenom>());
         }
 
 
 		public override void AddRecipes()
 		{
-			Recipe SpicyChickenPieRecipe = CreateRecipe();
-			SpicyChickenPieRecipe.AddIngredient(ModContent.ItemType<Content.Items.SpicyChickenNugget>(), 5);
-			SpicyChickenPieRecipe.AddTile(ModContent.TileType<PieMachineTile>());
-			SpicyChickenPieRecipe.Register();
+			Recipe PlantBasedPieRecipe = CreateRecipe();
+			PlantBasedPieRecipe.AddIngredient(ModContent.ItemType<Content.Items.PlantBasedNugget>(), 5);
+			PlantBasedPieRecipe.AddTile(ModContent.TileType<PieMachineTile>());
+			PlantBasedPieRecipe.Register();
 
 			
 		}

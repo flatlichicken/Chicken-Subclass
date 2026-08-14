@@ -47,7 +47,7 @@ namespace Chickensubclass.Content.NPCs
             NPC.value = 60f;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
-            NPC.knockBackResist = 0f;
+            NPC.knockBackResist = 1f;
             NPC.aiStyle = -1;
             NPC.rarity = 3;
         }
@@ -72,16 +72,19 @@ namespace Chickensubclass.Content.NPCs
             return 0f;
         }
 
-        public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            string[] deathMessages = [
-                $"{target.name} was consumed by C-367 after being spotted. As usual, no remains.",
-                $"{target.name} was spotted by C-367 and hunted down."   
-            ];
+            if (info.Damage >= target.statLife)
+            {
+                string[] deathMessages = [
+                    $"{target.name} was consumed by C-367 after being spotted. As usual, no remains.",
+                    $"{target.name} was spotted by C-367 and hunted down."
+                ];
 
-            string chosenMessage = deathMessages[Main.rand.Next(deathMessages.Length)];
+                string chosenMessage = deathMessages[Main.rand.Next(deathMessages.Length)];
 
-            target.HurtPlayerDeathReason = Terraria.DataStructures.PlayerDeathReason.ByCustomReason(chosenMessage);
+                info.DamageSource = Terraria.DataStructures.PlayerDeathReason.ByCustomReason(Terraria.Localization.NetworkText.FromLiteral(chosenMessage));
+            }
         }
 
         public override void FindFrame(int frameHeight) {
@@ -182,8 +185,8 @@ namespace Chickensubclass.Content.NPCs
                 
                 attackTime--;
                 if (attackTime <= 0) speed = -12f;                
-                else if (isHovered && speed > 5f) speed -= 0.05f;
-                else if (!isHovered && speed < 10f) speed += 0.1f;
+                else if (isHovered) speed -= 0.05f;
+                else if (!isHovered && speed < 10f) speed += 0.15f;
 
 
                 NPC.velocity = dashDirection * speed;

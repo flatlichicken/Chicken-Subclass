@@ -38,6 +38,8 @@ namespace Chickensubclass.Content.Items
             player.ClearBuff(ModContent.BuffType<ChickenInstinct>());
 			player.ClearBuff(ModContent.BuffType<ChickenAnger>());
 			player.ClearBuff(ModContent.BuffType<ChickenRage>());
+			player.ClearBuff(ModContent.BuffType<ChickenPoison>());
+			player.ClearBuff(ModContent.BuffType<ChickenVenom>());
         }
 
 

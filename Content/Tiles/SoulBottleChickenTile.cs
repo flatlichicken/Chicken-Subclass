@@ -8,7 +8,7 @@ using Terraria.ObjectData;
 
 namespace Chickensubclass.Content.Tiles
 {
-    public class SoulBottleChickenTile : ModTile
+    public class SoulBottleChickenTile : ModBannerTile
     {
         public override void SetStaticDefaults() {
             Main.tileFrameImportant[Type] = true;
