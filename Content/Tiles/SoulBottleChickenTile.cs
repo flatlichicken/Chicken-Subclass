@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
+
 namespace Chickensubclass.Content.Tiles
 {
     public class SoulBottleChickenTile : ModBannerTile
@@ -21,8 +22,13 @@ namespace Chickensubclass.Content.Tiles
 
             TileID.Sets.MultiTileSway[Type] = true;
             
+            
 
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
+            TileObjectData.newTile.Height = 1;
+            TileObjectData.newTile.CoordinateHeights = new int[] { 36 };
+            TileObjectData.newTile.StyleHorizontal = true;
+            
             TileObjectData.newTile.AnchorTop = new AnchorData(
                 AnchorType.SolidTile | AnchorType.Platform | AnchorType.PlanterBox, 
                 TileObjectData.newTile.Width, 
