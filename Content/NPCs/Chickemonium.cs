@@ -58,10 +58,10 @@ namespace Chickensubclass.Content.NPCs
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-            if (!NPC.downedBoss3 || spawnInfo.PlayerInTown) {
+            if (!NPC.downedBoss3 || spawnInfo.Water || spawnInfo.PlayerSafe || spawnInfo.PlayerInTown || spawnInfo.Invasion) {
                 return 0f;
             }
-        
+
             if (spawnInfo.Player.ZoneRockLayerHeight) {
                 float depthProgress = (spawnInfo.SpawnTileY - (float)Main.rockLayer) / (float)(Main.maxTilesY - Main.rockLayer);
                 depthProgress = MathHelper.Clamp(depthProgress, 0.1f, 1f);
