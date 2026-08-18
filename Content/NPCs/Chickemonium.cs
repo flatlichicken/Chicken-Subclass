@@ -58,7 +58,7 @@ namespace Chickensubclass.Content.NPCs
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-            if (!NPC.downedBoss3 || spawnInfo.Water || spawnInfo.PlayerSafe || spawnInfo.PlayerInTown || spawnInfo.Invasion) {
+            if (!NPC.downedBoss3 || spawnInfo.Water || spawnInfo.PlayerSafe || spawnInfo.PlayerInTown || spawnInfo.Invasion || spawnInfo.Lihzahrd) {
                 return 0f;
             }
 
