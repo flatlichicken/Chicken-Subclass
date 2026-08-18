@@ -22,6 +22,15 @@ namespace Chickensubclass.Content.Items
             Item.createTile = ModContent.TileType<Tiles.SoulBottleChickenTile>();
             Item.placeStyle = 0;
         }
+
+        public override void AddRecipes()
+		{
+			Recipe SoulBottleChickenRecipe = CreateRecipe();
+            SoulBottleChickenRecipe.AddIngredient(ItemID.Bottle, 1);
+			SoulBottleChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenSoul>(), 1);
+			SoulBottleChickenRecipe.Register();
+
+		}
     }
 }
 

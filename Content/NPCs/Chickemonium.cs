@@ -41,7 +41,7 @@ namespace Chickensubclass.Content.NPCs
             NPC.height = 100;
             NPC.damage = 42;
             NPC.defense = 8;
-            NPC.lifeMax = 1500;
+            NPC.lifeMax = 1000;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.value = 60f;

@@ -24,7 +24,8 @@ namespace Chickensubclass.Content
                 }
 
                 if (name == "Cockatrice" || 
-                    name == "Basan")
+                    name == "Basan" ||
+                    name == "FowlEmperor")
                 {
                     npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RawChicken>(), 1, 5, 10));
                     npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenFeather>(), 1, 5, 10));

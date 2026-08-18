@@ -493,8 +493,8 @@ Items: {
 	}
 
 	SoulBottleChicken: {
-		Tooltip: This item is unused/incomplete
-		DisplayName: Soul Bottle Chicken
+		Tooltip: ""
+		DisplayName: Chicken Soul in a Bottle 
 	}
 
 	PlantBasedChickenPie: {
