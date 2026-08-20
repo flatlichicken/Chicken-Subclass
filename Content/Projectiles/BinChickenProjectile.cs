@@ -24,6 +24,8 @@ namespace Chickensubclass.Content.Projectiles
 			Projectile.CloneDefaults(ProjectileID.Spear); 
 			Projectile.penetrate = -1; 
 			Projectile.hide = false;
+			Projectile.usesLocalNPCImmunity = true;
+            Projectile.localNPCHitCooldown = 12; 
 			
 		}
 
