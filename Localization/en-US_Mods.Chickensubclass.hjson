@@ -494,7 +494,7 @@ Items: {
 
 	SoulBottleChicken: {
 		Tooltip: ""
-		DisplayName: Chicken Soul in a Bottle 
+		DisplayName: Chicken Soul in a Bottle
 	}
 
 	PlantBasedChickenPie: {
@@ -600,5 +600,12 @@ Buffs: {
 	ChickenPoison: {
 		Description: 5% increased melee damage and can poison enemies when holding a chicken weapon
 		DisplayName: Chicken Poison
+	}
+}
+
+BossChecklist: {
+	GreatChicken: {
+		EntryName: Great Chicken
+		SpawnInfo: Use a [i:Chickensubclass/SusEgg]
 	}
 }

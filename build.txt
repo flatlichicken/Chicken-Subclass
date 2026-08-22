@@ -1,3 +1,4 @@
+name = Chickensubclass
 displayName = Chicken Subclass
 author = Flatlichicken
 version = 1.4.1
