@@ -34,6 +34,7 @@ if you somehow have multiple chicken buffs, they do not stack and only the stron
 chicken wings grant fall damage imunity regardless of if you are holding a chicken weapon or not
 changed the projectile for the Red Junglefowl (sorry for the vaugeposting)
 American Chicken now consumes ammo and uses the projectile
+Bin Chicken Has less imunity frames
 fixed the sell prices of many items
 
 added description to chicken jockey mount buff
