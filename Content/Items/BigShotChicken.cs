@@ -46,7 +46,7 @@ namespace Chickensubclass.Content.Items
 		{
 			if (player.altFunctionUse == 2)
 			{
-				Item.shoot = ModContent.ProjectileType<BigShotChickenProjectile>();
+				Item.shoot = ModContent.ProjectileType<BigShotChickenProjectileCharge>();
 				Item.shootSpeed = 0f;
 			}
 			else

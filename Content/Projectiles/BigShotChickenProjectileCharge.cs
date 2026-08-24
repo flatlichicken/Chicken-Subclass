@@ -45,7 +45,7 @@ namespace Chickensubclass.Content.Projectiles
 
 			--ammoConDelay;
 			if (ammoItem != null && ammoConDelay <= 0 && ammoCount < 10) {
-				AmmoDamage = ammoItem.damage;
+				int AmmoDamage = ammoItem.damage;
 				player.ConsumeItem(ammoItem.type);
 
 				++ammoCount;

@@ -506,6 +506,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Triple Cluck
 	}
+
+	BigShotChicken: {
+		Tooltip: ""
+		DisplayName: Big Shot Chicken
+	}
 }
 
 Projectiles: {
@@ -546,6 +551,7 @@ Projectiles: {
 	FeatherCrossIndecator.DisplayName: Feather Cross Indecator
 	FeatherAimIndecator.DisplayName: Feather Aim Indecator
 	TripleCluckProjectile.DisplayName: Triple Cluck Projectile
+	BigShotChickenProjectileCharge.DisplayName: Big Shot Chicken Projectile Charge
 }
 
 NPCs: {

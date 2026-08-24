@@ -38,7 +38,7 @@ namespace Chickensubclass.Content.Projectiles
 		public override void AI()
         {
             Player player = Main.player[Projectile.owner];
-			int Duration == 1;
+			int Duration = 1;
 
 			Projectile.position = player.position;
 			Projectile.rotation += MathHelper.ToRadians(360f / Projectile.timeLeft) * player.direction;
