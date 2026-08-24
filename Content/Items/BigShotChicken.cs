@@ -12,8 +12,8 @@ namespace Chickensubclass.Content.Items
 {
 	// This is a basic item template.
 	// Please see tModLoader's ExampleMod for every other example:
-	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
-	public class FlyingChicken : ModItem
+	// https://github.com
+	public class BigShotChicken : ModItem
 	{
 		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.Chickensubclass.hjson' file.
 		public override void SetDefaults()
@@ -23,7 +23,7 @@ namespace Chickensubclass.Content.Items
 			Item.width = 51;
 			Item.height = 48;
 			Item.useTime = 16;
-			Item.useAnimation = 16;
+			Item.useAnimation = 16 ;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 2;
 			Item.value = Item.sellPrice(0, 0, 85, 0);
@@ -36,27 +36,31 @@ namespace Chickensubclass.Content.Items
 
 
 		}
+
+		public override bool AltFunctionUse(Player player)
+		{
+			return true;
+		}
+
+		public override bool CanUseItem(Player player)
+		{
+			if (player.altFunctionUse == 2)
+			{
+				Item.shoot = ModContent.ProjectileType<BigShotChickenProjectile>();
+				Item.shootSpeed = 0f;
+			}
+			else
+			{
+				Item.shoot = ModContent.ProjectileType<ChickenFeatherProjectile>();
+				Item.shootSpeed = 4f;
+			}
+			return base.CanUseItem(player);
+		}
 		
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-{
-    // Define the number of projectiles to shoot, e.g., 5 shots
-    float numberProjectiles = 1;
-
-    // Define the spread angle in degrees
-    float spread = 5;
-
-    for (int i = 0; i < numberProjectiles; i++)
-    {
-        // Randomize the velocity of each projectile
-        Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
-
-        // Spawn the projectile
-        Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
-    }
-
-    // Return false to stop the default projectile from being spawned
-    return false;
-}
+		{
+			return true;
+		}
 
 		public override void AddRecipes()
 		{
@@ -72,4 +76,3 @@ namespace Chickensubclass.Content.Items
 		
 	}
 }
-

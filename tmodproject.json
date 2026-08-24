@@ -31,7 +31,7 @@
     "Content\\NPCs\\Chickemonium.cs": "Chickensubclass.Content.NPCs",
     "Content\\MoREnemyDropChanges.cs": "Chickensubclass.Content",
     "Content\\BossCheckList.cs": "Chickensubclass.Content",
-    "Content\\Projectiles\\TripleCluckProjectile.cs": "Chickensubclass.Content.Projectiles",
-    "Content\\Items\\TripleCluck.cs": "Chickensubclass.Content.Items"
+    "Content\\Projectiles\\BigShotChickenProjectileCharge.cs": "Chickensubclass.Content.Projectiles",
+    "Content\\Items\\BigShotChicken.cs": "Chickensubclass.Content.Items"
   }
 }
