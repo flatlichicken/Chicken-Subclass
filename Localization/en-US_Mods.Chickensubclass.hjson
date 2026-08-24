@@ -501,6 +501,11 @@ Items: {
 		DisplayName: Plant Based Chicken Pie
 		Tooltip: Grants Chicken Venom
 	}
+
+	TripleCluck: {
+		Tooltip: ""
+		DisplayName: Triple Cluck
+	}
 }
 
 Projectiles: {
@@ -540,6 +545,7 @@ Projectiles: {
 	GreatChickenFeatherProjectile.DisplayName: Great Chicken Feather
 	FeatherCrossIndecator.DisplayName: Feather Cross Indecator
 	FeatherAimIndecator.DisplayName: Feather Aim Indecator
+	TripleCluckProjectile.DisplayName: Triple Cluck Projectile
 }
 
 NPCs: {

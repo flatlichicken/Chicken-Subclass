@@ -13,9 +13,10 @@ namespace Chickensubclass.Content.Items
 	// This is a basic item template.
 	// Please see tModLoader's ExampleMod for every other example:
 	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
-	public class FlyingChicken : ModItem
+	public class TripleCluck : ModItem
 	{
-		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.Chickensubclass.hjson' file.
+        // The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.Chickensubclass.hjson' file.
+        
 		public override void SetDefaults()
 		{
 			Item.damage = 12;
@@ -31,32 +32,19 @@ namespace Chickensubclass.Content.Items
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
 			Item.useTurn = false;
-			Item.shoot = ModContent.ProjectileType<ChickenFeatherProjectile>();
+			Item.shoot = ModContent.ProjectileType<TripleCluckProjectile>();
 			Item.shootSpeed = 4f;
 
 
 		}
-		
-		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-{
-    // Define the number of projectiles to shoot, e.g., 5 shots
-    float numberProjectiles = 1;
 
-    // Define the spread angle in degrees
-    float spread = 5;
-
-    for (int i = 0; i < numberProjectiles; i++)
-    {
-        // Randomize the velocity of each projectile
-        Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
-
-        // Spawn the projectile
-        Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
-    }
-
-    // Return false to stop the default projectile from being spawned
-    return false;
-}
+		public override void HoldItem(Player player)
+		{
+			if (player.ownedProjectileCounts[Item.shoot] > 0)
+			{
+				player.heldProj = -1;
+			}
+		}
 
 		public override void AddRecipes()
 		{

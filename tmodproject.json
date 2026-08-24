@@ -2,7 +2,6 @@
   "rootNamespace": "Chickensubclass",
   "fileMap": {
     "Content\\Items\\ReaperChicken.cs": "Chickensubclass.Content.Items",
-    "Content\\Projectiles\\ChickenFeatherProjectile copy.cs": "Chickensubclass.Content.Projectiles",
     "Content\\Projectiles\\ReaperChickenFeatherProjectile.cs": "Chickensubclass.Content.Projectiles",
     "Content\\Projectiles\\NuggetChickenProjectile.cs": "Chickensubclass.Content.Projectiles",
     "Content\\Items\\NuggetChicken.cs": "Chickensubclass.Content.Items",
@@ -31,6 +30,8 @@
     "Content\\Items\\SoulBottleChicken.cs": "Chickensubclass.Content.Items",
     "Content\\NPCs\\Chickemonium.cs": "Chickensubclass.Content.NPCs",
     "Content\\MoREnemyDropChanges.cs": "Chickensubclass.Content",
-    "Content\\BossCheckList.cs": "Chickensubclass.Content"
+    "Content\\BossCheckList.cs": "Chickensubclass.Content",
+    "Content\\Projectiles\\TripleCluckProjectile.cs": "Chickensubclass.Content.Projectiles",
+    "Content\\Items\\TripleCluck.cs": "Chickensubclass.Content.Items"
   }
 }
