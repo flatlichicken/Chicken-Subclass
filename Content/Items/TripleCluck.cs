@@ -19,15 +19,15 @@ namespace Chickensubclass.Content.Items
         
 		public override void SetDefaults()
 		{
-			Item.damage = 12;
+			Item.damage = 14;
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 51;
 			Item.height = 48;
-			Item.useTime = 16;
-			Item.useAnimation = 16 *2;
+			Item.useTime = 60;
+			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 2;
-			Item.value = Item.sellPrice(0, 0, 85, 0);
+			Item.value = Item.sellPrice(0, 0, 35, 0);
 			Item.rare = ItemRarityID.Blue;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
@@ -48,13 +48,11 @@ namespace Chickensubclass.Content.Items
 
 		public override void AddRecipes()
 		{
-			Recipe FlyingChickenRecipe = CreateRecipe();
-			FlyingChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenFeather>(), 25);
-			FlyingChickenRecipe.AddIngredient(ItemID.Feather, 10);
-			FlyingChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 8);
-			FlyingChickenRecipe.AddRecipeGroup("GoldBar", 10);
-			FlyingChickenRecipe.AddTile(TileID.Anvils);
-			FlyingChickenRecipe.Register();
+			Recipe TripleCluckRecipe = CreateRecipe();
+			TripleCluckRecipe.AddIngredient(ItemID.Wood, 100);
+			TripleCluckRecipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 15);
+			TripleCluckRecipe.AddTile(TileID.WorkBenches);
+			TripleCluckRecipe.Register();
 
 		}
 		

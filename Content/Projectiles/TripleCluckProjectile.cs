@@ -9,11 +9,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Chickensubclass.Content.Projectiles
-{
+{	
 	public class TripleCluckProjectile : ModProjectile
 	{
 		public override void SetStaticDefaults() {
-			//ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5; // The length of old position to be recorded
+			ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5; // The length of old position to be recorded
 			ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
 			ProjectileID.Sets.HeldProjDoesNotUsePlayerGfxOffY[Type] = false;
 		}
@@ -26,22 +26,22 @@ namespace Chickensubclass.Content.Projectiles
 			Projectile.hostile = false; // Can the projectile deal damage to the player?
 			Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
 			Projectile.penetrate = 9999; // How many monsters the projectile can penetrate. (OnTileCollide below also decrements penetrate for bounces as well)
-			Projectile.timeLeft = 300; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+			Projectile.timeLeft = 40; // The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
 			Projectile.alpha = 0; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
 			Projectile.light = 0f; // How much light emit around the projectile
 			Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
 			Projectile.tileCollide = true; // Can the projectile collide with tiles?
 			Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
+			
 
 		}
 
 		public override void AI()
         {
             Player player = Main.player[Projectile.owner];
-			int Duration = 1;
 
-			Projectile.position = player.position;
-			Projectile.rotation += MathHelper.ToRadians(360f / Projectile.timeLeft) * player.direction;
+			Projectile.Center = player.Center + Projectile.rotation.ToRotationVector2() * 200f;
+			Projectile.rotation += MathHelper.ToRadians(360f / 40) * player.direction;
         }
 
 
@@ -53,8 +53,6 @@ namespace Chickensubclass.Content.Projectiles
 				Projectile.Kill();
 			}
 			else {
-				Collision.HitTiles(Projectile.position, Projectile.velocity, Projectile.width, Projectile.height);
-				SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 			}
 
 			return false;
@@ -77,8 +75,22 @@ namespace Chickensubclass.Content.Projectiles
 
 		public override void OnKill(int timeLeft) {
 			// This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-			Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-			SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
+			
+		}
+
+		public override bool PreDraw(ref Color lightColor)
+		{
+		    Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
+		    Vector2 origin = texture.Size() / 2f;
+
+		    for (int index = Projectile.oldPos.Length - 1; index >= 0; index--)
+		    {
+		        Vector2 drawPos = Projectile.oldPos[index] + Projectile.Size / 2f - Main.screenPosition;
+		        Color color = Projectile.GetAlpha(lightColor) * ((float)(Projectile.oldPos.Length - index) / Projectile.oldPos.Length);
+		        Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation + MathHelper.ToRadians(90f), origin, Projectile.scale, SpriteEffects.None, 0);
+		    }
+			
+		    return false;
 		}
 	}
 }
