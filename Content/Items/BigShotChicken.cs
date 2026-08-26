@@ -33,6 +33,7 @@ namespace Chickensubclass.Content.Items
 			Item.useTurn = false;
 			Item.shoot = ModContent.ProjectileType<ChickenFeatherProjectile>();
 			Item.shootSpeed = 4f;
+			Item.channel = true;
 
 
 		}
