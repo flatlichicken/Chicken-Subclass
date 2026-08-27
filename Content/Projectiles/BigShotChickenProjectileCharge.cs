@@ -23,7 +23,8 @@ namespace Chickensubclass.Content.Projectiles
 		public override void SetDefaults() {
 			Projectile.width = 16; // The width of projectile hitbox
 			Projectile.height = 16; // The height of projectile hitbox
-			Projectile.aiStyle = 20; // The ai style of the projectile, please reference the source code of Terraria
+			
+			Projectile.aiStyle = -1; // The ai style of the projectile, please reference the source code of Terraria
 			Projectile.friendly = false; // Can the projectile deal damage to enemies?
 			Projectile.hostile = false; // Can the projectile deal damage to the player?
 			Projectile.DamageType = DamageClass.Melee; // Is the projectile shoot by a ranged weapon?
@@ -43,10 +44,20 @@ namespace Chickensubclass.Content.Projectiles
 			Item weapon = player.HeldItem;
 			Item ammoItem = player.ChooseAmmo(weapon);
 
+			
+			Vector2 targetDir = Main.MouseWorld - Projectile.Center;
+			targetDir.Normalize();
+
+			if(targetDir.X < 0) Projectile.spriteDirection = -1;
+			else Projectile.spriteDirection = 1; 
+
+			Projectile.rotation = targetDir.ToRotation();
+			Projectile.position = player.position;
+			
 			--ammoConDelay;
 			if (ammoItem != null && ammoConDelay <= 0 && ammoCount < 10) {
 				int AmmoDamage = ammoItem.damage;
-				player.ConsumeItem(ammoItem.type);
+				player.PickAmmo(weapon, out _, out _, out _, out _, out _, false);
 
 				++ammoCount;
 				ammoConDelay = 5;
@@ -56,6 +67,7 @@ namespace Chickensubclass.Content.Projectiles
 
 
 		public override bool PreDraw(ref Color lightColor) {
+			
 			return true;
 		}
 
