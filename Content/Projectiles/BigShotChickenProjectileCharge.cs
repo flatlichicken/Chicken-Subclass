@@ -21,8 +21,8 @@ namespace Chickensubclass.Content.Projectiles
 		}
 
 		public override void SetDefaults() {
-			Projectile.width = 16; // The width of projectile hitbox
-			Projectile.height = 16; // The height of projectile hitbox
+			Projectile.width = 60; // The width of projectile hitbox
+			Projectile.height = 64; // The height of projectile hitbox
 			
 			Projectile.aiStyle = -1; // The ai style of the projectile, please reference the source code of Terraria
 			Projectile.friendly = false; // Can the projectile deal damage to enemies?
@@ -44,16 +44,29 @@ namespace Chickensubclass.Content.Projectiles
 			Item weapon = player.HeldItem;
 			Item ammoItem = player.ChooseAmmo(weapon);
 
-			
+			// movement logic
 			Vector2 targetDir = Main.MouseWorld - Projectile.Center;
 			targetDir.Normalize();
 
 			if(targetDir.X < 0) Projectile.spriteDirection = -1;
 			else Projectile.spriteDirection = 1; 
-
-			Projectile.rotation = targetDir.ToRotation();
-			Projectile.position = player.position;
 			
+			Projectile.rotation = targetDir.ToRotation();
+			Projectile.Center = player.Center + (targetDir * 50f);
+			//
+
+			// arm following logig
+			if (Projectile.rotation > MathHelper.ToRadians(-225f) && Projectile.rotation < MathHelper.ToRadians(225f)) player.bodyFrame.Y = 56 * 3;
+			else if (Projectile.rotation >= MathHelper.ToRadians(225f) && Projectile.rotation <= MathHelper.ToRadians(315f)) player.bodyFrame.Y = 56 * 4;
+			else if (Projectile.rotation <= MathHelper.ToRadians(-225f) && Projectile.rotation >= MathHelper.ToRadians(-315f)) player.bodyFrame.Y = 56 * 2;
+		
+			if (Projectile.rotation > MathHelper.ToRadians(-45f) && Projectile.rotation < MathHelper.ToRadians(45f)) player.bodyFrame.Y = 56 * 3;
+			else if (Projectile.rotation >= MathHelper.ToRadians(45f) && Projectile.rotation <= MathHelper.ToRadians(135f)) player.bodyFrame.Y = 56 * 4;
+			else if (Projectile.rotation <= MathHelper.ToRadians(-45f) && Projectile.rotation >= MathHelper.ToRadians(-135f)) player.bodyFrame.Y = 56 * 2;
+			player.direction = Projectile.spriteDirection;
+			//
+			
+			// ammo consumption logic (broken for some reason)
 			--ammoConDelay;
 			if (ammoItem != null && ammoConDelay <= 0 && ammoCount < 10) {
 				int AmmoDamage = ammoItem.damage;
@@ -62,13 +75,20 @@ namespace Chickensubclass.Content.Projectiles
 				++ammoCount;
 				ammoConDelay = 5;
 			}
-
+			//
 		}
 
 
 		public override bool PreDraw(ref Color lightColor) {
-			
-			return true;
+			Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
+
+			Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
+			Vector2 drawPos = Projectile.position - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
+			Color color = Projectile.GetAlpha(lightColor);
+			SpriteEffects spriteEffects = Projectile.spriteDirection == -1 ? SpriteEffects.FlipVertically : SpriteEffects.None;
+
+			Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, spriteEffects, 0);
+			return false;
 		}
 
 		public override void OnKill(int timeLeft) {
