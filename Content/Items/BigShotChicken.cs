@@ -31,12 +31,17 @@ namespace Chickensubclass.Content.Items
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.useTurn = false;
-            Item.shoot = ModContent.ProjectileType<ChickenFeatherProjectile>();
+            Item.shoot = ModContent.ProjectileType<AmericanChickenProjectile>();
             Item.shootSpeed = 4f;
             Item.channel = true;
-
+			Item.UseSound = SoundID.Item11;
+            Item.useAmmo = AmmoID.Bullet;
 
         }
+
+		public override bool CanUseItem(Player player) {
+          return player.ownedProjectileCounts[ModContent.ProjectileType<BigShotChickenProjectileCharge>()] <= 0;
+		}
 
         public override bool AltFunctionUse(Player player)
         {

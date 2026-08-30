@@ -55,7 +55,7 @@ namespace Chickensubclass.Content.Projectiles
 			Projectile.Center = player.Center + (targetDir * 50f);
 			//
 
-			// arm following logig
+			// arm following logic
 			if (Projectile.rotation > MathHelper.ToRadians(-225f) && Projectile.rotation < MathHelper.ToRadians(225f)) player.bodyFrame.Y = 56 * 3;
 			else if (Projectile.rotation >= MathHelper.ToRadians(225f) && Projectile.rotation <= MathHelper.ToRadians(315f)) player.bodyFrame.Y = 56 * 4;
 			else if (Projectile.rotation <= MathHelper.ToRadians(-225f) && Projectile.rotation >= MathHelper.ToRadians(-315f)) player.bodyFrame.Y = 56 * 2;
@@ -70,24 +70,44 @@ namespace Chickensubclass.Content.Projectiles
 			--ammoConDelay;
 			if (ammoItem != null && ammoConDelay <= 0 && ammoCount < 10) {
 				int AmmoDamage = ammoItem.damage;
-				player.PickAmmo(weapon, out _, out _, out _, out _, out _, false);
+				player.PickAmmo(weapon, out _, out _, out _, out _, out _, true);
 
 				++ammoCount;
 				ammoConDelay = 5;
 			}
 			//
+
+			// dust logic (copy pasted logic for zenith chicken spawning projectiles)
+			float dustSpawnDistance = 50f;
+			Vector2 randomDirection = Main.rand.NextFloat((float)Math.PI * 2f).ToRotationVector2();
+			Vector2 dustSpawnPosition = Projectile.position + (randomDirection * dustSpawnDistance);
+
+			Vector2 newVelocity = Projectile.position - dustSpawnPosition;
+			newVelocity.Normalize();
+			newVelocity *= Item.shootSpeed;
+
+			Dust.NewDust(dustSpawnPosition, 0, 0, DustID.YellowTorch);
+			//
+
+			if (!Main.mouseRight) Projectile.timeLeft = 0; // delete the projectile if the right mouse button isnt being held down
 		}
 
 
 		public override bool PreDraw(ref Color lightColor) {
+			// color becomes more yellow over time
+			int chargeGlow = (int)((300 - Projectile.timeLeft) * 0.85f);
+			//
+
+			// main projectile rendering logic
 			Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
 
 			Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
 			Vector2 drawPos = Projectile.position - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
 			Color color = Projectile.GetAlpha(lightColor);
 			SpriteEffects spriteEffects = Projectile.spriteDirection == -1 ? SpriteEffects.FlipVertically : SpriteEffects.None;
+			//
 
-			Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, spriteEffects, 0);
+			Main.EntitySpriteDraw(texture, drawPos, null, color + new Color(chargeGlow, chargeGlow, 0), Projectile.rotation, drawOrigin, Projectile.scale, spriteEffects, 0);
 			return false;
 		}
 
