@@ -33,7 +33,7 @@ namespace Chickensubclass.Content.Projectiles
 			Projectile.alpha = 0; // The transparency of the projectile, 255 for completely transparent. (aiStyle 1 quickly fades the projectile in) Make sure to delete this if you aren't using an aiStyle that fades in. You'll wonder why your projectile is invisible.
 			Projectile.light = 0f; // How much light emit around the projectile
 			Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
-			Projectile.tileCollide = true; // Can the projectile collide with tiles?
+			Projectile.tileCollide = false; // Can the projectile collide with tiles?
 			Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
 
 			
@@ -80,13 +80,21 @@ namespace Chickensubclass.Content.Projectiles
 			// dust logic (copy pasted logic for zenith chicken spawning projectiles)
 			float dustSpawnDistance = 50f;
 			Vector2 randomDirection = Main.rand.NextFloat((float)Math.PI * 2f).ToRotationVector2();
-			Vector2 dustSpawnPosition = Projectile.position + (randomDirection * dustSpawnDistance);
+			Vector2 dustSpawnPosition = Projectile.Center + (randomDirection * dustSpawnDistance);
 
-			Vector2 newVelocity = Projectile.position - dustSpawnPosition;
+			Vector2 newVelocity = Projectile.Center - dustSpawnPosition;
 			newVelocity.Normalize();
-			newVelocity *= Item.shootSpeed;
+			newVelocity *= 5;
 
-			Dust.NewDust(dustSpawnPosition, 0, 0, DustID.YellowTorch);
+			Dust dust = Dust.NewDustPerfect(dustSpawnPosition, DustID.YellowTorch, Projectile.velocity + newVelocity);
+			dust.noGravity = true;
+			dust.customData = Projectile.whoAmI;
+
+			foreach (Dust activeDust in Main.dust) {
+				if (activeDust.active && activeDust.type == DustID.YellowTorch && activeDust.customData is int projectileId && projectileId == Projectile.whoAmI) {
+					activeDust.position += Projectile.position - Projectile.oldPosition;
+				}
+			}
 			//
 
 			if (!Main.mouseRight) Projectile.timeLeft = 0; // delete the projectile if the right mouse button isnt being held down
@@ -103,11 +111,12 @@ namespace Chickensubclass.Content.Projectiles
 
 			Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
 			Vector2 drawPos = Projectile.position - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-			Color color = Projectile.GetAlpha(lightColor);
+			Color color = new Color(lightColor.R, lightColor.G, Math.Max(0, lightColor.B - chargeGlow), lightColor.A);
+			color = Projectile.GetAlpha(color);
 			SpriteEffects spriteEffects = Projectile.spriteDirection == -1 ? SpriteEffects.FlipVertically : SpriteEffects.None;
 			//
 
-			Main.EntitySpriteDraw(texture, drawPos, null, color + new Color(chargeGlow, chargeGlow, 0), Projectile.rotation, drawOrigin, Projectile.scale, spriteEffects, 0);
+			Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, spriteEffects, 0);
 			return false;
 		}
 
