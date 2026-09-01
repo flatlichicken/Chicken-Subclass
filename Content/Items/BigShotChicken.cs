@@ -33,7 +33,7 @@ namespace Chickensubclass.Content.Items
             Item.useTurn = false;
             Item.shoot = ModContent.ProjectileType<AmericanChickenProjectile>();
             Item.shootSpeed = 12f;
-            Item.channel = true; // not an issue
+            Item.channel = true;
 			Item.UseSound = SoundID.Item11;
             Item.useAmmo = AmmoID.Bullet;
 
@@ -46,7 +46,7 @@ namespace Chickensubclass.Content.Items
 
         public override bool CanUseItem(Player player)
         {
-            return player.ownedProjectileCounts[ModContent.ProjectileType<BigShotChickenProjectileCharge>()] <= 0; // not an issue
+            return player.ownedProjectileCounts[ModContent.ProjectileType<BigShotChickenProjectileCharge>()] <= 0;
         }
         
         public override bool CanConsumeAmmo(Item ammo, Player player)
@@ -55,7 +55,7 @@ namespace Chickensubclass.Content.Items
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            if (player.altFunctionUse == 2) // not an issue
+            if (player.altFunctionUse == 2)
             {
                 type = ModContent.ProjectileType<BigShotChickenProjectileCharge>();
                 velocity = Vector2.Zero;

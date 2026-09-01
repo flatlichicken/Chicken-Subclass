@@ -552,6 +552,7 @@ Projectiles: {
 	FeatherAimIndecator.DisplayName: Feather Aim Indecator
 	TripleCluckProjectile.DisplayName: Triple Cluck Projectile
 	BigShotChickenProjectileCharge.DisplayName: Big Shot Chicken Projectile Charge
+	BigShotProjectile.DisplayName: Big Shot Projectile
 }
 
 NPCs: {
