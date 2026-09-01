@@ -508,7 +508,7 @@ Items: {
 	}
 
 	BigShotChicken: {
-		Tooltip: ""
+		Tooltip: Needs ammo
 		DisplayName: Big Shot Chicken
 	}
 }

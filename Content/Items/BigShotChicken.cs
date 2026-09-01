@@ -22,8 +22,8 @@ namespace Chickensubclass.Content.Items
             Item.DamageType = DamageClass.Melee;
             Item.width = 51;
             Item.height = 48;
-            Item.useTime = 16;
-            Item.useAnimation = 16 ;
+            Item.useTime = 14;
+            Item.useAnimation = 14;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2;
             Item.value = Item.sellPrice(0, 0, 85, 0);
@@ -32,8 +32,8 @@ namespace Chickensubclass.Content.Items
             Item.autoReuse = true;
             Item.useTurn = false;
             Item.shoot = ModContent.ProjectileType<AmericanChickenProjectile>();
-            Item.shootSpeed = 4f;
-            Item.channel = true;
+            Item.shootSpeed = 12f;
+            Item.channel = true; // not an issue
 			Item.UseSound = SoundID.Item11;
             Item.useAmmo = AmmoID.Bullet;
 
@@ -46,24 +46,38 @@ namespace Chickensubclass.Content.Items
 
         public override bool CanUseItem(Player player)
         {
-            return player.ownedProjectileCounts[ModContent.ProjectileType<BigShotChickenProjectileCharge>()] <= 0;
+            return player.ownedProjectileCounts[ModContent.ProjectileType<BigShotChickenProjectileCharge>()] <= 0; // not an issue
         }
         
+        public override bool CanConsumeAmmo(Item ammo, Player player)
+        {
+            return Main.rand.NextFloat() >= 0.33f;
+        }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            if (player.altFunctionUse == 2)
+            if (player.altFunctionUse == 2) // not an issue
             {
                 type = ModContent.ProjectileType<BigShotChickenProjectileCharge>();
                 velocity = Vector2.Zero;
 				Item.channel = true;
+                Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
             }
             else
             {
-                type = ModContent.ProjectileType<ChickenFeatherProjectile>();
-                velocity = velocity.SafeNormalize(Vector2.UnitX) * 4f;
-            }
+                Item.shoot = ModContent.ProjectileType<AmericanChickenProjectile>();
+                velocity = velocity.SafeNormalize(Vector2.UnitX) * 12f;
 
-            Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
+                float numberProjectiles = 1;
+                float spread = 5;
+
+                for (int i = 0; i < numberProjectiles; i++)
+                {
+
+                    Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
+                    Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
+                }
+                
+            }
             return false;
         }
 

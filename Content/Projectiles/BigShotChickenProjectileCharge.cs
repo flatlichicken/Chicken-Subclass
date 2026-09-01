@@ -14,6 +14,8 @@ namespace Chickensubclass.Content.Projectiles
 		private int ammoConDelay = 5;
 		private int ammoCount = 0;
 		private int finalDamage = 0;
+		private int chargeTime =0;
+		private int ammoDamage;
 		public override void SetStaticDefaults() {
 			//ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5; // The length of old position to be recorded
 			ProjectileID.Sets.TrailingMode[Projectile.type] = 0; // The recording mode
@@ -36,6 +38,7 @@ namespace Chickensubclass.Content.Projectiles
 			Projectile.tileCollide = false; // Can the projectile collide with tiles?
 			Projectile.extraUpdates = 1; // Set to above 0 if you want the projectile to update multiple time in a frame
 
+			chargeTime = 300;
 			
 		}
 
@@ -68,12 +71,11 @@ namespace Chickensubclass.Content.Projectiles
 			
 			// ammo consumption logic (broken for some reason)
 			--ammoConDelay;
-			if (ammoItem != null && ammoConDelay <= 0 && ammoCount < 10) {
-				int AmmoDamage = ammoItem.damage;
-				player.PickAmmo(weapon, out _, out _, out _, out _, out _, true);
-
+			if (ammoItem != null && ammoConDelay <= 0 && ammoCount < 6) {
+				player.PickAmmo(weapon, out _, out _, out ammoDamage, out _, out _, false);
+				finalDamage += ammoDamage;
 				++ammoCount;
-				ammoConDelay = 5;
+				ammoConDelay = 20;
 			}
 			//
 
@@ -86,9 +88,11 @@ namespace Chickensubclass.Content.Projectiles
 			newVelocity.Normalize();
 			newVelocity *= 5;
 
+			if (chargeTime > 0) {
 			Dust dust = Dust.NewDustPerfect(dustSpawnPosition, DustID.YellowTorch, Projectile.velocity + newVelocity);
 			dust.noGravity = true;
 			dust.customData = Projectile.whoAmI;
+			}
 
 			foreach (Dust activeDust in Main.dust) {
 				if (activeDust.active && activeDust.type == DustID.YellowTorch && activeDust.customData is int projectileId && projectileId == Projectile.whoAmI) {
@@ -96,14 +100,18 @@ namespace Chickensubclass.Content.Projectiles
 				}
 			}
 			//
-
-			if (!Main.mouseRight) Projectile.timeLeft = 0; // delete the projectile if the right mouse button isnt being held down
+			
+			if (Projectile.owner == Main.myPlayer && !Main.mouseRight) Projectile.Kill(); // delete the projectile if the right mouse button isnt being held down
+			Projectile.timeLeft = 2;
+			if (chargeTime == 0) SoundEngine.PlaySound(SoundID.Item9, Projectile.position);
+			chargeTime = chargeTime - 2;
 		}
 
 
 		public override bool PreDraw(ref Color lightColor) {
 			// color becomes more yellow over time
-			int chargeGlow = (int)((300 - Projectile.timeLeft) * 0.85f);
+			int chargeGlow = (int)((300 - chargeTime) * 0.85f);
+			
 			//
 
 			// main projectile rendering logic
@@ -123,7 +131,8 @@ namespace Chickensubclass.Content.Projectiles
 		public override void OnKill(int timeLeft) {
 			// This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
 			Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-			SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
+			if (chargeTime <= 0) SoundEngine.PlaySound(SoundID.Item20, Projectile.position);
+			else SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 		}
 	}
 }
