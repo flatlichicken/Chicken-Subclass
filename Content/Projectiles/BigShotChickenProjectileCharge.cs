@@ -101,7 +101,22 @@ namespace Chickensubclass.Content.Projectiles
 			}
 			//
 			
-			if (Projectile.owner == Main.myPlayer && !Main.mouseRight) Projectile.Kill(); // delete the projectile if the right mouse button isnt being held down
+			if (Projectile.owner == Main.myPlayer && !Main.mouseRight) {
+				if (Projectile.owner == Main.myPlayer && chargeTime <= 0) {
+					Vector2 velocity = Projectile.rotation.ToRotationVector2() * 12f;
+					Projectile.NewProjectile(
+						Projectile.GetSource_FromThis(), 
+						Projectile.Center, 
+						velocity, 
+						ModContent.ProjectileType<BigShotProjectile>(),
+						finalDamage, 
+						Projectile.knockBack, 
+						Projectile.owner
+					);
+				}
+				Projectile.Kill();
+			}
+
 			Projectile.timeLeft = 2;
 			if (chargeTime == 0) SoundEngine.PlaySound(SoundID.Item9, Projectile.position);
 			chargeTime = chargeTime - 2;
