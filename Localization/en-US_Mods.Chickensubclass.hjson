@@ -550,9 +550,9 @@ Projectiles: {
 	GreatChickenFeatherProjectile.DisplayName: Great Chicken Feather
 	FeatherCrossIndecator.DisplayName: Feather Cross Indecator
 	FeatherAimIndecator.DisplayName: Feather Aim Indecator
-	TripleCluckProjectile.DisplayName: Triple Cluck Projectile
+	TripleCluckProjectile.DisplayName: Triple Cluck Bat
 	BigShotChickenProjectileCharge.DisplayName: Big Shot Chicken Projectile Charge
-	BigShotProjectile.DisplayName: Big Shot Projectile
+	BigShotProjectile.DisplayName: [BIGSHOT]
 }
 
 NPCs: {

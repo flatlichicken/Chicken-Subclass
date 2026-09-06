@@ -18,7 +18,7 @@ namespace Chickensubclass.Content.Items
         // The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.Chickensubclass.hjson' file.
         public override void SetDefaults()
         {
-            Item.damage = 12;
+            Item.damage = 36;
             Item.DamageType = DamageClass.Melee;
             Item.width = 51;
             Item.height = 48;
@@ -26,7 +26,7 @@ namespace Chickensubclass.Content.Items
             Item.useAnimation = 14;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2;
-            Item.value = Item.sellPrice(0, 0, 85, 0);
+            Item.value = Item.sellPrice(0, 3, 85, 0);
             Item.rare = ItemRarityID.Blue;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
@@ -83,13 +83,13 @@ namespace Chickensubclass.Content.Items
 
         public override void AddRecipes()
         {
-            Recipe FlyingChickenRecipe = CreateRecipe();
-            FlyingChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenFeather>(), 25);
-            FlyingChickenRecipe.AddIngredient(ItemID.Feather, 10);
-            FlyingChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.RawChicken>(), 8);
-            FlyingChickenRecipe.AddRecipeGroup("GoldBar", 10);
-            FlyingChickenRecipe.AddTile(TileID.Anvils);
-            FlyingChickenRecipe.Register();
+            Recipe BigShotChickenRecipe = CreateRecipe();
+            BigShotChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenSoul>(), 10);
+            BigShotChickenRecipe.AddIngredient(ItemID.SoulOfNight, 10);
+            BigShotChickenRecipe.AddIngredient(ItemID.Lens, 2);
+            BigShotChickenRecipe.AddIngredient(ItemID.AmericanChicken, 1);
+            BigShotChickenRecipe.AddTile(TileID.MythrilAnvil);
+            BigShotChickenRecipe.Register();
 
         }
         

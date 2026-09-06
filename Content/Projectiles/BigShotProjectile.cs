@@ -62,7 +62,7 @@ namespace Chickensubclass.Content.Projectiles
 		}
 
 		public override void AI() {
-			if (Projectile.timeLeft <= (270)) // doing math here cuz im lazy
+			if (Projectile.timeLeft <= 270)
 			{
 				Projectile.frame = 0;
 			}

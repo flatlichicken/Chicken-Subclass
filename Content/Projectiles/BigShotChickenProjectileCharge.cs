@@ -71,11 +71,11 @@ namespace Chickensubclass.Content.Projectiles
 			
 			// ammo consumption logic (broken for some reason)
 			--ammoConDelay;
-			if (ammoItem != null && ammoConDelay <= 0 && ammoCount < 6) {
+			if (ammoItem != null && ammoConDelay <= 0 && ammoCount < 4) {
 				player.PickAmmo(weapon, out _, out _, out ammoDamage, out _, out _, false);
 				finalDamage += ammoDamage;
 				++ammoCount;
-				ammoConDelay = 20;
+				ammoConDelay = 30;
 			}
 			//
 
