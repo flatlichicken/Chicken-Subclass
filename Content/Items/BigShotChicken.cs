@@ -18,7 +18,7 @@ namespace Chickensubclass.Content.Items
         // The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.Chickensubclass.hjson' file.
         public override void SetDefaults()
         {
-            Item.damage = 36;
+            Item.damage = 34;
             Item.DamageType = DamageClass.Melee;
             Item.width = 51;
             Item.height = 48;
@@ -51,7 +51,8 @@ namespace Chickensubclass.Content.Items
         
         public override bool CanConsumeAmmo(Item ammo, Player player)
         {
-            return Main.rand.NextFloat() >= 0.33f;
+            if (player.altFunctionUse == 2) return Main.rand.NextFloat() >= 1f;
+            else return Main.rand.NextFloat() >= 0.33f;
         }
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
@@ -85,9 +86,9 @@ namespace Chickensubclass.Content.Items
         {
             Recipe BigShotChickenRecipe = CreateRecipe();
             BigShotChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.ChickenSoul>(), 10);
-            BigShotChickenRecipe.AddIngredient(ItemID.SoulOfNight, 10);
+            BigShotChickenRecipe.AddIngredient(ItemID.SoulofNight, 10);
             BigShotChickenRecipe.AddIngredient(ItemID.Lens, 2);
-            BigShotChickenRecipe.AddIngredient(ItemID.AmericanChicken, 1);
+            BigShotChickenRecipe.AddIngredient(ModContent.ItemType<Content.Items.AmericanChicken>(), 10);
             BigShotChickenRecipe.AddTile(TileID.MythrilAnvil);
             BigShotChickenRecipe.Register();
 
