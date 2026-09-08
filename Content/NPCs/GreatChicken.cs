@@ -68,6 +68,10 @@ namespace Chickensubclass.Content.NPCs
             
         }
 
+        public override void OnKill()
+        {
+            DownedSystem.downedGreatChicken = true;
+        }
 
         public override void FindFrame(int frameHeight) {
             NPC.spriteDirection = NPC.direction;
