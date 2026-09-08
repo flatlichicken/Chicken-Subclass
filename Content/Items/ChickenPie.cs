@@ -22,7 +22,7 @@ namespace Chickensubclass.Content.Items
 			Item.height = 22;
 			Item.maxStack = Item.CommonMaxStack;
 			Item.value = Item.sellPrice(silver: 20);
-			Item.rare = ItemRarityID.Blue;
+			Item.rare = ItemRarityID.Green;
 			Item.useTime = 17;
             Item.useAnimation = 17;
             Item.useStyle = ItemUseStyleID.EatFood;

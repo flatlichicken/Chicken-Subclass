@@ -21,6 +21,7 @@ namespace Chickensubclass.Content.Tiles
             AnimationFrameHeight = 36;
 
             TileID.Sets.MultiTileSway[Type] = true;
+            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch); 
             
             
 
@@ -28,6 +29,8 @@ namespace Chickensubclass.Content.Tiles
             TileObjectData.newTile.Height = 1;
             TileObjectData.newTile.CoordinateHeights = new int[] { 36 };
             TileObjectData.newTile.StyleHorizontal = true;
+
+            // To do: make it show properly when placing under a platform
             
             TileObjectData.newTile.AnchorTop = new AnchorData(
                 AnchorType.SolidTile | AnchorType.Platform | AnchorType.PlanterBox, 
