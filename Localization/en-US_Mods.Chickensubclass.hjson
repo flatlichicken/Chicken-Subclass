@@ -511,6 +511,11 @@ Items: {
 		Tooltip: Needs ammo
 		DisplayName: Big Shot Chicken
 	}
+
+	MusicBoxApprehension: {
+		Tooltip: Apprehension from Undertale Yellow by MyNewSoundtrack, MasterSwordRemix
+		DisplayName: Music Box (Great Chicken)
+	}
 }
 
 Projectiles: {
