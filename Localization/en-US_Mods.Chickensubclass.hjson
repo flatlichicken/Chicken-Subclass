@@ -556,7 +556,7 @@ Projectiles: {
 	FeatherCrossIndecator.DisplayName: Feather Cross Indecator
 	FeatherAimIndecator.DisplayName: Feather Aim Indecator
 	TripleCluckProjectile.DisplayName: Triple Cluck Bat
-	BigShotChickenProjectileCharge.DisplayName: Big Shot Chicken Projectile Charge
+	BigShotChickenProjectileCharge.DisplayName: Big Shot Chicken Projectile Charge (how did you die to this bro)
 	BigShotProjectile.DisplayName: BIGSHOT
 }
 
@@ -573,7 +573,7 @@ MapObject.NuggetMachineTile: Nugget Machine
 Tiles: {
 	NuggetMachineTile.MapEntry: Nugget Machine
 	PieMachineTile.MapEntry: Pie Machine
-	GreatChickenRelicTile.MapEntry: Great Chicken Relic Tile
+	GreatChickenRelicTile.MapEntry: Great Chicken Relic
 	AngrierChickenBannerTile.MapEntry: Banner
 	AngryChickenBannerTile.MapEntry: Banner
 	GiantChickenBannerTile.MapEntry: Banner

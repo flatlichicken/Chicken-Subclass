@@ -23,6 +23,8 @@ new weapons:
 Triple Cluck
 Big Shot Chicken
 
+new music box for Great Chicken
+
 decresed fire rate of American Chicken
 slightly increased swingspeed on American Chicken
 buffed damage of american chicken from 8 to 9
