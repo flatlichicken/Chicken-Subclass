@@ -16,20 +16,9 @@ github repo: https://github.com/flatlichicken/Chicken-Subclass
 
 credit to MasterSwordRemix for the song "Apprehension" used in the bossfight
 
-1.4.2 update:
+1.4.3 update:
 
-new weapons:
+new FortheWorthy/GetFixedBoi fight for Great Chicken
 
-Triple Cluck
-Big Shot Chicken
-
-new music box for Great Chicken
-
-decresed fire rate of American Chicken
-slightly increased swingspeed on American Chicken
-buffed damage of american chicken from 8 to 9
-
-changed the rarity of Chicken Pie from Blue to Green
-
-fixed an issue where the housing system wouldnt reconize Chicken Soul in a Bottle as a light source
-
+buffed Great Chicken's feather spread attack damage from 20 to 25
+fixed an issue where some Great Chicken feather attacks wouldnt fire for some reason

@@ -33,6 +33,7 @@
     "Content\\BossCheckList.cs": "Chickensubclass.Content",
     "Content\\Projectiles\\BigShotChickenProjectileCharge.cs": "Chickensubclass.Content.Projectiles",
     "Content\\Items\\BigShotChicken.cs": "Chickensubclass.Content.Items",
-    "Content/Projectiles/BigShotProjectile.cs": "Chickensubclass.Content.Projectiles"
+    "Content/Projectiles/BigShotProjectile.cs": "Chickensubclass.Content.Projectiles",
+    "Content\\Projectiles\\FeatherOctoIndecator.cs": "Chickensubclass.Content.Projectiles"
   }
 }

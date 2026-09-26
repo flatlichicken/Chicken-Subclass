@@ -558,6 +558,7 @@ Projectiles: {
 	TripleCluckProjectile.DisplayName: Triple Cluck Bat
 	BigShotChickenProjectileCharge.DisplayName: Big Shot Chicken Projectile Charge (how did you die to this bro)
 	BigShotProjectile.DisplayName: BIGSHOT
+	FeatherOctoIndecator.DisplayName: Feather Octo Indecator
 }
 
 NPCs: {
