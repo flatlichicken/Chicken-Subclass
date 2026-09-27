@@ -23,8 +23,8 @@ namespace Chickensubclass.Content.NPCs
         private int BossPhase = 0;
         private bool ArmorShed = false;
         private float XtraDashspeed = 0f;
-
         private float FeatherSpreadSpeed = 5f;
+        private bool Rebound = false;
         
         public override void SetStaticDefaults() {
                 Main.npcFrameCount[NPC.type] = 12;
@@ -104,6 +104,12 @@ namespace Chickensubclass.Content.NPCs
             NPC.frame.Y = (startFrame + currentSubFrame) * frameHeight;
         }
         public override void AI() {
+
+            if (Main.netMode == NetmodeID.MultiplayerClient) 
+            {
+                return;
+            }
+            
             float healthRatio = (float)NPC.life / NPC.lifeMax;
 
             if (healthRatio <= 0.33f) {
@@ -196,34 +202,29 @@ namespace Chickensubclass.Content.NPCs
 
                         // feather attacks 
 						ProjTimer += 1;
-                        // maybe define this as a funtion
-						Vector2 targetPos = NPC.Center + Main.rand.NextVector2Circular(300f, 300f);
-						Vector2 spawnPos = NPC.Center + Collision.TileCollision(NPC.Center, targetPos - NPC.Center, 62, 62);
-                        // --------------------------------------------------------------------------------------------------
 
                         if (Main.masterMode && (Main.zenithWorld || Main.getGoodWorld)) {
                             // legendary mode feather attacks
-                        if ((ProjTimer == 10 && BossPhase == 0) || ProjTimer == 100 || ProjTimer == 110 || ProjTimer == 200 || ProjTimer == 210 || ProjTimer == 400 || ProjTimer == 410 || ProjTimer == 500 || ProjTimer == 510) {           
-                            Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherOctoIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);    
+                        if (ProjTimer == 100 || ProjTimer == 110 || ProjTimer == 200 || ProjTimer == 210 || ProjTimer == 400 || ProjTimer == 410 || ProjTimer == 500 || ProjTimer == 510) {           
+                            SpawnFeatherAttack(ModContent.ProjectileType<FeatherOctoIndecator>(), 35, speed); 
 						}
 
-                        if (ProjTimer == 600 || ProjTimer == 300) {
-                            if (BossPhase >= 1) Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherAimIndecator>(), 40, 0f, Main.myPlayer, ai0: speed);
-                            else Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherOctoIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);   
+                        if (ProjTimer == 10 || ProjTimer == 600 || ProjTimer == 300 || ProjTimer == 310) {
+                            if (BossPhase >= 1) SpawnFeatherAttack(ModContent.ProjectileType<FeatherSpreadIndecator>(), 40, speed); 
+                            else SpawnFeatherAttack(ModContent.ProjectileType<FeatherOctoIndecator>(), 35, speed);    
                             
-							
 						}
                         }
 
                         else if (Main.expertMode) {
-                            // expert mode+ feather attacks ( i dont think this works)
+                            // expert mode+ feather attacks
 						if (ProjTimer == 100 || ProjTimer == 200 || ProjTimer == 400 || ProjTimer == 500) {
-							Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);
+							SpawnFeatherAttack(ModContent.ProjectileType<FeatherCrossIndecator>(), 35, speed);   
 						}
 
                         if (ProjTimer == 600 || ProjTimer == 300) {
-                            if (BossPhase >= 1) Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherAimIndecator>(), 40, 0f, Main.myPlayer, ai0: speed);
-                            else Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);
+                            if (BossPhase >= 1) SpawnFeatherAttack(ModContent.ProjectileType<FeatherAimIndecator>(), 40, speed); 
+                            else SpawnFeatherAttack(ModContent.ProjectileType<FeatherCrossIndecator>(), 35, speed);   
 							
 						}
                         }
@@ -231,12 +232,12 @@ namespace Chickensubclass.Content.NPCs
                         else {
                         // classic mode feather attacks
 						if (ProjTimer == 150 || ProjTimer == 300 || ProjTimer == 450) {
-							Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);
+							SpawnFeatherAttack(ModContent.ProjectileType<FeatherCrossIndecator>(), 35, speed);   
 						}
 
                         if (ProjTimer == 600) {
-                            if (BossPhase >= 1) Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherAimIndecator>(), 40, 0f, Main.myPlayer, ai0: speed);
-                            else Projectile.NewProjectile(NPC.GetSource_FromAI(), GetFeatherSpawnPos(), Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);
+                            if (BossPhase >= 1) SpawnFeatherAttack(ModContent.ProjectileType<FeatherAimIndecator>(), 40, speed);
+                            else SpawnFeatherAttack(ModContent.ProjectileType<FeatherCrossIndecator>(), 35, speed);
 							
 						}
 
@@ -276,15 +277,20 @@ namespace Chickensubclass.Content.NPCs
                         
                     }
                     else if (MoveType == 3) { // dash attack
-                        if (AttackTimer == 240) {
+                        
+                        if (AttackTimer == 240 || (AttackTimer == 301 && Rebound)) {
                             Vector2 dashDirection = player.Center - NPC.Center;
                             dashDirection.Normalize();
                             if (Main.expertMode) XtraDashspeed = 3f;
+
                             if (BossPhase == 2) NPC.velocity = dashDirection * (25f + XtraDashspeed);
                             else NPC.velocity = dashDirection * (18f + XtraDashspeed);
                             NPC.damage = (int)(115 * (speed - 4f));
+
+                            if (Main.rand.Next(1, 4 - BossPhase) == 1 && Main.masterMode && (Main.zenithWorld || Main.getGoodWorld)) Rebound = true;
+                            else Rebound = false;
                         }
-                        if (AttackTimer == 300) NPC.damage = 40;
+                        if (AttackTimer == 300 || AttackTimer == 360) NPC.damage = 40;
                     }
 
                     else if (MoveType == 4) { // stay still
@@ -297,15 +303,17 @@ namespace Chickensubclass.Content.NPCs
                     NPC.velocity.Y += -1f;
                     NPC.EncourageDespawn(10);
                 }
+
+                
                 
             }
 
-            private Vector2 GetFeatherSpawnPos()
+            private void SpawnFeatherAttack(int type, int damage, float speed)
             {
                 Vector2 targetPos = NPC.Center + Main.rand.NextVector2Circular(300f, 300f);
                 Vector2 spawnPos = NPC.Center + Collision.TileCollision(NPC.Center, targetPos - NPC.Center, 62, 62);
 
-                return spawnPos;
+                Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, type, damage, 0f, Main.myPlayer, ai0: speed);
             }
 
             public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
