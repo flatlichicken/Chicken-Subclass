@@ -24,3 +24,6 @@ buffed Great Chicken's feather spread attack damage from 20 to 25
 fixed an issue where some Great Chicken feather attacks wouldnt fire for some reason
 nerfed health scaling of Great Chicken
 Great Chicken No longer takes damage from lava
+the panels that fall of Great Chicken when it enters its 3rd phase are no longer flipped
+
+slightly changed the outline of Giant Chicken
