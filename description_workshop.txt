@@ -22,3 +22,5 @@ new FortheWorthy/GetFixedBoi fight for Great Chicken
 
 buffed Great Chicken's feather spread attack damage from 20 to 25
 fixed an issue where some Great Chicken feather attacks wouldnt fire for some reason
+nerfed health scaling of Great Chicken
+Great Chicken No longer takes damage from lava

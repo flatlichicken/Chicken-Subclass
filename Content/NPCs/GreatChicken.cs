@@ -55,7 +55,24 @@ namespace Chickensubclass.Content.NPCs
                 NPC.noTileCollide = true;
                 NPC.boss = true;
                 NPC.knockBackResist = 0f;
+                NPC.lavaImmune = true;
                 Music = MusicLoader.GetMusicSlot(Mod, "Content/Music/GreatChickenBossTheme");
+        }
+
+        public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment) {
+            float customDifficultyScale = 1.0f;
+
+            if (Main.masterMode && (Main.getGoodWorld || Main.zenithWorld)) {
+                customDifficultyScale *= 3.0f;
+            }
+            else if (Main.masterMode) {
+                customDifficultyScale = 2.0f; 
+            }
+            else if (Main.expertMode) {
+                customDifficultyScale = 1.5f; 
+            }
+            
+            NPC.lifeMax = (int)(25500 * balance * bossAdjustment * customDifficultyScale);
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot) {
@@ -271,7 +288,8 @@ namespace Chickensubclass.Content.NPCs
                         ProjAngle += 6;
 
                         if (ProjAngle % 90 == 0 && BossPhase >= 2) {
-                            Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center + new Vector2(300f, 0f).RotatedBy(MathHelper.ToRadians(ProjAngle)), Vector2.Zero, ModContent.ProjectileType<FeatherAimIndecator>(), 40, 0f, Main.myPlayer, ai0: speed);
+                           if (Main.masterMode && (Main.zenithWorld || Main.getGoodWorld)) SpawnFeatherAttack(ModContent.ProjectileType<FeatherSpreadIndecator>(), 40, speed); 
+                           else SpawnFeatherAttack(ModContent.ProjectileType<FeatherAimIndecator>(), 40, speed); 
                             
                         }
                         
