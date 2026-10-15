@@ -516,6 +516,11 @@ Items: {
 		Tooltip: Apprehension from Undertale Yellow by MyNewSoundtrack, MasterSwordRemix
 		DisplayName: Music Box (Great Chicken)
 	}
+
+	GreatChickenWeapon: {
+		DisplayName: Great Chicken Weapon
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -560,6 +565,7 @@ Projectiles: {
 	BigShotProjectile.DisplayName: BIGSHOT
 	FeatherOctoIndecator.DisplayName: Feather Octo Indecator
 	FeatherSpreadIndecator.DisplayName: Feather Spread Indecator
+	GreatChickenFeatherFriendlyProjectile.DisplayName: Great Chicken Feather Friendly Projectile
 }
 
 NPCs: {

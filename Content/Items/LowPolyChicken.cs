@@ -14,6 +14,7 @@ namespace Chickensubclass.Content.Items
 		public override void SetStaticDefaults() {
 			// Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 20));
+			ItemID.Sets.AnimatesAsSoul[Item.type] = true;
 		}
 
 	
