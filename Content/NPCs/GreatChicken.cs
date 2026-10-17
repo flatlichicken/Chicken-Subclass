@@ -23,6 +23,8 @@ namespace Chickensubclass.Content.NPCs
         private int BossPhase = 0;
         private bool ArmorShed = false;
         private float XtraDashspeed = 0f;
+        private float FeatherSpreadSpeed = 5f;
+        private bool Rebound = false;
         
         public override void SetStaticDefaults() {
                 Main.npcFrameCount[NPC.type] = 12;
@@ -53,18 +55,37 @@ namespace Chickensubclass.Content.NPCs
                 NPC.noTileCollide = true;
                 NPC.boss = true;
                 NPC.knockBackResist = 0f;
+                NPC.lavaImmune = true;
                 Music = MusicLoader.GetMusicSlot(Mod, "Content/Music/GreatChickenBossTheme");
+        }
+
+        public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment) {
+            float customDifficultyScale = 1.0f;
+
+            if (Main.masterMode && (Main.getGoodWorld || Main.zenithWorld)) {
+                customDifficultyScale *= 3.0f;
+            }
+            else if (Main.masterMode) {
+                customDifficultyScale = 2.0f; 
+            }
+            else if (Main.expertMode) {
+                customDifficultyScale = 1.5f; 
+            }
+            
+            NPC.lifeMax = (int)(25500 * balance * bossAdjustment * customDifficultyScale);
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot) {
             npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<GreatChickenTreasureBag>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsMasterMode(), ModContent.ItemType<GreatChickenRelic>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<PieMachine>()));
-            npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenJockey>()));
+            IItemDropRule dropPool = ItemDropRule.OneFromOptions(1, ModContent.ItemType<ChickenJockey>(), ModContent.ItemType<GreatChickenWeapon>());
+            npcLoot.Add(dropPool);
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<RawChicken>(), 1, 40, 60));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenFeather>(), 1, 40, 60));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenSoul>(), 1, 25, 40));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GreatChickenTrophy>(), 10));
+            
             
         }
 
@@ -102,6 +123,12 @@ namespace Chickensubclass.Content.NPCs
             NPC.frame.Y = (startFrame + currentSubFrame) * frameHeight;
         }
         public override void AI() {
+
+            if (Main.netMode == NetmodeID.MultiplayerClient) 
+            {
+                return;
+            }
+            
             float healthRatio = (float)NPC.life / NPC.lifeMax;
 
             if (healthRatio <= 0.33f) {
@@ -192,20 +219,31 @@ namespace Chickensubclass.Content.NPCs
                             
                         }
 
-                        // feather attacks
+                        // feather attacks 
 						ProjTimer += 1;
-						Vector2 targetPos = NPC.Center + Main.rand.NextVector2Circular(300f, 300f);
-						Vector2 spawnPos = NPC.Center + Collision.TileCollision(NPC.Center, targetPos - NPC.Center, 62, 62);
 
-                        if (Main.expertMode) {
+                        if (Main.masterMode && (Main.zenithWorld || Main.getGoodWorld)) {
+                            // legendary mode feather attacks
+                        if (ProjTimer == 100 || ProjTimer == 110 || ProjTimer == 200 || ProjTimer == 210 || ProjTimer == 400 || ProjTimer == 410 || ProjTimer == 500 || ProjTimer == 510) {           
+                            SpawnFeatherAttack(ModContent.ProjectileType<FeatherOctoIndecator>(), 35, speed); 
+						}
+
+                        if (ProjTimer == 10 || ProjTimer == 600 || ProjTimer == 300 || ProjTimer == 310) {
+                            if (BossPhase >= 1) SpawnFeatherAttack(ModContent.ProjectileType<FeatherSpreadIndecator>(), 40, speed); 
+                            else SpawnFeatherAttack(ModContent.ProjectileType<FeatherOctoIndecator>(), 35, speed);    
+                            
+						}
+                        }
+
+                        else if (Main.expertMode) {
                             // expert mode+ feather attacks
 						if (ProjTimer == 100 || ProjTimer == 200 || ProjTimer == 400 || ProjTimer == 500) {
-							Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);
+							SpawnFeatherAttack(ModContent.ProjectileType<FeatherCrossIndecator>(), 35, speed);   
 						}
 
                         if (ProjTimer == 600 || ProjTimer == 300) {
-                            if (BossPhase >= 1) Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherAimIndecator>(), 40, 0f, Main.myPlayer, ai0: speed);
-                            else Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);
+                            if (BossPhase >= 1) SpawnFeatherAttack(ModContent.ProjectileType<FeatherAimIndecator>(), 40, speed); 
+                            else SpawnFeatherAttack(ModContent.ProjectileType<FeatherCrossIndecator>(), 35, speed);   
 							
 						}
                         }
@@ -213,18 +251,18 @@ namespace Chickensubclass.Content.NPCs
                         else {
                         // classic mode feather attacks
 						if (ProjTimer == 150 || ProjTimer == 300 || ProjTimer == 450) {
-							Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);
+							SpawnFeatherAttack(ModContent.ProjectileType<FeatherCrossIndecator>(), 35, speed);   
 						}
 
                         if (ProjTimer == 600) {
-                            if (BossPhase >= 1) Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherAimIndecator>(), 40, 0f, Main.myPlayer, ai0: speed);
-                            else Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, ModContent.ProjectileType<FeatherCrossIndecator>(), 35, 0f, Main.myPlayer, ai0: speed);
+                            if (BossPhase >= 1) SpawnFeatherAttack(ModContent.ProjectileType<FeatherAimIndecator>(), 40, speed);
+                            else SpawnFeatherAttack(ModContent.ProjectileType<FeatherCrossIndecator>(), 35, speed);
 							
 						}
 
                         }
 
-                        if (ProjTimer >= 600) {
+                        if (ProjTimer >= 601) {
 							ProjTimer = 0; // reset timer
 						}
 
@@ -239,31 +277,40 @@ namespace Chickensubclass.Content.NPCs
 
                     else if (MoveType == 2) { // feather spread attack
                         NPC.velocity = Vector2.Zero;
-                        
+
+                        if(Main.masterMode && (Main.zenithWorld || Main.getGoodWorld)) FeatherSpreadSpeed = -10f;
+                        else FeatherSpreadSpeed = -5f;
+
                         if (FeatherSpreadCooldown >= 1) {
-                            Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, new Vector2(0f, -5f).RotatedBy(MathHelper.ToRadians(ProjAngle)), ModContent.ProjectileType<GreatChickenFeatherProjectile>(), 20, 1f, Main.myPlayer);
-                            if (BossPhase >= 1) Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, new Vector2(0f, -5f).RotatedBy(MathHelper.ToRadians(ProjAngle + 186)), ModContent.ProjectileType<GreatChickenFeatherProjectile>(), 20, 1f, Main.myPlayer);
+                            Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, new Vector2(0f, FeatherSpreadSpeed).RotatedBy(MathHelper.ToRadians(ProjAngle)), ModContent.ProjectileType<GreatChickenFeatherProjectile>(), 25, 1f, Main.myPlayer);
+                            if (BossPhase >= 1) Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, new Vector2(0f, FeatherSpreadSpeed).RotatedBy(MathHelper.ToRadians(ProjAngle + 186)), ModContent.ProjectileType<GreatChickenFeatherProjectile>(), 25, 1f, Main.myPlayer);
                             FeatherSpreadCooldown = 0;
                         }
                         else FeatherSpreadCooldown += 1;
                         ProjAngle += 6;
 
                         if (ProjAngle % 90 == 0 && BossPhase >= 2) {
-                            Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center + new Vector2(300f, 0f).RotatedBy(MathHelper.ToRadians(ProjAngle)), Vector2.Zero, ModContent.ProjectileType<FeatherAimIndecator>(), 40, 0f, Main.myPlayer, ai0: speed);
+                           if (Main.masterMode && (Main.zenithWorld || Main.getGoodWorld)) SpawnFeatherAttack(ModContent.ProjectileType<FeatherSpreadIndecator>(), 40, speed); 
+                           else SpawnFeatherAttack(ModContent.ProjectileType<FeatherAimIndecator>(), 40, speed); 
                             
                         }
                         
                     }
                     else if (MoveType == 3) { // dash attack
-                        if (AttackTimer == 240) {
+                        
+                        if (AttackTimer == 240 || (AttackTimer == 301 && Rebound)) {
                             Vector2 dashDirection = player.Center - NPC.Center;
                             dashDirection.Normalize();
                             if (Main.expertMode) XtraDashspeed = 3f;
+
                             if (BossPhase == 2) NPC.velocity = dashDirection * (25f + XtraDashspeed);
                             else NPC.velocity = dashDirection * (18f + XtraDashspeed);
                             NPC.damage = (int)(115 * (speed - 4f));
+
+                            if (Main.rand.Next(1, 4 - BossPhase) == 1 && Main.masterMode && (Main.zenithWorld || Main.getGoodWorld)) Rebound = true;
+                            else Rebound = false;
                         }
-                        if (AttackTimer == 300) NPC.damage = 40;
+                        if (AttackTimer == 300 || AttackTimer == 360) NPC.damage = 40;
                     }
 
                     else if (MoveType == 4) { // stay still
@@ -276,7 +323,17 @@ namespace Chickensubclass.Content.NPCs
                     NPC.velocity.Y += -1f;
                     NPC.EncourageDespawn(10);
                 }
+
                 
+                
+            }
+
+            private void SpawnFeatherAttack(int type, int damage, float speed)
+            {
+                Vector2 targetPos = NPC.Center + Main.rand.NextVector2Circular(300f, 300f);
+                Vector2 spawnPos = NPC.Center + Collision.TileCollision(NPC.Center, targetPos - NPC.Center, 62, 62);
+
+                Projectile.NewProjectile(NPC.GetSource_FromAI(), spawnPos, Vector2.Zero, type, damage, 0f, Main.myPlayer, ai0: speed);
             }
 
             public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry) {
