@@ -1,0 +1,648 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	Chicken: {
+		DisplayName: 鸡
+		Tooltip: "'你为什么把鸡当武器用？'"
+	}
+
+	MagicChicken: {
+		DisplayName: 魔法鸡
+		Tooltip: 发射一只魔法鸡
+	}
+
+	ExplosiveChicken: {
+		DisplayName: 爆裂鸡
+		Tooltip: 下爆炸蛋
+	}
+
+	ChickenSoul: {
+		DisplayName: 鸡魂
+		Tooltip: "'鸡的精华'"
+	}
+
+	FlyingChicken: {
+		Tooltip: "'它飞行时会射出羽毛'"
+		DisplayName: 飞鸡
+	}
+
+	ChickenFeather: {
+		Tooltip: ""
+		DisplayName: 鸡毛
+	}
+
+	RawChicken: {
+		DisplayName: 生鸡肉
+		Tooltip: ""
+	}
+
+	ChickenFeatherBreastplate: {
+		DisplayName: 鸡毛胸甲
+		Tooltip: 近战伤害 +5%
+	}
+
+	ChickenFeatherGreaves: {
+		DisplayName: 鸡毛护胫
+		Tooltip:
+			'''
+			近战暴击率 +2%
+			移动速度 +5%
+			'''
+	}
+
+	ChickenFeatherHelm: {
+		DisplayName: 鸡毛头盔
+		Tooltip: 近战暴击率 +3%
+	}
+
+	RedJunglefowl: {
+		DisplayName: 红原鸡
+		Tooltip:
+			'''
+			'这基本上只是只野鸡'
+			射出丛林荆棘
+			'''
+	}
+
+	SpicyChickenNugget: {
+		DisplayName: 辣鸡块
+		Tooltip:
+			'''
+			'史提夫的熔岩鸡，是的，它好吃到离谱'
+			获得鸡之愤怒
+			'''
+	}
+
+	EvilChicken: {
+		DisplayName: 邪恶鸡
+		Tooltip: 挥舞时召唤一只鸡鬼
+	}
+
+	SpicyChickenBreastplate: {
+		DisplayName: 辣鸡胸甲
+		Tooltip:
+			'''
+			近战伤害 +3%
+			持有鸡武器时近战伤害 +8%
+			'''
+	}
+
+	SpicyChickenGreaves: {
+		DisplayName: 辣鸡护胫
+		Tooltip:
+			'''
+			近战攻速 +3%
+			持有鸡武器时近战攻速 +8%
+			'''
+	}
+
+	SpicyChickenHelmet: {
+		DisplayName: 辣鸡头盔
+		Tooltip:
+			'''
+			近战暴击率 +3%
+			持有鸡武器时近战暴击率 +8%
+			'''
+	}
+
+	FireChicken: {
+		DisplayName: 火鸡
+		Tooltip: 发射一串燃烧羽毛
+	}
+
+	ChaosChicken: {
+		DisplayName: 混沌鸡
+		Tooltip: "'混沌！混沌！'"
+	}
+
+	ChickenFoot: {
+		DisplayName: 鸡脚
+		Tooltip: 持有鸡武器时移动速度提高
+	}
+
+	FrostBeak: {
+		DisplayName: 霜喙
+		Tooltip:
+			'''
+			持有鸡武器时近战伤害 +20%
+			'当我施放一个我也不知道的法术时，看看会发生什么！'
+			'''
+	}
+
+	ChickenWings: {
+		DisplayName: 鸡翅
+		Tooltip:
+			'''
+			持有鸡武器时移动速度提高
+			这些其实不能飞
+			'''
+	}
+
+	GodChicken: {
+		DisplayName: 神之鸡
+		Tooltip: 你不该拥有这个
+	}
+
+	HolyChicken: {
+		DisplayName: 神圣鸡
+		Tooltip: 每5次挥舞推进一次
+	}
+
+	DarkChicken: {
+		DisplayName: 黑暗鸡
+		Tooltip: 每3次挥舞向前飞行
+	}
+
+	ChickenClimbingGear: {
+		DisplayName: 鸡攀爬装备
+		Tooltip: 持有鸡武器时机动性提高
+	}
+
+	PoultryEmblem: {
+		DisplayName: 家禽徽章
+		Tooltip: 持有鸡武器时近战伤害 +18%
+	}
+
+	NinjaChicken: {
+		DisplayName: 忍者鸡
+		Tooltip: ""
+	}
+
+	ExpiredCoupon: {
+		DisplayName: 过期优惠券
+		Tooltip: 持有鸡武器时近战伤害、暴击率、攻速和防御略有提升
+	}
+
+	Coupon: {
+		DisplayName: 优惠券
+		Tooltip: 右键兑换 5 金币
+	}
+
+	NuggetMachine: {
+		DisplayName: 鸡块机
+		Tooltip: ""
+	}
+
+	PlantBasedNugget: {
+		DisplayName: 植物基鸡块
+		Tooltip:
+			'''
+			'吃动物不对，Flatlichicken，伤害动物不对，Flatlichicken'
+			获得鸡毒
+			'''
+	}
+
+	SolarNugget: {
+		DisplayName: 日耀鸡块
+		Tooltip: ""
+	}
+
+	DinoNuggie: {
+		DisplayName: 恐龙鸡块
+		Tooltip: ""
+	}
+
+	LowPolyChicken: {
+		DisplayName: 低多边形鸡
+		Tooltip: ""
+	}
+
+	PlantBasedChickenBreastplate: {
+		DisplayName: 植物基鸡胸甲
+		Tooltip:
+			'''
+			近战暴击率 +10%
+			近战伤害 +8%
+			'''
+	}
+
+	PlantBasedChickenGreaves: {
+		DisplayName: 植物基鸡护胫
+		Tooltip:
+			'''
+			近战暴击率 +10%
+			移动速度 +7%
+			'''
+	}
+
+	PlantBasedChickenHelmet: {
+		DisplayName: 植物基鸡头盔
+		Tooltip:
+			'''
+			近战暴击率 +8%
+			近战伤害 +20%
+			'''
+	}
+
+	TrueDarkChicken: {
+		DisplayName: 真正的黑暗鸡
+		Tooltip: 每次挥舞都向前飞行
+	}
+
+	TrueHolyChicken: {
+		DisplayName: 真正的神圣鸡
+		Tooltip: ""
+	}
+
+	LizardChicken: {
+		DisplayName: 蜥蜴“鸡”
+		Tooltip: ""
+	}
+
+	CommieChicken: {
+		DisplayName: 共产鸡
+		Tooltip: 投掷锤子和镰刀
+	}
+
+	ChickenNinjaGear: {
+		DisplayName: 鸡忍者装备
+		Tooltip:
+			'''
+			持有鸡武器时冲刺和机动性提高
+			持有鸡武器时有机会躲避攻击
+			'''
+	}
+
+	NuclearChicken: {
+		DisplayName: 核子鸡
+		Tooltip: ""
+	}
+
+	DinoGreaves: {
+		DisplayName: 恐龙护胫
+		Tooltip:
+			'''
+			持有鸡武器时近战伤害 +12%
+			持有鸡武器时移动速度 +10%
+			'''
+	}
+
+	DinoBreastplate: {
+		DisplayName: 恐龙胸甲
+		Tooltip:
+			'''
+			持有鸡武器时近战暴击率 +12%
+			持有鸡武器时近战伤害 +12%
+			'''
+	}
+
+	DinoHelmet: {
+		DisplayName: 恐龙头盔
+		Tooltip:
+			'''
+			持有鸡武器时近战暴击率 +10%
+			持有鸡武器时近战伤害 +24%
+			'''
+	}
+
+	TerraChicken: {
+		DisplayName: 泰拉鸡
+		Tooltip: ""
+	}
+
+	WaterChicken: {
+		DisplayName: 水鸡
+		Tooltip: ""
+	}
+
+	PrismaticChicken: {
+		DisplayName: 棱镜鸡
+		Tooltip: ""
+	}
+
+	RoaringChicken: {
+		DisplayName: 咆哮鸡
+		Tooltip: "'NYEH HEH HEH!'"
+	}
+
+	ShadowCrystal: {
+		Tooltip: 一枚锋利的暗影在手中像水一样移动。
+		DisplayName: 暗影水晶
+	}
+
+	BeeChicken: {
+		DisplayName: 蜜蜂鸡
+		Tooltip: "'你喜欢爵士吗？'"
+	}
+
+	SolarChicken: {
+		DisplayName: 日耀鸡
+		Tooltip: ""
+	}
+
+	SpookyChicken: {
+		DisplayName: 幽灵鸡
+		Tooltip: 召唤鬼魂为你作战
+	}
+
+	ZenithChicken: {
+		DisplayName: 天顶鸡
+		Tooltip: ""
+	}
+
+	NuggetKnuckles: {
+		DisplayName: 鸡块指虎
+		Tooltip: 持有鸡武器时，近战攻击有几率削弱敌人
+	}
+
+	ChickenScent: {
+		DisplayName: 鸡味香水
+		Tooltip:
+			'''
+			持有鸡武器时近战暴击率 +8%
+			持有鸡武器时近战伤害 +8%
+			持有鸡武器时攻击会让敌人变强
+			'''
+	}
+
+	SolarFlareBeak: {
+		DisplayName: 太阳耀斑喙
+		Tooltip: 持有鸡武器时近战暴击率 +30%
+	}
+
+	ChlorophytePullet: {
+		DisplayName: 叶绿鸡
+		Tooltip:
+			'''
+			在你多次未命中时发射一枚追踪弹幕
+			'如果你遇到困难，朝着它们前进的方向射击，而不是它们目前的位置'
+			'''
+	}
+
+	ReaperChicken: {
+		DisplayName: 收割鸡
+		Tooltip: ""
+	}
+
+	NuggetChicken: {
+		DisplayName: 鸡块鸡
+		Tooltip: 发射鸡块链枷
+	}
+
+	BinChicken: {
+		DisplayName: 垃圾桶鸡
+		Tooltip: ""
+	}
+
+	Bawkbawk: {
+		DisplayName: 鲍克鲍克
+		Tooltip: 这把武器未被使用
+	}
+
+	GreedyChicken: {
+		DisplayName: 贪婪鸡
+		Tooltip: 会抽干敌人的银行账户
+	}
+
+	PieMachine: {
+		DisplayName: 派机
+		Tooltip:
+			'''
+			用于制造鸡派
+			'鸡进去，派出来'
+			'''
+	}
+
+	ChickenPie: {
+		DisplayName: 鸡派
+		Tooltip: 获得鸡之力
+	}
+
+	AmericanChicken: {
+		DisplayName: 美国鸡
+		Tooltip:
+			'''
+			使用第二修正案的力量
+			需要弹药
+			'''
+	}
+
+	ChickenWalker: {
+		DisplayName: 鸡行者
+		Tooltip: ""
+	}
+
+	SpicyChickenPie: {
+		DisplayName: 辣鸡派
+		Tooltip: 获得鸡之狂怒
+	}
+
+	GreatChickenTreasureBag: {
+		Tooltip: 右键打开
+		DisplayName: 大鸡宝藏袋
+	}
+
+	ChickenJockey: {
+		DisplayName: 鸡骑士
+		Tooltip:
+			'''
+			持有鸡武器或使用鸡饰品时更强
+			'你要我去跟鸡打架？'
+			'''
+	}
+
+	ChickenOrb: {
+		DisplayName: 鸡球
+		Tooltip:
+			'''
+			让鸡翅足够强大以飞行
+			让鸡脚足够快以冲刺
+			可与升级配合
+			'''
+	}
+
+	GreatChickenTrophy: {
+		DisplayName: 大鸡纪念章
+		Tooltip: ""
+	}
+
+	GreatChickenRelic: {
+		DisplayName: 大鸡遗物
+		Tooltip: ""
+	}
+
+	SusEgg: {
+		Tooltip: 召唤大鸡
+		DisplayName: 可疑的蛋
+	}
+
+	FlockEmblem: {
+		DisplayName: 群鸡徽章
+		Tooltip:
+			'''
+			持有鸡武器时近战暴击率 +15%
+			持有鸡武器时近战伤害 +20%
+			持有鸡武器时攻击会让敌人变强
+			'''
+	}
+
+	AngrierChickenBanner: {
+		DisplayName: 愤怒鸡旗帜
+		Tooltip: ""
+	}
+
+	AngryChickenBanner: {
+		DisplayName: 愤怒鸡旗帜
+		Tooltip: ""
+	}
+
+	GiantChickenBanner: {
+		DisplayName: 巨型鸡旗帜
+		Tooltip: ""
+	}
+
+	SoulBottleChicken: {
+		Tooltip: ""
+		DisplayName: 瓶中鸡魂
+	}
+
+	PlantBasedChickenPie: {
+		DisplayName: 植物基鸡派
+		Tooltip: 获得鸡之剧毒
+	}
+
+	TripleCluck: {
+		Tooltip: ""
+		DisplayName: 三重咯咯
+	}
+
+	BigShotChicken: {
+		Tooltip: 需要弹药
+		DisplayName: 大射鸡
+	}
+
+	MusicBoxApprehension: {
+		Tooltip: 《Undertale Yellow》中的《Apprehension》，作者 MyNewSoundtrack, MasterSwordRemix
+		DisplayName: 音乐盒（大鸡）
+	}
+
+	GreatChickenWeapon: {
+		DisplayName: 大鸡武器
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	ExampleBullet.DisplayName: 示例子弹
+	MagicChickenProjectile.DisplayName: 魔法鸡
+	ChickenFeatherProjectile.DisplayName: 鸡毛
+	RedJunglefowlProjectile.DisplayName: 红原鸡荆棘
+	EvilChickenProjectile.DisplayName: 邪恶鸡投射物
+	ChickenFireFeatherProjectile.DisplayName: 燃烧鸡羽
+	ChaosChickenProjectile.DisplayName: 混沌鸡
+	HolyChickenProjectile.DisplayName: 神圣鸡冲锋
+	DarkChickenProjectile.DisplayName: 黑暗鸡冲锋
+	LowPolyChickenProjectile.DisplayName: 低多边形鸡
+	LowPolyChickenProjectile2.DisplayName: 低多边形鸡
+	TrueDarkChickenProjectile.DisplayName: 真正的黑暗鸡冲锋
+	TrueHolyChickenProjectile.DisplayName: 真正的神圣鸡冲锋
+	CommieChickenHammer.DisplayName: 共产鸡锤
+	CommieChickenSickle.DisplayName: 共产鸡镰刀
+	NuclearChickenProjectile.DisplayName: 核子鸡炸弹
+	ExplosiveChickenProjectile.DisplayName: 爆裂蛋
+	TerraChickenProjectile.DisplayName: 泰拉鸡弩矢
+	RoaringChickenProjectile.DisplayName: 咆哮鸡刀刃
+	SolarChickenProjectile.DisplayName: 日耀鸡火球
+	PrismaticChickenProjectile.DisplayName: 棱镜鸡弩矢
+	SpookyChickenProjectile.DisplayName: 幽灵鸡鬼魂
+	ZenithChickenProjectile.DisplayName: 天顶鸡投射物
+	ChlorophytePulletProjectile.DisplayName: 叶绿鸡
+	ChickenChlorophyteFeatherProjectile.DisplayName: 叶绿鸡羽
+	ReaperChickenFeatherProjectile.DisplayName: 收割鸡羽
+	NuggetChickenProjectile.DisplayName: 鸡块鸡链枷
+	BinChickenProjectile.DisplayName: 垃圾桶鸡喙
+	GreedyChickenProjectile.DisplayName: 贪婪鸡仆从
+	GreedyChickenProjectile2.DisplayName: 贪婪鸡美元
+	AmericanChickenProjectile.DisplayName: 美国鸡子弹
+	ChickenWalkerProjectile.DisplayName: 鸡行者星
+	ChickenWalkerProjectile2.DisplayName: 鸡行者星
+	GreatChickenFeatherProjectile.DisplayName: 大鸡羽
+	FeatherCrossIndecator.DisplayName: 羽毛十字指示器
+	FeatherAimIndecator.DisplayName: 羽毛瞄准指示器
+	TripleCluckProjectile.DisplayName: 三重咯咯蝙蝠
+	BigShotChickenProjectileCharge.DisplayName: 大射鸡投射物充能（你怎么被它打死的）
+	BigShotProjectile.DisplayName: BIGSHOT
+	FeatherOctoIndecator.DisplayName: 羽毛八角指示器
+	FeatherSpreadIndecator.DisplayName: 羽毛扩散指示器
+	GreatChickenFeatherFriendlyProjectile.DisplayName: 大鸡友方羽毛投射物
+}
+
+NPCs: {
+	AngryChicken.DisplayName: 愤怒鸡
+	AngrierChicken.DisplayName: 愤怒更强鸡
+	GiantChicken.DisplayName: 巨型鸡
+	GreatChicken.DisplayName: 大鸡
+	Chickemonium.DisplayName: 雏鸡灵
+}
+
+MapObject.NuggetMachineTile: 鸡块机
+
+Tiles: {
+	NuggetMachineTile.MapEntry: 鸡块机
+	PieMachineTile.MapEntry: 派机
+	GreatChickenRelicTile.MapEntry: 大鸡遗物
+	AngrierChickenBannerTile.MapEntry: 旗帜
+	AngryChickenBannerTile.MapEntry: 旗帜
+	GiantChickenBannerTile.MapEntry: 旗帜
+}
+
+Buffs: {
+	Chicken: {
+		DisplayName: 鸡
+		Description: 你会害怕并造成更少伤害
+	}
+
+	ChickenInstinct: {
+		DisplayName: 鸡本能
+		Description: 持有鸡武器时近战伤害 +5%
+	}
+
+	ChickenPower: {
+		DisplayName: 鸡之力
+		Description: 持有鸡武器时近战伤害 +10%
+	}
+
+	ChickenAnger: {
+		DisplayName: 鸡之愤怒
+		Description: 持有鸡武器时近战伤害 +5%，并能点燃敌人
+	}
+
+	ChickenRage: {
+		DisplayName: 鸡之狂怒
+		Description: 持有鸡武器时近战伤害 +10%，并会使敌人着地狱火
+	}
+
+	ChickenJockeyBuff: {
+		Description: 不要把这匹坐骑带进电影院
+		DisplayName: 鸡骑士
+	}
+
+	ChickenVenom: {
+		Description: 持有鸡武器时近战伤害 +10%，并会使敌人中酸性剧毒
+		DisplayName: 鸡之剧毒
+	}
+
+	ChickenPoison: {
+		Description: 持有鸡武器时近战伤害 +5%，并能使敌人中毒
+		DisplayName: 鸡之毒
+	}
+}
+
+BossChecklist: {
+	GreatChicken: {
+		EntryName: 大鸡
+		SpawnInfo: 使用 [i:Chickensubclass/SusEgg] 召唤
+	}
+}
+
+Configs: {
+	ChickenSubclassConfig: {
+		ZCPQuality: {
+			Tooltip: ""
+			Label: 天顶鸡投射物质量
+		}
+
+		Headers.ZenithChickenProjectleQuality: 优化
+		DisplayName: 鸡分支配置
+	}
+}

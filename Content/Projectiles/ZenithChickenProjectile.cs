@@ -128,11 +128,11 @@ namespace Chickensubclass.Content.Projectiles
                 0f
             );
 
-            Main.spriteBatch.End();
-
             int ProjQuality = ModContent.GetInstance<ChickenSubclassConfig>().ZCPQuality;
 
             if (ProjQuality >= 2) {
+                Main.spriteBatch.End(); 
+
                 Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
 
                 Vector2 originalPosition = player.position;
@@ -143,34 +143,52 @@ namespace Chickensubclass.Content.Projectiles
                     Male = player.Male, skinVariant = player.skinVariant, hair = player.hair, hairDye = player.hairDye,
                     hairColor = player.hairColor, skinColor = player.skinColor, eyeColor = player.eyeColor,
                     shirtColor = player.shirtColor, underShirtColor = player.underShirtColor, pantsColor = player.pantsColor, shoeColor = player.shoeColor,
-                    head = player.head, body = player.body, legs = player.legs,
-                    wings = player.wings, back = player.back, front = player.front, shoe = player.shoe,
-                    waist = player.waist, shield = player.shield, neck = player.neck, handon = player.handon, handoff = player.handoff
+                    head = player.head, body = player.body, legs = player.legs
                 };
 
+                if (ProjQuality >= 3) {
+                    tempPlayer.wings = player.wings;
+                    tempPlayer.back = player.back;
+                    tempPlayer.front = player.front;
+                    tempPlayer.shoe = player.shoe;
+                    tempPlayer.waist = player.waist;
+                    tempPlayer.shield = player.shield;
+                    tempPlayer.neck = player.neck;
+                    tempPlayer.handon = player.handon;
+                    tempPlayer.handoff = player.handoff;
+                }
 
-                for (int index = 0; index < player.armor.Length; index++) {
+                for (int index = 0; index < 3; index++) {
                     tempPlayer.armor[index] = player.armor[index].Clone();
                 }
-                for (int index = 0; index < player.dye.Length; index++) {
+                for (int index = 0; index < 3; index++) {
                     tempPlayer.dye[index] = player.dye[index].Clone();
                 }
                 if (ProjQuality >= 3) {
+                    for (int index = 3; index < player.armor.Length; index++) {
+                        tempPlayer.armor[index] = player.armor[index].Clone();
+                    }
+                    for (int index = 3; index < player.dye.Length; index++) {
+                        tempPlayer.dye[index] = player.dye[index].Clone();
+                    }
                     for (int index = 0; index < player.hideVisibleAccessory.Length; index++) {
                         tempPlayer.hideVisibleAccessory[index] = player.hideVisibleAccessory[index];
                     }
                 }
 
                 tempPlayer.PlayerFrame();
-			    tempPlayer.bodyFrame.Y = tempPlayer.bodyFrame.Height * 5;
+                tempPlayer.bodyFrame.Y = tempPlayer.bodyFrame.Height * 5;
                 tempPlayer.legFrame.Y = tempPlayer.legFrame.Height * 5;
                 tempPlayer.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, Projectile.rotation - MathHelper.ToRadians(90f));
                 Main.PlayerRenderer.DrawPlayer(Main.Camera, tempPlayer, tempPlayer.position, 0, tempPlayer.fullRotationOrigin, 0f);
                 player.position = originalPosition;    
-            }
-            
 
-            return false; // do not return true
+                Main.spriteBatch.End();
+
+                Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
+            }
+
+            return false;
         }
 
 		public override void OnKill(int timeLeft) {
