@@ -635,3 +635,15 @@ BossChecklist: {
 		SpawnInfo: Use a [i:Chickensubclass/SusEgg]
 	}
 }
+
+Configs: {
+	ChickenSubclassConfig: {
+		ZCPQuality: {
+			Tooltip: ""
+			Label: Zenith Chicken Projectile Quality
+		}
+
+		Headers.ZenithChickenProjectleQuality: Optimizations
+		DisplayName: Chicken Subclass Config
+	}
+}

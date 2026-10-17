@@ -79,11 +79,13 @@ namespace Chickensubclass.Content.NPCs
             npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<GreatChickenTreasureBag>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsMasterMode(), ModContent.ItemType<GreatChickenRelic>()));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<PieMachine>()));
-            npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenJockey>()));
+            IItemDropRule dropPool = ItemDropRule.OneFromOptions(1, ModContent.ItemType<ChickenJockey>(), ModContent.ItemType<GreatChickenWeapon>());
+            npcLoot.Add(dropPool);
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<RawChicken>(), 1, 40, 60));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenFeather>(), 1, 40, 60));
             npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenSoul>(), 1, 25, 40));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<GreatChickenTrophy>(), 10));
+            
             
         }
 

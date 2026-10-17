@@ -129,37 +129,46 @@ namespace Chickensubclass.Content.Projectiles
             );
 
             Main.spriteBatch.End();
-            Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
 
-            Vector2 originalPosition = player.position;
-            player.position = Projectile.Center - new Vector2(player.width / 2f, player.height / 2f);
+            int ProjQuality = ModContent.GetInstance<ChickenSubclassConfig>().ZCPQuality;
 
-            Player tempPlayer = new Player {
-                position = player.position, width = player.width, height = player.height, direction = player.direction,
-                Male = player.Male, skinVariant = player.skinVariant, hair = player.hair, hairDye = player.hairDye,
-                hairColor = player.hairColor, skinColor = player.skinColor, eyeColor = player.eyeColor,
-                shirtColor = player.shirtColor, underShirtColor = player.underShirtColor, pantsColor = player.pantsColor, shoeColor = player.shoeColor,
-                head = player.head, body = player.body, legs = player.legs,
-                wings = player.wings, back = player.back, front = player.front, shoe = player.shoe,
-                waist = player.waist, shield = player.shield, neck = player.neck, handon = player.handon, handoff = player.handoff
-            };
+            if (ProjQuality >= 2) {
+                Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
 
-            for (int index = 0; index < player.armor.Length; index++) {
-                tempPlayer.armor[index] = player.armor[index].Clone();
+                Vector2 originalPosition = player.position;
+                player.position = Projectile.Center - new Vector2(player.width / 2f, player.height / 2f);
+
+                Player tempPlayer = new Player {
+                    position = player.position, width = player.width, height = player.height, direction = player.direction,
+                    Male = player.Male, skinVariant = player.skinVariant, hair = player.hair, hairDye = player.hairDye,
+                    hairColor = player.hairColor, skinColor = player.skinColor, eyeColor = player.eyeColor,
+                    shirtColor = player.shirtColor, underShirtColor = player.underShirtColor, pantsColor = player.pantsColor, shoeColor = player.shoeColor,
+                    head = player.head, body = player.body, legs = player.legs,
+                    wings = player.wings, back = player.back, front = player.front, shoe = player.shoe,
+                    waist = player.waist, shield = player.shield, neck = player.neck, handon = player.handon, handoff = player.handoff
+                };
+
+
+                for (int index = 0; index < player.armor.Length; index++) {
+                    tempPlayer.armor[index] = player.armor[index].Clone();
+                }
+                for (int index = 0; index < player.dye.Length; index++) {
+                    tempPlayer.dye[index] = player.dye[index].Clone();
+                }
+                if (ProjQuality >= 3) {
+                    for (int index = 0; index < player.hideVisibleAccessory.Length; index++) {
+                        tempPlayer.hideVisibleAccessory[index] = player.hideVisibleAccessory[index];
+                    }
+                }
+
+                tempPlayer.PlayerFrame();
+			    tempPlayer.bodyFrame.Y = tempPlayer.bodyFrame.Height * 5;
+                tempPlayer.legFrame.Y = tempPlayer.legFrame.Height * 5;
+                tempPlayer.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, Projectile.rotation - MathHelper.ToRadians(90f));
+                Main.PlayerRenderer.DrawPlayer(Main.Camera, tempPlayer, tempPlayer.position, 0, tempPlayer.fullRotationOrigin, 0f);
+                player.position = originalPosition;    
             }
-            for (int index = 0; index < player.dye.Length; index++) {
-                tempPlayer.dye[index] = player.dye[index].Clone();
-            }
-            for (int index = 0; index < player.hideVisibleAccessory.Length; index++) {
-                tempPlayer.hideVisibleAccessory[index] = player.hideVisibleAccessory[index];
-            }
-
-            tempPlayer.PlayerFrame();
-			tempPlayer.bodyFrame.Y = tempPlayer.bodyFrame.Height * 5;
-            tempPlayer.legFrame.Y = tempPlayer.legFrame.Height * 5;
-            tempPlayer.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, Projectile.rotation - MathHelper.ToRadians(90f));
-            Main.PlayerRenderer.DrawPlayer(Main.Camera, tempPlayer, tempPlayer.position, 0, tempPlayer.fullRotationOrigin, 0f);
-            player.position = originalPosition;
+            
 
             return false; // do not return true
         }
