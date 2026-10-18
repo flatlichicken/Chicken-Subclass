@@ -47,6 +47,7 @@ namespace Chickensubclass.Content
                heldItemType == ModContent.ItemType<BinChicken>() ||
                heldItemType == ModContent.ItemType<TripleCluck>() ||
                heldItemType == ModContent.ItemType<BigShotChicken>() ||
+               heldItemType == ModContent.ItemType<GreatChickenWeapon>() ||
                heldItemType == ModContent.ItemType<ZenithChicken>() ||
                heldItemType == ModContent.ItemType<Chicken>();
     }

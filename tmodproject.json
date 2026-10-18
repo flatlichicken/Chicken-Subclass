@@ -33,10 +33,13 @@
     "Content\\BossCheckList.cs": "Chickensubclass.Content",
     "Content\\Projectiles\\BigShotChickenProjectileCharge.cs": "Chickensubclass.Content.Projectiles",
     "Content\\Items\\BigShotChicken.cs": "Chickensubclass.Content.Items",
-    "Blacklist.cs": "Chickensubclass"
+    "Blacklist.cs": "Chickensubclass",
     "Content/Projectiles/BigShotProjectile.cs": "Chickensubclass.Content.Projectiles",
-    "Content\\Projectiles\\FeatherOctoIndecator.cs": "Chickensubclass.Content.Projectiles",
-    "Content\\Projectiles\\FeatherSpreadIndecator.cs": "Chickensubclass.Content.Projectiles",
-    "Content\\ChickenSubclassConfig.cs": "Chickensubclass.Content"
+    "Content/Projectiles/FeatherOctoIndecator.cs": "Chickensubclass.Content.Projectiles",
+    "Content/Projectiles/FeatherSpreadIndecator.cs": "Chickensubclass.Content.Projectiles",
+    "Content/ChickenSubclassConfig.cs": "Chickensubclass.Content",
+    "Content/Items/GreatChickenWeapon.cs": "Chickensubclass.Content.Items",
+    "Content\\Projectiles\\GreatChickenFeatherFriendlyProjectile.cs": "Chickensubclass.Content.Projectiles",
+    "Content\\Projectiles\\FeatherAimIndecatorFriendly.cs": "Chickensubclass.Content.Projectiles"
   }
 }

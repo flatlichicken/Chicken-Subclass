@@ -518,7 +518,7 @@ Items: {
 	}
 
 	GreatChickenWeapon: {
-		DisplayName: Great Chicken Weapon
+		DisplayName: Great Chicken
 		Tooltip: ""
 	}
 }
@@ -565,7 +565,8 @@ Projectiles: {
 	BigShotProjectile.DisplayName: BIGSHOT
 	FeatherOctoIndecator.DisplayName: Feather Octo Indecator
 	FeatherSpreadIndecator.DisplayName: Feather Spread Indecator
-	GreatChickenFeatherFriendlyProjectile.DisplayName: Great Chicken Feather Friendly Projectile
+	GreatChickenFeatherFriendlyProjectile.DisplayName: Great Chicken Feather Projectile
+	FeatherAimIndecatorFriendly.DisplayName: Feather Aim Indecator Friendly
 }
 
 NPCs: {

@@ -37,26 +37,26 @@ namespace Chickensubclass.Content.Items
 
 		}
 		
-		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-{
-    // Define the number of projectiles to shoot, e.g., 5 shots
-    float numberProjectiles = 1;
-
-    // Define the spread angle in degrees
-    float spread = 5;
-
-    for (int i = 0; i < numberProjectiles; i++)
-    {
-        // Randomize the velocity of each projectile
-        Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
-
-        // Spawn the projectile
-        Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
-    }
-
-    // Return false to stop the default projectile from being spawned
-    return false;
-}
+	public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+	{
+	    // Define the number of projectiles to shoot, e.g., 5 shots
+	    float numberProjectiles = 1;
+	
+	    // Define the spread angle in degrees
+	    float spread = 5;
+	
+	    for (int i = 0; i < numberProjectiles; i++)
+	    {
+	        // Randomize the velocity of each projectile
+	        Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
+	
+	        // Spawn the projectile
+	        Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
+	    }
+	
+	    // Return false to stop the default projectile from being spawned
+	    return false;
+	}
 
 		public override void AddRecipes()
 		{
