@@ -565,6 +565,7 @@ Projectiles: {
 	FeatherOctoIndecator.DisplayName: 羽毛八角指示器
 	FeatherSpreadIndecator.DisplayName: 羽毛扩散指示器
 	GreatChickenFeatherFriendlyProjectile.DisplayName: 大鸡友方羽毛投射物
+	// FeatherAimIndecatorFriendly.DisplayName: Feather Aim Indecator Friendly
 }
 
 NPCs: {

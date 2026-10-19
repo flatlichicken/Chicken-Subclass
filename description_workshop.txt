@@ -22,6 +22,8 @@ new FortheWorthy/GetFixedBoi fight for Great Chicken
 
 new Great Chicken weapon
 
+added localization for chinese
+
 buffed Great Chicken's feather spread attack damage from 20 to 25
 fixed an issue where some Great Chicken feather attacks wouldnt fire for some reason
 nerfed health scaling of Great Chicken
@@ -31,5 +33,6 @@ the panels that fall of Great Chicken when it enters its 3rd phase are no longer
 slightly changed the outline colour of Giant Chicken
 Reduced the size of Commie Chicken and Greedy Chicken
 Low Poly Chicken animation now works when the item is dropped on the ground
+re-animated the flying sprite for Low Poly Chicken projectile
 
 added a config option to optimize the Zenith Chicken's projectiles
