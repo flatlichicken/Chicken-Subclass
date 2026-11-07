@@ -1,9 +1,9 @@
-using Chickensubclass.Content.RedemptionExp.Items;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
+using Chickensubclass.Content.Items;
 
-namespace Chickensubclass.Content.RedemptionExp.RedemptionExp
+namespace Chickensubclass.Content.MoRExpansion
 {
     public class MoREnemyDropChanges : GlobalNPC
     {

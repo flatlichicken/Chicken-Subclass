@@ -6,6 +6,7 @@ features:
 A bunch of chicken weapons. (I lost count)
 3 kinds of chicken enemies.
 a new boss
+a built in redemption expansion if that mod is enabled
 And a few other items.
 
 this is my first time creating a terraria mod
@@ -16,23 +17,15 @@ github repo: https://github.com/flatlichicken/Chicken-Subclass
 
 credit to MasterSwordRemix for the song "Apprehension" used in the bossfight
 
-1.4.3 update:
+1.4.4 update:
 
-new FortheWorthy/GetFixedBoi fight for Great Chicken
+new built in redemption expansion:
 
-new Great Chicken weapon
+Chicken Coops can now give Suspicous Looking Egg in Hardmode
+Egg Shelld now ignores knockback if you're holding a chicken weapon
+Reaper Chicken now needs Xenomite Shards instead of gel if the mod is enabled
+elemental damage for chicken weapons
 
-added localization for chinese
+thats all for redemption
 
-buffed Great Chicken's feather spread attack damage from 20 to 25
-fixed an issue where some Great Chicken feather attacks wouldnt fire for some reason
-nerfed health scaling of Great Chicken
-Great Chicken No longer takes damage from lava
-
-the panels that fall of Great Chicken when it enters its 3rd phase are no longer flipped
-slightly changed the outline colour of Giant Chicken
-Reduced the size of Commie Chicken and Greedy Chicken
-Low Poly Chicken animation now works when the item is dropped on the ground
-re-animated the flying sprite for Low Poly Chicken projectile
-
-added a config option to optimize the Zenith Chicken's projectiles
+Chickemonium Now Spawns after the wall of flesh instead of skeletron

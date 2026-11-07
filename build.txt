@@ -1,4 +1,5 @@
 name = Chickensubclass
 displayName = Chicken Subclass
 author = Flatlichicken
-version = 1.4.3
+version = 1.4.4
+weakReferences = Redemption
