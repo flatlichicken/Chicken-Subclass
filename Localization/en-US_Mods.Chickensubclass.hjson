@@ -521,6 +521,11 @@ Items: {
 		DisplayName: Great Chicken
 		Tooltip: ""
 	}
+
+	ChickemoniumEye: {
+		Tooltip: Tracks down enemies when holding a chicken weapon
+		DisplayName: Chickemonium Eye
+	}
 }
 
 Projectiles: {
@@ -627,6 +632,11 @@ Buffs: {
 	ChickenPoison: {
 		Description: 5% increased melee damage and can poison enemies when holding a chicken weapon
 		DisplayName: Chicken Poison
+	}
+
+	ChickemoniumTracked: {
+		Description: You are visible to the eye
+		DisplayName: Tracked By Chickemonium Eye
 	}
 }
 

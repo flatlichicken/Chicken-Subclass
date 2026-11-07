@@ -29,3 +29,4 @@ elemental damage for chicken weapons
 thats all for redemption
 
 Chickemonium Now Spawns after the wall of flesh instead of skeletron
+Touched up the sprite for Chickemonium a bit

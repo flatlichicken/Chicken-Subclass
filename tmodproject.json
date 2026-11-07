@@ -40,6 +40,9 @@
     "Content/Items/GreatChickenWeapon.cs": "Chickensubclass.Content.Items",
     "Content\\Projectiles\\GreatChickenFeatherFriendlyProjectile.cs": "Chickensubclass.Content.Projectiles",
     "Content\\Projectiles\\FeatherAimIndecatorFriendly.cs": "Chickensubclass.Content.Projectiles",
-    "Content\\RedemptionExp\\MoREnemyDropChanges.cs": "Chickensubclass.Content.RedemptionExp"
+    "Content\\RedemptionExp\\MoREnemyDropChanges.cs": "Chickensubclass.Content.RedemptionExp",
+    "Content\\Items\\Accessories\\ChickemoniumEye.cs": "Chickensubclass.Content.Items.Accessories",
+    "Content\\Buffs\\ChickemoniumTracked.cs": "Chickensubclass.Content.Buffs",
+    "Content\\Items\\Accessories\\ChickemoniumWinglets.cs": "Chickensubclass.Content.Items.Accessories"
   }
 }

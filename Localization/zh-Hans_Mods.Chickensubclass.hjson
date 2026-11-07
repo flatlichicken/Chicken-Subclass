@@ -520,6 +520,11 @@ Items: {
 		DisplayName: 大鸡武器
 		Tooltip: ""
 	}
+
+	ChickemoniumEye: {
+		Tooltip: 手持鸡类武器时可追踪敌人
+		DisplayName: 雏鸡灵眼
+	}
 }
 
 Projectiles: {
@@ -626,6 +631,11 @@ Buffs: {
 	ChickenPoison: {
 		Description: 持有鸡武器时近战伤害 +5%，并能使敌人中毒
 		DisplayName: 鸡之毒
+	}
+
+	ChickemoniumTracked: {
+		DisplayName: 肉眼可见
+		Description: 追踪者：雏鸡灵眼
 	}
 }
 
