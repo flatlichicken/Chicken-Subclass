@@ -29,7 +29,6 @@
     "Content\\Tiles\\SoulBottleChickenTile.cs": "Chickensubclass.Content.Tiles",
     "Content\\Items\\SoulBottleChicken.cs": "Chickensubclass.Content.Items",
     "Content\\NPCs\\Chickemonium.cs": "Chickensubclass.Content.NPCs",
-    "Content\\MoREnemyDropChanges.cs": "Chickensubclass.Content",
     "Content\\BossCheckList.cs": "Chickensubclass.Content",
     "Content\\Projectiles\\BigShotChickenProjectileCharge.cs": "Chickensubclass.Content.Projectiles",
     "Content\\Items\\BigShotChicken.cs": "Chickensubclass.Content.Items",
@@ -40,6 +39,7 @@
     "Content/ChickenSubclassConfig.cs": "Chickensubclass.Content",
     "Content/Items/GreatChickenWeapon.cs": "Chickensubclass.Content.Items",
     "Content\\Projectiles\\GreatChickenFeatherFriendlyProjectile.cs": "Chickensubclass.Content.Projectiles",
-    "Content\\Projectiles\\FeatherAimIndecatorFriendly.cs": "Chickensubclass.Content.Projectiles"
+    "Content\\Projectiles\\FeatherAimIndecatorFriendly.cs": "Chickensubclass.Content.Projectiles",
+    "Content\\RedemptionExp\\MoREnemyDropChanges.cs": "Chickensubclass.Content.RedemptionExp"
   }
 }
