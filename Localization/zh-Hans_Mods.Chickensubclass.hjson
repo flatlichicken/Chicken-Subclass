@@ -634,8 +634,8 @@ Buffs: {
 	}
 
 	ChickemoniumTracked: {
-		DisplayName: 肉眼可见
 		Description: 追踪者：雏鸡灵眼
+		DisplayName: 肉眼可见
 	}
 }
 

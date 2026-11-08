@@ -49,14 +49,14 @@ namespace Chickensubclass.Content.Buffs
 
             if (hasAccessoryEquipped && npc.HasBuff(ModContent.BuffType<ChickemoniumTracked>()))
             {
-                Texture2D texture = TextureAssets.Npc[npc.type].Value;
-                Vector2 drawPosition = npc.Center - screenPos;
-                SpriteEffects effects = npc.spriteDirection == 1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-                Vector2 origin = npc.frame.Size() / 2f;
-
-                spriteBatch.Draw(texture, drawPosition, npc.frame, Color.White, npc.rotation, origin, npc.scale, effects, 0f);
-
-                return false;
+                if (npc.friendly || npc.damage == 0)
+                {
+                    Lighting.AddLight(npc.Center, 0.0f, 0.8f, 0.0f);
+                }
+                else
+                {
+                    Lighting.AddLight(npc.Center, 0.8f, 0.0f, 0.0f);
+                }
             }
 
             return true;

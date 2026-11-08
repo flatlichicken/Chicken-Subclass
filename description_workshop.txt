@@ -29,6 +29,7 @@ elemental damage for chicken weapons
 thats all for redemption
 
 Chickemonium Now Spawns after the wall of flesh instead of skeletron
+Chickemoniums movement direction is now based on your position every 0.5 seconds 
 Touched up the sprite for Chickemonium a bit
 
 new accessory: Chickemonium Eye

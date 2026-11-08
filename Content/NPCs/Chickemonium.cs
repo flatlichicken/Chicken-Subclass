@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
 using Chickensubclass.Content.Items;
+using Chickensubclass.Content.Items.Accessories;
 using Terraria.Audio;
 using Chickensubclass.Content.Gores;
 using Microsoft.Xna.Framework;
@@ -24,6 +25,8 @@ namespace Chickensubclass.Content.NPCs
         private SlotId docileSoundSlot;
         private bool attackStarted = false;
         private int attackTime = 2400;
+        private int dashCooldown = 0;
+        Vector2 dashDirection;
 
         public override void SetStaticDefaults() {
             Main.npcFrameCount[Type] = 2;
@@ -106,7 +109,6 @@ namespace Chickensubclass.Content.NPCs
             }
 
             bool isHovered = NPC.Hitbox.Contains(Main.MouseWorld.ToPoint());
-            
 
             NPC.TargetClosest(true);
             Player targetPlayer = Main.player[NPC.target];
@@ -173,7 +175,20 @@ namespace Chickensubclass.Content.NPCs
             }
             else
             {
-                Vector2 dashDirection = targetPlayer.Center - NPC.Center;
+            
+                if (attackStarted)
+                {
+                    if (dashCooldown <= 0)
+                    {
+                        dashDirection = targetPlayer.Center - NPC.Center;
+                        dashCooldown = 30;
+                    }
+                    else
+                    {
+                       dashCooldown--;
+                    }
+                }
+
                 if (dashDirection != Vector2.Zero)
                 {
                     dashDirection.Normalize();
