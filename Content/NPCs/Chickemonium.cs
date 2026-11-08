@@ -55,6 +55,7 @@ namespace Chickensubclass.Content.NPCs
         public override void ModifyNPCLoot(NPCLoot npcLoot) {
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<RawChicken>(), 1, 5, 10));
             npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickenFeather>(), 1, 5, 10));
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChickemoniumEye>(), 2, 1, 1));
         }
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo) {
